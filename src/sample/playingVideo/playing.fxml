@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.media.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <MediaView fx:id="mediaView" fitHeight="400.0" fitWidth="600.0" BorderPane.alignment="CENTER" />
+   </center>
+   <bottom>
+      <ProgressBar fx:id="progress" minHeight="-Infinity" opacity="0.21" prefHeight="6.0" prefWidth="598.0" progress="0.0" BorderPane.alignment="CENTER" />
+   </bottom>
+   <top>
+      <Button id="green" fx:id="next" mnemonicParsing="false" opacity="0.3" prefHeight="25.0" prefWidth="45.0" stylesheets="@../style.css" text="Далі" BorderPane.alignment="TOP_RIGHT">
+         <BorderPane.margin>
+            <Insets right="2.0" top="2.0" />
+         </BorderPane.margin>
+      </Button>
+   </top>
+</BorderPane>
