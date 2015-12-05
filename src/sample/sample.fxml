@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.media.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane id="bgColor" fx:id="mainBorderPane" prefHeight="389.0" prefWidth="588.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+
+   <top>
+      <Button id="green" fx:id="back" mnemonicParsing="false" opacity="0.66" prefHeight="31.0" prefWidth="144.0" stylesheets="@style.css" text="ВИХІД" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Batang" size="12.0" />
+         </font>
+         <padding>
+            <Insets top="2.0" />
+         </padding>
+         <BorderPane.margin>
+            <Insets top="3.0" />
+         </BorderPane.margin>
+      </Button>
+   </top>
+   <center>
+      <VBox alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="307.0" prefWidth="588.0" BorderPane.alignment="CENTER">
+         <children>
+            <Pane prefHeight="185.0" prefWidth="588.0" />
+            <Label id="label" prefHeight="21.0" prefWidth="193.0" stylesheets="@style.css" text="Виберіть, будь ласка, мову:">
+               <font>
+                  <Font name="System Italic" size="13.0" />
+               </font>
+               <padding>
+                  <Insets bottom="1.0" />
+               </padding>
+            </Label>
+            <Line endX="100.0" startX="-100.0">
+               <VBox.margin>
+                  <Insets bottom="11.0" />
+               </VBox.margin>
+            </Line>
+            <!--<ToggleGroup fx:id="genderGroup"/>-->
+            <RadioButton id="label2" fx:id="radio1" mnemonicParsing="false" prefHeight="29.0" prefWidth="142.0" stylesheets="@style.css" text="Українська" textOverrun="CENTER_ELLIPSIS" VBox.vgrow="ALWAYS">
+               <font>
+                  <Font name="System Italic" size="19.0" />
+               </font>
+               <padding>
+                  <Insets bottom="1.0" />
+               </padding>
+               <toggleGroup>
+                  <ToggleGroup fx:id="group" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton id="label2" fx:id="radio2" mnemonicParsing="false" prefHeight="28.0" prefWidth="142.0" stylesheets="@style.css" text="English" toggleGroup="$group">
+               <font>
+                  <Font name="System Italic" size="19.0" />
+               </font>
+            </RadioButton>
+            <Line endX="100.0" startX="-100.0">
+               <VBox.margin>
+                  <Insets top="11.0" />
+               </VBox.margin>
+            </Line>
+            <Pane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <RadioButton id="label3" fx:id="radio3" layoutX="201.0" layoutY="1.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="194.0" stylesheets="@style.css" text="Запам'ятати">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <padding>
+                        <Insets top="3.0" />
+                     </padding>
+                  </RadioButton>
+               </children></Pane>
+         </children>
+      </VBox>
+   </center>
+   <bottom>
+      <HBox BorderPane.alignment="CENTER">
+         <children>
+            <Pane prefHeight="34.0" prefWidth="241.0" />
+            <Button id="green" fx:id="next" mnemonicParsing="false" opacity="0.66" prefHeight="31.0" prefWidth="144.0" stylesheets="@style.css" text="ПРОДОВЖИТИ">
+               <padding>
+                  <Insets top="2.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets bottom="3.0" />
+               </HBox.margin>
+            </Button>
+            <Pane prefHeight="31.0" prefWidth="179.0" />
+            <Button id="green" fx:id="see" mnemonicParsing="false" opacity="0.66" prefHeight="30.0" prefWidth="80.0" stylesheets="@style.css" text="Дивись">
+               <HBox.margin>
+                  <Insets right="3.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>
