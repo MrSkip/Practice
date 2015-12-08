@@ -1,0 +1,34 @@
+/*Change the selected items color*/
+/*.root {*/
+    /*-fx-background-color: black;*/
+    /*-fx-focus-color: #3530ee;*/
+    /*-fx-font-focused-opacity: 1%;*/
+    /*-fx-effect: red;*/
+/*}*/
+
+.button:focused {
+    -fx-opacity: 1;
+}
+
+.tooltip {
+    -fx-font-size: 12;
+}
+
+/*Background color fill*/
+#bgColor1 {
+    -fx-background-color: black;
+    -fx-effect: black;
+}
+
+/*Button fill*/
+#green {
+    -fx-background-color: black;
+    -fx-text-fill: snow;
+    -fx-background-radius: 19, 19;
+    -fx-background-insets: 0, 1;
+    -fx-font-weight: bolder;
+    -fx-font-style: italic;
+    -fx-font-family: "Arial";
+    /*-fx-effect: innershadow( one-pass-box, black, 0, 0, 0, 2);*/
+    /*-fx-focus-color: red;*/
+}

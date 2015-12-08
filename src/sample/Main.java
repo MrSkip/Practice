@@ -1,23 +1,24 @@
 package sample;
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
 
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.initStyle(StageStyle.UNDECORATED);
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 588, 389));
-        primaryStage.showAndWait();
+        CreateWindow createWindow = new CreateWindow("", "sample.fxml", 588, 389, false, false);
+        Controller controller = (Controller) createWindow.createModalWindow();
+        Stage stage = createWindow.getDialog();
+        stage.showAndWait();
 
+        if (controller.BACK) return;
+
+        createWindow = new CreateWindow("", "playingVideo\\playing.fxml", 602, 370, false, false);
+        sample.playingVideo.Controller controller1 = (sample.playingVideo.Controller) createWindow.createModalWindow();
+        stage = createWindow.getDialog();
+        stage.showAndWait();
     }
 
 

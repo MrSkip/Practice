@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.effect.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.media.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="borderPane1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="602.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.playingVideo.Controller">
+   <center>
+      <MediaView fx:id="mediaView" fitHeight="400.0" fitWidth="600.0" BorderPane.alignment="CENTER" />
+   </center>
+   <bottom>
+      <ProgressBar fx:id="progress" minHeight="-Infinity" opacity="0.21" prefHeight="9.0" prefWidth="598.0" progress="0.0" BorderPane.alignment="CENTER" />
+   </bottom>
+   <top>
+      <HBox fx:id="hBox1" alignment="TOP_RIGHT" stylesheets="@style.css" BorderPane.alignment="TOP_RIGHT">
+         <children>
+            <Label fx:id="next" text="Далі">
+               <padding>
+                  <Insets right="2.0" top="1.0" />
+               </padding>
+            </Label>
+         </children>
+      </HBox>
+   </top>
+</BorderPane>

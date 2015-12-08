@@ -1,8 +1,10 @@
 /*Change the selected items color*/
-.root {
-    -fx-focus-color: #3530ee;
-    -fx-font-focused-opacity: 1%;
-}
+/*.root {*/
+    /*-fx-background-color: black;*/
+    /*-fx-focus-color: #3530ee;*/
+    /*-fx-font-focused-opacity: 1%;*/
+    /*-fx-effect: red;*/
+/*}*/
 
 .button:focused {
     -fx-opacity: 1;
@@ -13,55 +15,20 @@
 }
 
 /*Background color fill*/
-#bgColor {
-    -fx-background-image: url("file://localhost/C:/Users/Mr%20Skip/Downloads/dictionary.jpg");
-    -fx-background-size: stretch;
-    -fx-background-repeat: stretch;
-    -fx-background-radius: 19, 19;
-
-    -fx-blend-mode: exclusion;
+#bgColor1 {
+    -fx-background-color: black;
+    -fx-effect: black;
 }
 
 /*Button fill*/
 #green {
-    -fx-background-color: snow;
+    -fx-background-color: black;
+    -fx-text-fill: snow;
     -fx-background-radius: 19, 19;
     -fx-background-insets: 0, 1;
     -fx-font-weight: bolder;
     -fx-font-style: italic;
-    -fx-text-fill: black;
     -fx-font-family: "Arial";
-    -fx-effect: innershadow( one-pass-box, black, 0, 0, 0, 2);
+    /*-fx-effect: innershadow( one-pass-box, black, 0, 0, 0, 2);*/
     /*-fx-focus-color: red;*/
-}
-
-/*The fill of label "Виберіть мову"*/
-#label{
-    /*-fx-background-color: #ffffff;*/
-    -fx-text-fill: #000000;
-    -fx-font-size: 14;
-    -fx-font-weight: bold;
-}
-
-/*Fill of RadioButton*/
-#label2{
-    -fx-font-size: 19;
-    -fx-pref-width: 142;
-    -fx-font-weight: bold;
-    -fx-font-style: italic;
-    -fx-text-fill: black;
-    -fx-font-family: "Arial";
-    -fx-border-insets: inherit;
-    -fx-mark-color: #ff3af3;
-}
-
-/*Fill of label "Remember"*/
-#label3 {
-    -fx-font-size: 14;
-    -fx-font-weight: bold;
-    /*-fx-font-style: italic;*/
-    -fx-text-fill: black;
-    -fx-font-family: "Arial";
-    -fx-border-insets: inherit;
-    -fx-mark-color: #ff3af3;
 }
