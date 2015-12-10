@@ -7,6 +7,7 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.Tooltip;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -47,7 +48,7 @@ public class Controller implements Initializable {
                 (event.getEventType() == KeyEvent.KEY_PRESSED && (((KeyEvent) event).getCode() == KeyCode.TAB))){
             ((Button) event.getSource()).setStyle("-fx-opacity: 0.66;");
         }
-        else if (event.getEventType() == MouseEvent.MOUSE_CLICKED ||
+        else if (event.getEventType() == MouseEvent.MOUSE_CLICKED && ((MouseEvent)event).getButton() == MouseButton.PRIMARY ||
                 (event.getEventType() == KeyEvent.KEY_PRESSED && (((KeyEvent) event).getCode() == KeyCode.ENTER))){
             if (event.getSource() == next){
                 System.out.println("Clicked button NEXT - next step (close this window)");
@@ -66,6 +67,7 @@ public class Controller implements Initializable {
     }
 
     private void setRadioButtonProperties(Event event){
+
         if (event.getEventType() == MouseEvent.MOUSE_ENTERED ||
                 (event.getEventType() == KeyEvent.KEY_RELEASED && (((KeyEvent) event).getCode() == KeyCode.TAB))){
             if (event.getSource() != radio3) ((RadioButton) event.getSource()).setStyle("-fx-pref-width: 170; -fx-font-size: 23;");
@@ -74,7 +76,7 @@ public class Controller implements Initializable {
                 (event.getEventType() == KeyEvent.KEY_PRESSED && (((KeyEvent) event).getCode() == KeyCode.TAB))){
             if (event.getSource() != radio3) ((RadioButton) event.getSource()).setStyle("-fx-font-size: 19; -fx-pref-width: 142;");
         }
-        else if (event.getEventType() == MouseEvent.MOUSE_CLICKED ||
+        else if ((event.getEventType() == MouseEvent.MOUSE_CLICKED && ((MouseEvent)event).getButton() == MouseButton.PRIMARY) ||
                 (event.getEventType() == KeyEvent.KEY_PRESSED && (((KeyEvent) event).getCode() == KeyCode.ENTER))){
             if (event.getSource() == radio1){
                 System.out.println("Clicked button RADIO1");
