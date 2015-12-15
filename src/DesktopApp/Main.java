@@ -14,6 +14,5 @@ public class Main extends Application{
         CreateStage createStage = new CreateStage("run", "..\\GUI\\main.fxml", 600, 400, false, true);
         C_main c_main = (C_main) createStage.getController();
         c_main.show(createStage.getStage());
-
     }
 }

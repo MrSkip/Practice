@@ -1,5 +1,10 @@
 ~START->
+count of use-1
 language-ENGLISH
+
+~DICTIONARY->
+D:\Dictionary\Dictionary\done\en-uk.txt
+D:\Dictionary\Dictionary\done\uk-en.txt
 
 ~STUDY->
 http://lingualeo.com/ - 0

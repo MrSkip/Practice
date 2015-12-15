@@ -51,21 +51,23 @@ public class ShowMinorStage {
         stage.yProperty().addListener((observable, oldValue, newValue) -> {
             closeStudy();
         });
+
+        button.setOnAction(event -> closeOrShow());
     }
 
     // Method close the mStage (If mStage is showing)
-    private boolean closeStudy(){
+    private void closeStudy(){
         if (mStage.isShowing())
             mStage.close();
-        return mStage.isShowing();
     }
 
     // Method close mStage (is mStage is show) - and show mStage (if mStage is close)
     public void closeOrShow(){
-        if (closeStudy()){
+        if (!mStage.isShowing()){
             mStage.setX(stage.getX() + 9);
             mStage.setY(stage.getY() + 30 + button.getHeight());
             mStage.show();
         }
+        else closeStudy();
     }
 }

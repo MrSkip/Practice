@@ -1,0 +1,17 @@
+~START->
+count of use-1
+language-ENGLISH
+
+~DICTIONARY->
+D:\Dictionary\Dictionary\done\en-uk.txt
+D:\Dictionary\Dictionary\done\uk-en.txt
+
+~STUDY->
+http://lingualeo.com/ - 0
+http://www.oxforddictionaries.com/ - 0
+https://www.duolingo.com/ - 0
+http://easy-english.com.ua/ - 0
+https://opentalk.org.ua/ - 0
+http://www.lingvozone.com/ - 0
+-RECENT
+0

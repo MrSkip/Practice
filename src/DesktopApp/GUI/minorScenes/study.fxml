@@ -1,24 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.canvas.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane id="bgStudy" fx:id="borderPanePrimary" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="304.0" prefWidth="215.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DesktopApp.Controlling.minorControllers.C_study">
+<BorderPane id="bgStudy" fx:id="borderPanePrimary" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.84" prefHeight="304.0" prefWidth="215.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DesktopApp.Controlling.minorControllers.C_study">
    <center>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <HBox prefHeight="100.0" prefWidth="200.0">
+            <VBox alignment="TOP_RIGHT">
                <children>
-                  <SplitPane dividerPositions="0.43434343434343436" orientation="VERTICAL" prefHeight="96.0" prefWidth="105.0">
-                    <items>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
-                    </items>
-                  </SplitPane>
-               </children></HBox>
+                  <Label id="mainLabel" stylesheets="@style.css" text="RECENT">
+                     <padding>
+                        <Insets right="6.0" />
+                     </padding>
+                     <font>
+                        <Font name="Arial Bold Italic" size="11.0" />
+                     </font>
+                  </Label>
+                  <Label id="label123" fx:id="l1" prefHeight="17.0" prefWidth="213.0" stylesheets="@style.css" text="Label">
+                     <VBox.margin>
+                        <Insets left="3.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label id="label123" fx:id="l2" prefHeight="17.0" prefWidth="270.0" stylesheets="@style.css" text="Label">
+                     <VBox.margin>
+                        <Insets left="3.0" top="1.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label id="label123" fx:id="l3" prefHeight="17.0" prefWidth="270.0" stylesheets="@style.css" text="Label">
+                     <VBox.margin>
+                        <Insets left="3.0" top="1.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Line endX="115.0" opacity="0.24" startX="-100.0" />
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Button id="button123" fx:id="bt1" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="22.0" prefWidth="28.0" stylesheets="@style.css" text="1">
+                           <HBox.margin>
+                              <Insets top="1.0" />
+                           </HBox.margin>
+                           <padding>
+                              <Insets left="1.0" />
+                           </padding>
+                        </Button>
+                        <Button id="button123" fx:id="bt2" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="22.0" prefWidth="28.0" stylesheets="@style.css" text="2">
+                           <HBox.margin>
+                              <Insets left="3.0" right="3.0" top="1.0" />
+                           </HBox.margin>
+                           <padding>
+                              <Insets left="1.0" />
+                           </padding>
+                        </Button>
+                        <Button id="button123" fx:id="bt3" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="22.0" prefWidth="28.0" stylesheets="@style.css" text="3">
+                           <HBox.margin>
+                              <Insets top="1.0" />
+                           </HBox.margin>
+                           <padding>
+                              <Insets left="1.0" />
+                           </padding>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <Pane prefHeight="277.0" prefWidth="216.0">
+               <children>
+                  <VBox prefHeight="169.0" prefWidth="215.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fx:id="listImage1" fitHeight="90.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="listImage2" fitHeight="95.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fx:id="listImage3" fitHeight="95.0" fitWidth="107.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="listImage4" fitHeight="95.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children></Pane>
          </children>
       </VBox>
    </center>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="24.0" prefWidth="215.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="173.0" promptText="Add new site" />
+            <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="16.0" prefWidth="16.0" text="d">
+               <HBox.margin>
+                  <Insets left="2.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </bottom>
 </BorderPane>
