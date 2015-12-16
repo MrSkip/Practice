@@ -1,5 +1,5 @@
 ~START->
-count of use-1
+count of use-0
 language-ENGLISH
 
 ~DICTIONARY->
@@ -7,11 +7,18 @@ D:\Dictionary\Dictionary\done\en-uk.txt
 D:\Dictionary\Dictionary\done\uk-en.txt
 
 ~STUDY->
-http://lingualeo.com/ - 0
-http://www.oxforddictionaries.com/ - 0
-https://www.duolingo.com/ - 0
-http://easy-english.com.ua/ - 0
-https://opentalk.org.ua/ - 0
-http://www.lingvozone.com/ - 0
+http://lingualeo.com/
+http://oxforddictionaries.com/
+https://duolingo.com/
+http://easy-english.com.ua/
+https://opentalk.org.ua/
+http://liuro.com.ua/
+http://learnenglishteens.britishcouncil.org/
+http://elllo.org/
+-USER SITES
+http://www.vk.com/
 -RECENT
-0
+www.duolingo.com
+lingvozone.com
+opentalk.org.ua
+~END STUDY<-

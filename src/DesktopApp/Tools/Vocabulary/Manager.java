@@ -34,10 +34,7 @@ public class Manager {
         this.listWords = listWords;
     }
 
-    /*
-    * Method return translation of `typeWord`
-    */
-
+    // Method return translation of `typeWord`
     public Vector<String> getWord(String typeWord){
         Iterator<Words> iterator = listWords.iterator();
         Vector<String> vector = new Vector<>();
@@ -48,6 +45,26 @@ public class Manager {
                 while (iterator.hasNext()){
                     word = iterator.next();
                     if (word.getWord().equalsIgnoreCase(typeWord))
+                        vector.add(word.getTranslate());
+                    else break;
+                }
+                break;
+            }
+        }
+        return vector;
+    }
+
+    // Method return words that start with typeWord
+    public Vector<String> getTypedWord(String typeWord){
+        Iterator<Words> iterator = listWords.iterator();
+        Vector<String> vector = new Vector<>();
+        while (iterator.hasNext()){
+            Words word = iterator.next();
+            if (word.getWord().startsWith(typeWord)){
+                vector.add(word.getTranslate());
+                while (iterator.hasNext()){
+                    word = iterator.next();
+                    if (word.getWord().startsWith(typeWord))
                         vector.add(word.getTranslate());
                     else break;
                 }
