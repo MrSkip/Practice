@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DesktopApp/Resource/linksImage/duolingo.com.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DesktopApp/Resource/linksImage/easy-english.com.ua.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DesktopApp/Resource/linksImage/elllo.org.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DesktopApp/Resource/linksImage/learnenglishteens.britishcouncil.org.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DesktopApp/Resource/linksImage/lingualeo.com.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DesktopApp/Resource/linksImage/liuro.com.ua.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DesktopApp/Resource/linksImage/opentalk.org.ua.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DesktopApp/Resource/linksImage/oxforddictionaries.com.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DesktopApp/Resource/images/left224(2).png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DesktopApp/Resource/images/left224.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Vocabulary/DesktopApp/Controlling/minorControllers/C_study.class" afterPath="$PROJECT_DIR$/out/production/Vocabulary/DesktopApp/Controlling/minorControllers/C_study.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Vocabulary/DesktopApp/Tools/ReadLog.class" afterPath="$PROJECT_DIR$/out/production/Vocabulary/DesktopApp/Tools/ReadLog.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Vocabulary/DesktopApp/Tools/Vocabulary/Manager.class" afterPath="$PROJECT_DIR$/out/production/Vocabulary/DesktopApp/Tools/Vocabulary/Manager.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Vocabulary/DesktopApp/GUI/minorScenes/study.fxml" afterPath="$PROJECT_DIR$/out/production/Vocabulary/DesktopApp/GUI/minorScenes/study.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Vocabulary/DesktopApp/GUI/minorScenes/style.css" afterPath="$PROJECT_DIR$/out/production/Vocabulary/DesktopApp/GUI/minorScenes/style.css" />
@@ -21,8 +14,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DesktopApp/GUI/minorScenes/study.fxml" afterPath="$PROJECT_DIR$/src/DesktopApp/GUI/minorScenes/study.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DesktopApp/GUI/minorScenes/style.css" afterPath="$PROJECT_DIR$/src/DesktopApp/GUI/minorScenes/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DesktopApp/Resource/log.txt" afterPath="$PROJECT_DIR$/src/DesktopApp/Resource/log.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DesktopApp/Tools/ReadLog.java" afterPath="$PROJECT_DIR$/src/DesktopApp/Tools/ReadLog.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DesktopApp/Tools/Vocabulary/Manager.java" afterPath="$PROJECT_DIR$/src/DesktopApp/Tools/Vocabulary/Manager.java" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -99,21 +90,9 @@
         <entry file="file://$PROJECT_DIR$/src/DesktopApp/Tools/ReadLog.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="138" column="65" selection-start-line="138" selection-start-column="65" selection-end-line="138" selection-end-column="65" />
+              <caret line="149" column="5" selection-start-line="149" selection-start-column="5" selection-end-line="149" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#7585#7586#0" expanded="true" />
-                <element signature="e#7626#7627#0" expanded="true" />
-                <element signature="e#7681#7682#0" expanded="true" />
-                <element signature="e#7724#7725#0" expanded="true" />
-                <element signature="e#7799#7800#0" expanded="true" />
-                <element signature="e#7854#7855#0" expanded="true" />
-                <element signature="e#7917#7918#0" expanded="true" />
-                <element signature="e#7960#7961#0" expanded="true" />
-                <element signature="e#8035#8036#0" expanded="true" />
-                <element signature="e#8090#8091#0" expanded="true" />
-                <element signature="e#8165#8166#0" expanded="true" />
-                <element signature="e#8220#8221#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -123,7 +102,7 @@
         <entry file="file://$PROJECT_DIR$/src/DesktopApp/Resource/log.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+              <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -132,9 +111,20 @@
       <file leaf-file-name="C_study.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/DesktopApp/Controlling/minorControllers/C_study.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.26881722">
-              <caret line="88" column="62" selection-start-line="88" selection-start-column="62" selection-end-line="88" selection-end-column="62" />
-              <folding />
+            <state vertical-scroll-proportion="0.6921182">
+              <caret line="371" column="9" selection-start-line="371" selection-start-column="9" selection-end-line="371" selection-end-column="9" />
+              <folding>
+                <element signature="method#setButtonProperties#0;class#C_study#0" expanded="false" />
+                <element signature="method#changeFocused#0;class#C_study#0" expanded="false" />
+                <element signature="method#setLabelProperties#0;class#C_study#0" expanded="false" />
+                <element signature="method#setImages#0;class#C_study#0" expanded="false" />
+                <element signature="method#referenceImages#0;class#C_study#0" expanded="false" />
+                <element signature="method#setImagesProperties#0;class#C_study#0" expanded="false" />
+                <element signature="method#setLabel#0;class#C_study#0" expanded="false" />
+                <element signature="method#openInDefaultBrowser#0;class#C_study#0" expanded="false" />
+                <element signature="method#setUserSites#0;class#C_study#0" expanded="false" />
+                <element signature="method#setAddImage#0;class#C_study#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -142,8 +132,8 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DesktopApp/GUI/minorScenes/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.8846154">
-              <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="22" />
+            <state vertical-scroll-proportion="-9.153846">
+              <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -152,8 +142,8 @@
       <file leaf-file-name="study.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DesktopApp/GUI/minorScenes/study.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.5636364">
-              <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+            <state vertical-scroll-proportion="-2.709091">
+              <caret line="122" column="30" selection-start-line="122" selection-start-column="30" selection-end-line="122" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -173,6 +163,30 @@
                 <element signature="e#1360#1361#0" expanded="false" />
                 <element signature="e#1464#1465#0" expanded="false" />
                 <element signature="e#1513#1514#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DesktopApp/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="C_main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DesktopApp/Controlling/C_main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -239,16 +253,18 @@
         <option value="$PROJECT_DIR$/src/DesktopApp/Main.java" />
         <option value="$PROJECT_DIR$/src/DesktopApp/Controlling/C_main.java" />
         <option value="$PROJECT_DIR$/src/DesktopApp/Tools/log.txt" />
-        <option value="$PROJECT_DIR$/src/DesktopApp/GUI/minorScenes/study.fxml" />
         <option value="$PROJECT_DIR$/src/DesktopApp/Tools/References.java" />
         <option value="$PROJECT_DIR$/src/DesktopApp/Tools/Vocabulary.java" />
         <option value="$PROJECT_DIR$/src/DesktopApp/Tools/Vocabulary/Vocabulary.java" />
         <option value="$PROJECT_DIR$/src/DesktopApp/Tools/Vocabulary/Words.java" />
         <option value="$PROJECT_DIR$/src/DesktopApp/Resource/Dictionaries/uk-en.txt" />
         <option value="$PROJECT_DIR$/src/DesktopApp/Tools/Vocabulary/Manager.java" />
+        <option value="$PROJECT_DIR$/src/DesktopApp/Tools/ReadLog.java" />
+        <option value="C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/util/function/Consumer.java" />
+        <option value="C:/Program Files/Java/jdk1.8.0_60/javafx-src.zip!/javafx/scene/Node.java" />
         <option value="$PROJECT_DIR$/src/DesktopApp/GUI/minorScenes/style.css" />
         <option value="$PROJECT_DIR$/src/DesktopApp/Resource/log.txt" />
-        <option value="$PROJECT_DIR$/src/DesktopApp/Tools/ReadLog.java" />
+        <option value="$PROJECT_DIR$/src/DesktopApp/GUI/minorScenes/study.fxml" />
         <option value="$PROJECT_DIR$/src/DesktopApp/Controlling/minorControllers/C_study.java" />
       </list>
     </option>
@@ -270,8 +286,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="width" value="1366" />
-    <option name="height" value="768" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="784" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -303,6 +321,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope">
         <subPane subId="Problems" />
         <subPane subId="Project Files">
@@ -364,7 +383,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -525,7 +543,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="linksImage" />
+              <option name="myItemId" value="images" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -648,18 +666,18 @@
     <property name="settings.editor.splitter.proportion" value="0.21645446" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Project\Java\Vocabulary\src\DesktopApp\Resource\linksImage" />
-      <recent name="D:\Project\Java\Vocabulary\src\DesktopApp\Resource\Dictionaries" />
-      <recent name="D:\Project\Java\Vocabulary\src\DesktopApp\Controlling\minorControllers" />
-      <recent name="D:\Project\Java\Vocabulary\src\DesktopApp\GUI" />
-      <recent name="D:\Project\Java\Vocabulary\src\DesktopApp\GUI\minorScene" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Project\Java\Vocabulary\src\DesktopApp\Resource" />
       <recent name="D:\Project\Java\Vocabulary\src\DesktopApp" />
       <recent name="D:\Project\Java\Vocabulary\src\DesktopApp\Controlling" />
       <recent name="D:\Project\Java\Vocabulary\src\DesktopApp\GUI\minorScenes" />
+      <recent name="D:\Project\Java\Vocabulary\src\DesktopApp\GUI" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Project\Java\Vocabulary\src\DesktopApp\Resource\images" />
+      <recent name="D:\Project\Java\Vocabulary\src\DesktopApp\Resource\linksImage" />
+      <recent name="D:\Project\Java\Vocabulary\src\DesktopApp\Resource\Dictionaries" />
+      <recent name="D:\Project\Java\Vocabulary\src\DesktopApp\Controlling\minorControllers" />
       <recent name="D:\Project\Java\Vocabulary\src\DesktopApp\GUI" />
     </key>
   </component>
@@ -1222,25 +1240,36 @@
       <workItem from="1450110128615" duration="8120000" />
       <workItem from="1450175238301" duration="1935000" />
       <workItem from="1450196880678" duration="14428000" />
-      <workItem from="1450260558187" duration="19160000" />
+      <workItem from="1450260558187" duration="26097000" />
+      <workItem from="1450293344707" duration="218000" />
+      <workItem from="1450352759265" duration="28570000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="252699000" />
+    <option name="totallyTimeSpent" value="288424000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1366" height="768" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295129" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32465544" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928678" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32808024" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924962" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29369628" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32808024" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3353752" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30659026" sideWeight="0.49705014" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19515885" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
@@ -1283,7 +1312,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="9" />
+      <option name="time" value="11" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1292,30 +1321,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/lang/Runnable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6682927">
@@ -1324,13 +1329,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/jre/lib/charsets.jar!/sun/nio/cs/ext/Big5_HKSCS.class">
@@ -1369,13 +1374,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/playingVideo/playing.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3">
           <caret line="13" column="266" selection-start-line="13" selection-start-column="266" selection-end-line="13" selection-end-column="273" />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/mainWindows/mainStyle.css">
@@ -1400,13 +1405,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DesktopApp/GUI/start.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DesktopApp/Controlling/C_start.java">
@@ -1431,23 +1436,23 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DesktopApp/GUI/minorScenes/setting.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DesktopApp/GUI/minorScenes/print.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DesktopApp/Controlling/minorControllers/C_browser.java">
@@ -1458,13 +1463,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/mainWindows/MainView.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.027642276">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/CreateWindow.java">
@@ -1538,14 +1543,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DesktopApp/GUI/main.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.4">
           <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/playingVideo/style.css">
@@ -1583,43 +1588,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DesktopApp/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2937365">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DesktopApp/Controlling/C_main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32985073">
-          <caret line="25" column="98" selection-start-line="25" selection-start-column="98" selection-end-line="25" selection-end-column="98" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/DesktopApp/Resource/Dictionaries/en-uk.txt">
       <provider selected="true" editor-type-id="LargeFileEditor">
         <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DesktopApp/GUI/minorScenes/browser.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DesktopApp/Tools/ShowMinorStage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.24444444">
           <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1627,7 +1614,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.26444444">
           <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1635,12 +1621,32 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.56666666">
           <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/src.zip!/java/util/function/Consumer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15913978">
+          <caret line="50" column="7" selection-start-line="50" selection-start-column="7" selection-end-line="50" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DesktopApp/Controlling/C_main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#274#275#0" expanded="true" />
-            <element signature="e#319#320#0" expanded="true" />
-            <element signature="e#363#364#0" expanded="true" />
-            <element signature="e#429#430#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DesktopApp/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1659,21 +1665,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DesktopApp/GUI/minorScenes/study.fxml">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/javafx-src.zip!/javafx/scene/Node.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.5636364">
-          <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.33259425">
+          <caret line="8260" column="40" selection-start-line="8260" selection-start-column="40" selection-end-line="8260" selection-end-column="40" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DesktopApp/GUI/minorScenes/style.css">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/javafx-src.zip!/javafx/scene/Node.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.8846154">
-          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.33259425">
+          <caret line="8260" column="40" selection-start-line="8260" selection-start-column="40" selection-end-line="8260" selection-end-column="40" />
           <folding />
         </state>
       </provider>
@@ -1681,7 +1684,15 @@
     <entry file="file://$PROJECT_DIR$/src/DesktopApp/Resource/log.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+          <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DesktopApp/GUI/minorScenes/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.153846">
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -1689,30 +1700,40 @@
     <entry file="file://$PROJECT_DIR$/src/DesktopApp/Tools/ReadLog.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="138" column="65" selection-start-line="138" selection-start-column="65" selection-end-line="138" selection-end-column="65" />
+          <caret line="149" column="5" selection-start-line="149" selection-start-column="5" selection-end-line="149" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#7585#7586#0" expanded="true" />
-            <element signature="e#7626#7627#0" expanded="true" />
-            <element signature="e#7681#7682#0" expanded="true" />
-            <element signature="e#7724#7725#0" expanded="true" />
-            <element signature="e#7799#7800#0" expanded="true" />
-            <element signature="e#7854#7855#0" expanded="true" />
-            <element signature="e#7917#7918#0" expanded="true" />
-            <element signature="e#7960#7961#0" expanded="true" />
-            <element signature="e#8035#8036#0" expanded="true" />
-            <element signature="e#8090#8091#0" expanded="true" />
-            <element signature="e#8165#8166#0" expanded="true" />
-            <element signature="e#8220#8221#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DesktopApp/GUI/minorScenes/study.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.709091">
+          <caret line="122" column="30" selection-start-line="122" selection-start-column="30" selection-end-line="122" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DesktopApp/Controlling/minorControllers/C_study.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26881722">
-          <caret line="88" column="62" selection-start-line="88" selection-start-column="62" selection-end-line="88" selection-end-column="62" />
-          <folding />
+        <state vertical-scroll-proportion="0.6921182">
+          <caret line="371" column="9" selection-start-line="371" selection-start-column="9" selection-end-line="371" selection-end-column="9" />
+          <folding>
+            <element signature="method#setButtonProperties#0;class#C_study#0" expanded="false" />
+            <element signature="method#changeFocused#0;class#C_study#0" expanded="false" />
+            <element signature="method#setLabelProperties#0;class#C_study#0" expanded="false" />
+            <element signature="method#setImages#0;class#C_study#0" expanded="false" />
+            <element signature="method#referenceImages#0;class#C_study#0" expanded="false" />
+            <element signature="method#setImagesProperties#0;class#C_study#0" expanded="false" />
+            <element signature="method#setLabel#0;class#C_study#0" expanded="false" />
+            <element signature="method#openInDefaultBrowser#0;class#C_study#0" expanded="false" />
+            <element signature="method#setUserSites#0;class#C_study#0" expanded="false" />
+            <element signature="method#setAddImage#0;class#C_study#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

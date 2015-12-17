@@ -18,7 +18,7 @@
          <children>
             <VBox fx:id="vBoxBt" alignment="TOP_RIGHT">
                <children>
-                  <Label id="mainLabel" stylesheets="@style.css" text="RECENT">
+                  <Label fx:id="firstBt" prefHeight="14.0" prefWidth="217.0" text="RECENT">
                      <padding>
                         <Insets right="6.0" />
                      </padding>
@@ -57,29 +57,12 @@
                   </HBox>
                </children>
             </VBox>
-            <Pane prefHeight="277.0" prefWidth="216.0">
+            <Pane fx:id="pane" prefHeight="277.0" prefWidth="216.0">
                <children>
-                  <VBox prefHeight="169.0" prefWidth="215.0">
+                  <VBox>
                      <children>
                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                            <children>
-                              <ImageView fx:id="listImage1" fitHeight="88.0" fitWidth="103.0" pickOnBounds="true" preserveRatio="true">
-                                 <HBox.margin>
-                                    <Insets top="5.0" />
-                                 </HBox.margin>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                                 <effect>
-                                    <Lighting>
-                                       <bumpInput>
-                                          <Shadow />
-                                       </bumpInput>
-                                       <light>
-                                          <Light.Distant />
-                                       </light>
-                                    </Lighting>
-                                 </effect></ImageView>
                               <ImageView fx:id="listImage2" fitHeight="88.0" fitWidth="103.0" pickOnBounds="true" preserveRatio="true">
                                  <HBox.margin>
                                     <Insets left="5.0" top="5.0" />
@@ -98,7 +81,7 @@
                         </HBox>
                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                            <children>
-                              <ImageView fx:id="listImage3" fitHeight="88.0" fitWidth="103.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="listImage3" fitHeight="103.0" fitWidth="103.0" pickOnBounds="true" preserveRatio="true">
                                  <HBox.margin>
                                     <Insets top="5.0" />
                                  </HBox.margin>
@@ -135,14 +118,17 @@
       </VBox>
    </center>
    <bottom>
-      <HBox alignment="CENTER" prefHeight="36.0" prefWidth="215.0" BorderPane.alignment="CENTER">
+      <HBox alignment="CENTER" prefHeight="24.0" prefWidth="215.0" BorderPane.alignment="CENTER">
          <children>
-            <TextField minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="173.0" promptText="Add new site" />
-            <Button minHeight="-Infinity" mnemonicParsing="false" prefHeight="16.0" prefWidth="16.0" text="d">
+            <TextField fx:id="textField" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="173.0" promptText="Add new site" />
+            <ImageView fx:id="add" fitHeight="18.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Resource/images/left224.png" />
+               </image>
                <HBox.margin>
-                  <Insets left="2.0" />
+                  <Insets left="3.0" />
                </HBox.margin>
-            </Button>
+            </ImageView>
          </children>
       </HBox>
    </bottom>

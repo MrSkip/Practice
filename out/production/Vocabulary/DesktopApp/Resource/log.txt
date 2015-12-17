@@ -16,7 +16,12 @@ http://liuro.com.ua/
 http://learnenglishteens.britishcouncil.org/
 http://elllo.org/
 -USER SITES
-http://www.vk.com/
+http://www.vk.com/1
+http://www.vk.com/6
+http://www.vk.com/3
+http://www.vk.com/4
+http://www.vk.com/5
+http://www.vk.com/6
 -RECENT
 www.duolingo.com
 lingvozone.com
