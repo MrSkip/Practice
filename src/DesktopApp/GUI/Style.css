@@ -1,0 +1,16 @@
+#scene{
+    -fx-background-color: #909090;
+}
+
+#searchField{
+    -fx-background-radius: 19;
+    -fx-background-color: #c8c8c8;
+    -fx-effect: dropshadow(gaussian, #747474, 0, 1.0, 1.6, 1);
+}
+
+#combo{
+    -fx-background-color: #bababa;
+    -fx-font-size: 12;
+    -fx-pref-height: 25;
+    -fx-pref-width: 140;
+}

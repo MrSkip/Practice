@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.geometry.*?>
@@ -7,12 +10,11 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<BorderPane fx:id="borderPanePrimary" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DesktopApp.Controlling.C_main">
+<BorderPane id="scene" fx:id="borderPanePrimary" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DesktopApp.Controlling.C_main">
    <top>
-      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+      <VBox BorderPane.alignment="CENTER">
          <children>
-            <HBox prefHeight="100.0" prefWidth="200.0">
+            <HBox>
                <children>
                   <Button fx:id="study" mnemonicParsing="false" text="study">
                      <HBox.margin>
@@ -41,7 +43,43 @@
                   </MenuBar>
                </children>
             </HBox>
-            <Button mnemonicParsing="false" text="Button" />
+            <VBox alignment="CENTER" prefHeight="83.0" prefWidth="600.0">
+               <children>
+                  <HBox prefHeight="1.0" prefWidth="600.0">
+                     <children>
+                        <Pane prefHeight="25.0" prefWidth="194.0" />
+                        <ImageView fitHeight="14.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true" />
+                        <ImageView fitHeight="12.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="36.0" prefWidth="600.0">
+                     <children>
+                        <Pane prefHeight="29.0" prefWidth="169.0" />
+                        <ImageView fx:id="history" fitHeight="24.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../notebook91.png" />
+                           </image>
+                        </ImageView>
+                        <Pane prefHeight="36.0" prefWidth="5.0" />
+                        <TextField id="searchField" prefHeight="25.0" prefWidth="190.0" stylesheets="@Style.css" />
+                        <Pane prefHeight="36.0" prefWidth="4.0" />
+                        <ImageView fx:id="find" fitHeight="105.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../magnifying-glass23.png" />
+                           </image>
+                        </ImageView>
+                        <Pane prefHeight="35.0" prefWidth="194.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Label text="English -&gt; Ukraine" />
+                        <Pane prefHeight="17.0" prefWidth="8.0" />
+                        <Pane prefHeight="12.0" prefWidth="11.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
          </children>
       </VBox>
    </top>

@@ -5,7 +5,9 @@ import DesktopApp.Tools.Vocabulary.Words;
 
 import java.io.*;
 import java.nio.charset.Charset;
-import java.util.*;
+import java.util.Collection;
+import java.util.Vector;
+
 // ???? If the program use first - write to file path to Vocabulary
 // This class must return different data from log.file
 public class ReadLog {
@@ -22,7 +24,7 @@ public class ReadLog {
     public static void main(String [] args){
         Manager manager = new Manager();
 //        manager.setListWords(readVocabulary("uk-en"));
-        manager.setListWords(readVocabulary("en-uk"));
+        manager.setListWords(readVocabulary("uk-en"));
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         while (true){
             try {
@@ -58,7 +60,9 @@ public class ReadLog {
             String str;
 
             // Read words from Ukraine Vocabulary
-            if (br.readLine().equals("UKRAINE-ENGLISH"))
+            String str1 = br.readLine();
+            System.out.println(str1);
+            if (str1.equals("UKRAINE-ENGLISH"))
                 while ((str = br.readLine()) != null){
                     manager.add(str.substring(0, str.indexOf(" =")),
                                 str.substring(str.indexOf("= ") + 2, str.length()));
