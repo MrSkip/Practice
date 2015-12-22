@@ -356,8 +356,8 @@ public class C_study implements Initializable{
                 e.printStackTrace();
             }
         }
-        else if ( event.getEventType() == MouseEvent.MOUSE_CLICKED &&
-                event.getButton() == MouseButton.PRIMARY){
+        else if (event.getButton() == MouseButton.PRIMARY &&
+                event.getEventType() == MouseEvent.MOUSE_CLICKED){
             if (!textField.getText().isEmpty()){
                 Vector<String> vector = ReadLog.getStudyUserSites();
                 for (String aVector : vector) {

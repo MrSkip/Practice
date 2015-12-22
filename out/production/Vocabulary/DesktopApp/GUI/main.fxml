@@ -41,6 +41,7 @@
                       </Menu>
                     </menus>
                   </MenuBar>
+                  <Button fx:id="study1" mnemonicParsing="false" text="study" />
                </children>
             </HBox>
             <VBox alignment="CENTER" prefHeight="83.0" prefWidth="600.0">
@@ -61,7 +62,7 @@
                            </image>
                         </ImageView>
                         <Pane prefHeight="36.0" prefWidth="5.0" />
-                        <TextField id="searchField" prefHeight="25.0" prefWidth="190.0" stylesheets="@Style.css" />
+                        <TextField id="searchField" fx:id="textFieldF" prefHeight="25.0" prefWidth="190.0" stylesheets="@Style.css" />
                         <Pane prefHeight="36.0" prefWidth="4.0" />
                         <ImageView fx:id="find" fitHeight="105.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                            <image>

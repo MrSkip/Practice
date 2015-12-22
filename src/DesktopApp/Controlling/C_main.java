@@ -23,6 +23,7 @@ public class C_main implements Initializable{
     public BorderPane borderPanePrimary;
     public ImageView history;
     public ImageView find;
+    public TextField textFieldF;
     private Stage stage = null,
             stage_study = null;
     public Button study;
@@ -40,13 +41,13 @@ public class C_main implements Initializable{
         borderPanePrimary.setId("scene");
 
         setImages();
-        setPropertiesToImages();
+        setListeners();
     }
 
     // Show the scene
     public void show(Stage stage){
         stage.show();
-        ShowMinorStage stageStudy = new ShowMinorStage(study, stage, stage_study);
+        new ShowMinorStage(stage.getX() + 9,stage.getY() + 30 + study.getHeight(), stage_study, stage).setButton(study);
     }
 
     private void setImages() {
@@ -64,7 +65,7 @@ public class C_main implements Initializable{
         }
     }
 
-    private void setPropertiesToImages(){
+    private void setListeners(){
         find.addEventFilter(MouseEvent.ANY, event -> {
             if (event.getEventType() == MouseEvent.MOUSE_ENTERED ||
                     event.getEventType() == MouseEvent.MOUSE_EXITED){
@@ -99,6 +100,13 @@ public class C_main implements Initializable{
                     e.printStackTrace();
                 }
             }
+        });
+
+        textFieldF.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue)
+                textFieldF.setStyle("-fx-background-color: #f3f3f3;");
+            else
+                textFieldF.setStyle("-fx-background-color: #c8c8c8;");
         });
     }
 }
