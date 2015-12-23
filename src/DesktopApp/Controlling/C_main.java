@@ -109,4 +109,11 @@ public class C_main implements Initializable{
                 textFieldF.setStyle("-fx-background-color: #c8c8c8;");
         });
     }
+
+//    private Stage getStageForTypedWords(){
+//
+//    }
+//    private Stage getStageForChooseLanguage(){
+//
+//    }
 }

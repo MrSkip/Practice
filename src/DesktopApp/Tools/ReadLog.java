@@ -1,5 +1,6 @@
 package DesktopApp.Tools;
 
+import DesktopApp.Tools.Vocabulary.AllVocabularies;
 import DesktopApp.Tools.Vocabulary.Manager;
 import DesktopApp.Tools.Vocabulary.Words;
 
@@ -35,11 +36,24 @@ public class ReadLog {
         }
     }
 
+    public static Vector<AllVocabularies> getAllVocabularies(){
+        // if the method is not call than call him
+        if (!IfRead) readLog();
+
+        Vector<AllVocabularies> allVocabularies = new Vector<>();
+
+        for (String path : vocabularyPath) {
+            String name = path.substring(path.lastIndexOf("\\") + 1, path.lastIndexOf(".txt"));
+            allVocabularies.add(new AllVocabularies(name, readVocabulary(name)));
+        }
+
+        return allVocabularies;
+    }
+
     // Method get the name of Vocabulary and than return all words from this Vocabulary
     public static Collection<Words> readVocabulary(String vocabularyName){
         // if the method is not call than call him
         if (!IfRead) readLog();
-
         String languagePath = null;
         Manager manager = new Manager();
 

@@ -1,7 +1,5 @@
 package DesktopApp.Tools;
 
-import javafx.event.EventType;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseButton;
@@ -11,15 +9,17 @@ import javafx.stage.StageStyle;
 
 // Class can show the minor stage over the main stage
 public class ShowMinorStage {
-    private Stage mainStage = null,
+    private Stage
+            mainStage = null,
             minorStage = null;
     private double x, y;
 
     /*
     * Constructor get the parameters:
-    * button - the button that can call a mStage
-    * stage - the main stage
-    * mStage - the minor stage (this stage show over the main stage)
+    * x - x coordinate of minorStage
+    * y - y coordinate of minorStage
+    * mainStage - the main stage
+    * minorStage - the minor stage (this stage show over the mainStage)
     */
 
     public ShowMinorStage(double x, double y, Stage minorStage, Stage mainStage){
@@ -46,11 +46,13 @@ public class ShowMinorStage {
         });
     }
 
+    // Method references button with minorStage
     public void setButton(Button button){
         setCloseOnObject(button.getLayoutX(), button.getLayoutY(), button.getWidth(), button.getHeight());
         button.setOnAction(event -> closeOrShow());
     }
 
+    // Method references label with minorStage
     public void setLabel(Label label){
         setCloseOnObject(label.getLayoutX(), label.getLayoutY(), label.getWidth(), label.getHeight());
 
@@ -64,8 +66,8 @@ public class ShowMinorStage {
     private void setCloseOnObject(double layoutX, double layoutY, double width, double height){
         /*
         * Create EventFilter
-        * If cursor over the `button` than not close mStage
-        * else close mStage
+        * If cursor over the `object` than not close mStage
+        * else close minorStage
         */
         mainStage.getScene().addEventFilter(MouseEvent.MOUSE_PRESSED, mouseEvent -> {
             if (!(mouseEvent.getX() >= layoutX && mouseEvent.getX() <= layoutX + width
@@ -74,13 +76,13 @@ public class ShowMinorStage {
         });
     }
 
-    // Method close the mStage (If mStage is showing)
+    // Method close the minorStage (If minorStage is showing)
     private void closeStudy(){
         if (minorStage.isShowing())
             minorStage.close();
     }
 
-    // Method close mStage (is mStage is show) - and show mStage (if mStage is close)
+    // Method close mStage (is minorStage is show) - and show minorStage (if mStage is close)
     public void closeOrShow(){
         if (!minorStage.isShowing()){
             minorStage.setX(x);

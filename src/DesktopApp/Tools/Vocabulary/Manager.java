@@ -9,13 +9,11 @@ import java.util.Vector;
 
 public class Manager {
     private Collection<Words> listWords = null;
+    Vector<AllVocabularies> allVocabularies = null;
 
     public Manager(){
         listWords = new ArrayList<>();
-    }
-
-    public Manager(String vocabularyName){
-        listWords = ReadLog.readVocabulary(vocabularyName);
+        Vector<AllVocabularies> allVocabularies = ReadLog.getAllVocabularies();
     }
 
     public void add(String word, String transcription, String translate, String info, String note){
@@ -35,8 +33,14 @@ public class Manager {
     }
 
     // Method return translation of `typeWord`
-    public Vector<String> getWord(String typeWord){
-        Iterator<Words> iterator = listWords.iterator();
+    public Vector<String> getWord(String vocabularyName, String typeWord){
+
+        if (getTypedVocabulary(vocabularyName) == null){
+            System.out.println("Don`t have vocabulary of name - " + vocabularyName);
+            return null;
+        }
+
+        Iterator<Words> iterator = getTypedVocabulary(vocabularyName).iterator();
         Vector<String> vector = new Vector<>();
         while (iterator.hasNext()){
             Words word = iterator.next();
@@ -55,8 +59,14 @@ public class Manager {
     }
 
     // Method return words that start with typeWord
-    public Vector<String> getTypedWord(String typeWord){
-        Iterator<Words> iterator = listWords.iterator();
+    public Vector<String> getTypedWord(String vocabularyName, String typeWord){
+
+        if (getTypedVocabulary(vocabularyName) == null){
+            System.out.println("Don`t have vocabulary of name - " + vocabularyName);
+            return null;
+        }
+
+        Iterator<Words> iterator = getTypedVocabulary(vocabularyName).iterator();
         Vector<String> vector = new Vector<>();
         while (iterator.hasNext()){
             Words word = iterator.next();
@@ -72,5 +82,17 @@ public class Manager {
             }
         }
         return vector;
+    }
+
+    private Collection<Words> getTypedVocabulary(String name){
+
+        if (allVocabularies == null)
+            allVocabularies = ReadLog.getAllVocabularies();
+
+        for (AllVocabularies allVocabulary : allVocabularies) {
+            if (allVocabulary.getVocabularyName().equalsIgnoreCase(name.trim()))
+                return allVocabulary.getWordsCollection();
+        }
+        return null;
     }
 }
