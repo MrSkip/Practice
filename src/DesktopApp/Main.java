@@ -11,8 +11,19 @@ public class Main extends Application{
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        CreateStage createStage = new CreateStage("run", "..\\GUI\\main.fxml", 600, 400, false, true);
+        CreateStage createStage = null;
+        try {
+            createStage = new CreateStage("run", "..\\GUI\\main.fxml", 600, 400, false, true);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        assert createStage != null;
         C_main c_main = (C_main) createStage.getController();
         c_main.show(createStage.getStage());
+    }
+
+    public static void main(String[] arg){
+        launch(arg);
     }
 }

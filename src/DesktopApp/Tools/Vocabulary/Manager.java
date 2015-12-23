@@ -8,28 +8,10 @@ import java.util.Iterator;
 import java.util.Vector;
 
 public class Manager {
-    private Collection<Words> listWords = null;
     Vector<AllVocabularies> allVocabularies = null;
 
     public Manager(){
-        listWords = new ArrayList<>();
-        Vector<AllVocabularies> allVocabularies = ReadLog.getAllVocabularies();
-    }
-
-    public void add(String word, String transcription, String translate, String info, String note){
-        listWords.add(new Words(word, transcription, translate, info, note));
-    }
-
-    public void add(String word, String translate){
-        listWords.add(new Words(word, null, translate, null, null));
-    }
-
-    public Collection<Words> getListWords() {
-        return listWords;
-    }
-
-    public void setListWords(Collection<Words> listWords) {
-        this.listWords = listWords;
+        allVocabularies = ReadLog.getAllVocabularies();
     }
 
     // Method return translation of `typeWord`
@@ -94,5 +76,9 @@ public class Manager {
                 return allVocabulary.getWordsCollection();
         }
         return null;
+    }
+
+    public Vector<AllVocabularies> getAllVocabularies() {
+        return allVocabularies;
     }
 }

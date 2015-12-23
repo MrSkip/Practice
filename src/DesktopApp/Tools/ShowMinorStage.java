@@ -1,5 +1,6 @@
 package DesktopApp.Tools;
 
+import javafx.geometry.Point2D;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseButton;
@@ -48,17 +49,22 @@ public class ShowMinorStage {
 
     // Method references button with minorStage
     public void setButton(Button button){
-        setCloseOnObject(button.getLayoutX(), button.getLayoutY(), button.getWidth(), button.getHeight());
+        setCloseOnObject(
+                button.localToScreen(Point2D.ZERO).getX(),
+                button.localToScreen(Point2D.ZERO).getY(),
+                button.getWidth(), button.getHeight());
         button.setOnAction(event -> closeOrShow());
     }
 
     // Method references label with minorStage
     public void setLabel(Label label){
-        setCloseOnObject(label.getLayoutX(), label.getLayoutY(), label.getWidth(), label.getHeight());
+        setCloseOnObject(
+                label.localToScreen(Point2D.ZERO).getX(),
+                label.localToScreen(Point2D.ZERO).getY(),
+                label.getWidth(), label.getHeight());
 
         // set listener on MouseClicked
-        label.addEventFilter(MouseEvent.MOUSE_CLICKED, event -> {
-            if (event.getButton() == MouseButton.PRIMARY)
+        label.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
                 closeOrShow();
         });
     }
@@ -70,8 +76,8 @@ public class ShowMinorStage {
         * else close minorStage
         */
         mainStage.getScene().addEventFilter(MouseEvent.MOUSE_PRESSED, mouseEvent -> {
-            if (!(mouseEvent.getX() >= layoutX && mouseEvent.getX() <= layoutX + width
-                    && mouseEvent.getY() >= layoutY && mouseEvent.getY() <= layoutY + height))
+            if (!(mouseEvent.getScreenX() >= layoutX && mouseEvent.getScreenX() <= layoutX + width
+                    && mouseEvent.getScreenY() >= layoutY && mouseEvent.getScreenY() <= layoutY + height))
                 closeStudy();
         });
     }
@@ -84,11 +90,16 @@ public class ShowMinorStage {
 
     // Method close mStage (is minorStage is show) - and show minorStage (if mStage is close)
     public void closeOrShow(){
+        System.out.println("closeOrShow");
         if (!minorStage.isShowing()){
             minorStage.setX(x);
             minorStage.setY(y);
             minorStage.show();
+            System.out.println("-show");
         }
-        else closeStudy();
+        else {
+            System.out.println("-close");
+            closeStudy();
+        }
     }
 }

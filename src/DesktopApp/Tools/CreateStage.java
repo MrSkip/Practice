@@ -79,7 +79,7 @@ public class CreateStage {
             URL location = getClass().getResource(path);
             fxmlLoader = createFxmlLoader( location );
             root = fxmlLoader.load(location.openStream());
-        } catch (IOException e) {
+        } catch (Exception e) {
             System.out.println("Error:");
             e.printStackTrace( );
         }

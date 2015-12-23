@@ -6,6 +6,7 @@ import DesktopApp.Tools.Vocabulary.Words;
 
 import java.io.*;
 import java.nio.charset.Charset;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Vector;
 
@@ -25,15 +26,15 @@ public class ReadLog {
     public static void main(String [] args){
         Manager manager = new Manager();
 //        manager.setListWords(readVocabulary("uk-en"));
-        manager.setListWords(readVocabulary("en-uk"));
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        while (true){
-            try {
-                System.out.println(manager.getWord(br.readLine()));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
+//        manager.setListWords(readVocabulary("en-uk"));
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        while (true){
+//            try {
+//                System.out.println(manager.getWord(br.readLine()));
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//        }
     }
 
     public static Vector<AllVocabularies> getAllVocabularies(){
@@ -55,7 +56,7 @@ public class ReadLog {
         // if the method is not call than call him
         if (!IfRead) readLog();
         String languagePath = null;
-        Manager manager = new Manager();
+        ReadVocabulary readVocabulary = new ReadVocabulary();
 
         // Get the path of selected Vocabulary
         for (String path : vocabularyPath) {
@@ -76,15 +77,15 @@ public class ReadLog {
             // Read words from Ukraine Vocabulary
             String str1 = br.readLine();
             System.out.println(str1);
-            if (str1.equals("UKRAINE-ENGLISH"))
+            if (str1.equalsIgnoreCase("Ukraine-English"))
                 while ((str = br.readLine()) != null){
-                    manager.add(str.substring(0, str.indexOf(" =")),
+                    readVocabulary.add(str.substring(0, str.indexOf(" =")),
                                 str.substring(str.indexOf("= ") + 2, str.length()));
                 }
             // Read words from another Vocabulary
             else
                 while ((str = br.readLine()) != null){
-                    manager.add(str.substring(0, str.indexOf(" =")),
+                    readVocabulary.add(str.substring(0, str.indexOf(" =")),
                                 str.substring(str.indexOf(" [") + 2, str.indexOf("] =")),
                                 str.substring(str.indexOf("] =") + 4, str.length()),
                                 null, null);
@@ -96,7 +97,7 @@ public class ReadLog {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return manager.getListWords();
+        return readVocabulary.getListWords();
     }
 
      /*
@@ -272,5 +273,30 @@ public class ReadLog {
         if (!IfRead) readLog();
 
         return LANGUAGE;
+    }
+}
+
+// Class that can save vocabulary
+class ReadVocabulary{
+    private Collection<Words> listWords = null;
+
+    public ReadVocabulary(){
+        listWords = new ArrayList<>();
+    }
+
+    public void add(String word, String transcription, String translate, String info, String note){
+        listWords.add(new Words(word, transcription, translate, info, note));
+    }
+
+    public void add(String word, String translate){
+        listWords.add(new Words(word, null, translate, null, null));
+    }
+
+    public Collection<Words> getListWords() {
+        return listWords;
+    }
+
+    public void setListWords(Collection<Words> listWords) {
+        this.listWords = listWords;
     }
 }
