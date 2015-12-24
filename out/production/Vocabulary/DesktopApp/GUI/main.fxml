@@ -73,7 +73,7 @@
                   </HBox>
                   <HBox alignment="CENTER">
                      <children>
-                        <Label fx:id="userChooseDictionary" text="English -&gt; Ukraine" />
+                        <Label fx:id="userChooseDictionary" text="Ukraine-English" />
                         <Pane prefHeight="17.0" prefWidth="8.0" />
                         <Pane prefHeight="12.0" prefWidth="11.0" />
                      </children>

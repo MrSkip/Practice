@@ -14,3 +14,17 @@
     -fx-pref-height: 25;
     -fx-pref-width: 140;
 }
+
+#labelForVocabulary{
+    -fx-background-color: #909090;
+    -fx-font-style:italic;
+    -fx-font-size: 12;
+    -fx-pref-width: 125;
+}
+
+#labelForFind{
+    -fx-background-color: #5995a7;
+    -fx-font-style: normal;
+    -fx-font-size: 14;
+    -fx-pref-width: 125;
+}

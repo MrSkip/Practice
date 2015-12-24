@@ -8,9 +8,17 @@ import java.util.Iterator;
 import java.util.Vector;
 
 public class Manager {
-    Vector<AllVocabularies> allVocabularies = null;
+    private static Manager instance = null;
 
-    public Manager(){
+    private  static Vector<AllVocabularies> allVocabularies = null;
+
+    public static Manager getInstance(){
+        if (instance == null)
+            return instance = new Manager();
+        else return instance;
+    }
+
+    private Manager(){
         allVocabularies = ReadLog.getAllVocabularies();
     }
 
@@ -41,8 +49,7 @@ public class Manager {
     }
 
     // Method return words that start with typeWord
-    public Vector<String> getTypedWord(String vocabularyName, String typeWord){
-
+    public static Vector<String> getTypedWord(String vocabularyName, String typeWord){
         if (getTypedVocabulary(vocabularyName) == null){
             System.out.println("Don`t have vocabulary of name - " + vocabularyName);
             return null;
@@ -53,11 +60,11 @@ public class Manager {
         while (iterator.hasNext()){
             Words word = iterator.next();
             if (word.getWord().startsWith(typeWord)){
-                vector.add(word.getTranslate());
+                vector.add(word.getWord());
                 while (iterator.hasNext()){
                     word = iterator.next();
                     if (word.getWord().startsWith(typeWord))
-                        vector.add(word.getTranslate());
+                        vector.add(word.getWord());
                     else break;
                 }
                 break;
@@ -66,7 +73,7 @@ public class Manager {
         return vector;
     }
 
-    private Collection<Words> getTypedVocabulary(String name){
+    private static Collection<Words> getTypedVocabulary(String name){
 
         if (allVocabularies == null)
             allVocabularies = ReadLog.getAllVocabularies();

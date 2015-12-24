@@ -24,7 +24,7 @@ public class ReadLog {
             studyUserSites = new Vector<>();
 
     public static void main(String [] args){
-        Manager manager = new Manager();
+//        Manager manager = new Manager();
 //        manager.setListWords(readVocabulary("uk-en"));
 //        manager.setListWords(readVocabulary("en-uk"));
 //        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

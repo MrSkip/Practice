@@ -12,7 +12,7 @@ public class AllVocabularies{
     }
 
     public String getVocabularyName() {
-        return VocabluaryName.toLowerCase().trim();
+        return VocabluaryName.trim();
     }
 
     public Collection<Words> getWordsCollection() {

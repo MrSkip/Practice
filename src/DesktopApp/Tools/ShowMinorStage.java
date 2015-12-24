@@ -3,7 +3,7 @@ package DesktopApp.Tools;
 import javafx.geometry.Point2D;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.input.MouseButton;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -13,7 +13,8 @@ public class ShowMinorStage {
     private Stage
             mainStage = null,
             minorStage = null;
-    private double x, y;
+    private double x, y, x2, y2;
+    private Object object = null;
 
     /*
     * Constructor get the parameters:
@@ -24,8 +25,8 @@ public class ShowMinorStage {
     */
 
     public ShowMinorStage(double x, double y, Stage minorStage, Stage mainStage){
-        this.x = x;
-        this.y = y;
+        this.x2 = x;
+        this.y2 = y;
         this.minorStage = minorStage;
         this.mainStage = mainStage;
 
@@ -36,70 +37,93 @@ public class ShowMinorStage {
         minorStage.initStyle(StageStyle.UNDECORATED);
         minorStage.initOwner(mainStage);
 
-        // Add listener that can be close stage_study if window is change Width
+        // Add listener that can be close stage_study if window is change Width AND set new new positions at minorStage
         mainStage.xProperty().addListener((observable, oldValue, newValue) -> {
+            setPosition();
             closeStudy();
         });
 
-        // Add listener than can be close stage_study when window change Height
+        // Add listener than can be close stage_study when window change Height AND set new new positions at minorStage
         mainStage.yProperty().addListener((observable, oldValue, newValue) -> {
+            setPosition();
             closeStudy();
         });
+    }
+
+    // When the windows resize or first show than take position at object
+    private void setPosition(){
+        if (object instanceof Button){
+            this.x = ((Button)object).localToScreen(Point2D.ZERO).getX();
+            this.y = ((Button)object).localToScreen(Point2D.ZERO).getY();
+        }
+        else if (object instanceof Label){
+            this.x = ((Label)object).localToScreen(Point2D.ZERO).getX();
+            this.y = ((Label)object).localToScreen(Point2D.ZERO).getY();
+        }
+        else if (object instanceof TextField){
+            this.x = ((TextField)object).localToScreen(Point2D.ZERO).getX();
+            this.y = ((TextField)object).localToScreen(Point2D.ZERO).getY();
+        }
     }
 
     // Method references button with minorStage
     public void setButton(Button button){
-        setCloseOnObject(
-                button.localToScreen(Point2D.ZERO).getX(),
-                button.localToScreen(Point2D.ZERO).getY(),
-                button.getWidth(), button.getHeight());
+        object = button;
+        setCloseOnObject(button.getWidth(), button.getHeight());
         button.setOnAction(event -> closeOrShow());
+        setPosition();
     }
 
     // Method references label with minorStage
     public void setLabel(Label label){
-        setCloseOnObject(
-                label.localToScreen(Point2D.ZERO).getX(),
-                label.localToScreen(Point2D.ZERO).getY(),
-                label.getWidth(), label.getHeight());
-
-        // set listener on MouseClicked
-        label.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
-                closeOrShow();
-        });
+        object = label;
+        setCloseOnObject(label.getWidth(), label.getHeight());
+        label.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> closeOrShow());
+        setPosition();
     }
 
-    private void setCloseOnObject(double layoutX, double layoutY, double width, double height){
+    public void setTextField(TextField textField){
+        object = textField;
+        setCloseOnObject(textField.getWidth(), textField.getHeight());
+        setPosition();
+    }
+
+    private void setCloseOnObject(double width, double height){
         /*
         * Create EventFilter
         * If cursor over the `object` than not close mStage
         * else close minorStage
         */
         mainStage.getScene().addEventFilter(MouseEvent.MOUSE_PRESSED, mouseEvent -> {
-            if (!(mouseEvent.getScreenX() >= layoutX && mouseEvent.getScreenX() <= layoutX + width
-                    && mouseEvent.getScreenY() >= layoutY && mouseEvent.getScreenY() <= layoutY + height))
+            if (!(mouseEvent.getScreenX() >= x && mouseEvent.getScreenX() <= x + width
+                    && mouseEvent.getScreenY() >= y && mouseEvent.getScreenY() <= y + height))
                 closeStudy();
         });
     }
 
     // Method close the minorStage (If minorStage is showing)
-    private void closeStudy(){
+    public void closeStudy(){
         if (minorStage.isShowing())
             minorStage.close();
     }
 
-    // Method close mStage (is minorStage is show) - and show minorStage (if mStage is close)
+    // Method close mStage (is minorStage is show) - and show minorStage (if minorStage is close)
     public void closeOrShow(){
-        System.out.println("closeOrShow");
         if (!minorStage.isShowing()){
-            minorStage.setX(x);
-            minorStage.setY(y);
+            minorStage.setX(x + x2);
+            minorStage.setY(y + y2);
             minorStage.show();
-            System.out.println("-show");
         }
         else {
-            System.out.println("-close");
             closeStudy();
         }
+    }
+
+    public Stage getMinorStage(){
+        return minorStage;
+    }
+
+    public void setMinorStage(Stage stage){
+        minorStage = stage;
     }
 }
