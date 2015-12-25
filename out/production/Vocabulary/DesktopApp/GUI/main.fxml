@@ -14,44 +14,77 @@
    <top>
       <VBox BorderPane.alignment="CENTER">
          <children>
-            <HBox>
-               <children>
-                  <Button fx:id="study" mnemonicParsing="false" text="study">
-                     <HBox.margin>
-                        <Insets left="1.0" right="1.0" />
-                     </HBox.margin>
-                  </Button>
-                  <Group fx:id="group" />
-                  <MenuBar>
+            <BorderPane id="menupane" prefHeight="0.0" prefWidth="600.0" stylesheets="@Style.css">
+               <left>
+                  <HBox BorderPane.alignment="CENTER">
+                     <children>
+                        <Group fx:id="group" />
+                        <Button id="study" fx:id="study" mnemonicParsing="false" prefHeight="0.0" prefWidth="50.0" stylesheets="@Style.css" text="Study">
+                           <HBox.margin>
+                              <Insets left="1.0" right="3.0" />
+                           </HBox.margin>
+                        </Button>
+                        <MenuBar id="menu2" prefHeight="25.0" prefWidth="196.0" stylesheets="@Style.css">
+                          <menus>
+                            <Menu mnemonicParsing="false" text="File">
+                              <items>
+                                <MenuItem mnemonicParsing="false" text="Close" />
+                              </items>
+                            </Menu>
+                            <Menu mnemonicParsing="false" text="Setting">
+                              <items>
+                                <MenuItem mnemonicParsing="false" text="Delete" />
+                              </items>
+                            </Menu>
+                            <Menu mnemonicParsing="false" text="Print">
+                              <items>
+                                <MenuItem mnemonicParsing="false" text="About" />
+                              </items>
+                            </Menu>
+                              <Menu mnemonicParsing="false" text="Help">
+                                <items>
+                                  <MenuItem mnemonicParsing="false" text="Action 1" />
+                                </items>
+                              </Menu>
+                          </menus>
+                        </MenuBar>
+                     </children>
+                  </HBox>
+               </left>
+               <right>
+                  <MenuBar id="menu2" prefHeight="25.0" prefWidth="206.0" stylesheets="@Style.css" BorderPane.alignment="CENTER">
                     <menus>
-                      <Menu mnemonicParsing="false" text="File">
+                      <Menu mnemonicParsing="false" text="Your Dictionary">
                         <items>
                           <MenuItem mnemonicParsing="false" text="Close" />
                         </items>
                       </Menu>
-                      <Menu mnemonicParsing="false" text="Edit">
+                      <Menu mnemonicParsing="false" text="VK">
                         <items>
                           <MenuItem mnemonicParsing="false" text="Delete" />
                         </items>
                       </Menu>
-                      <Menu mnemonicParsing="false" text="Help">
+                      <Menu mnemonicParsing="false" text="FB">
                         <items>
                           <MenuItem mnemonicParsing="false" text="About" />
                         </items>
                       </Menu>
+                        <Menu mnemonicParsing="false" text="?">
+                          <items>
+                            <MenuItem mnemonicParsing="false" text="Action 1" />
+                          </items>
+                        </Menu>
                     </menus>
                   </MenuBar>
-               </children>
+               </right>
+            </BorderPane>
+            <HBox id="menupane" stylesheets="@Style.css">
+               <VBox.margin>
+                  <Insets left="1.0" />
+               </VBox.margin>
             </HBox>
-            <VBox alignment="CENTER" prefHeight="83.0" prefWidth="600.0">
+            <VBox alignment="CENTER" prefHeight="65.0" prefWidth="600.0">
                <children>
-                  <HBox prefHeight="1.0" prefWidth="600.0">
-                     <children>
-                        <Pane prefHeight="25.0" prefWidth="194.0" />
-                        <ImageView fitHeight="14.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true" />
-                        <ImageView fitHeight="12.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
-                     </children>
-                  </HBox>
                   <HBox alignment="CENTER" prefHeight="36.0" prefWidth="600.0">
                      <children>
                         <Pane prefHeight="29.0" prefWidth="169.0" />

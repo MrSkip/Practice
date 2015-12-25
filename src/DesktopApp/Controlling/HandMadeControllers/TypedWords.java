@@ -166,8 +166,8 @@ public class TypedWords extends ShowMinorStage{
             labelCorrect.addEventFilter(MouseEvent.ANY, event -> setStyle(event, label, labelCorrect));
         }
 
-        vBox.setStyle("-fx-background-color: #cacaca");
-        stage.setHeight((vBox.getChildren().size() - 1) * 18 + 20);
+        vBox.setStyle("-fx-background-color: #c0c0c0;-fx-effect: innershadow( gaussian, rgba(85, 85, 85, 0.5), 10, 0, 1, 1 );");
+        stage.setHeight((vBox.getChildren().size() - 1) * 18 + 22);
         upDown = 0;
     }
 

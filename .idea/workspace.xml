@@ -6,14 +6,10 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Vocabulary/DesktopApp/Resource/Dictionaries/uk-en.txt" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/src/DesktopApp/Resource/Dictionaries/en-uk.txt" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/src/DesktopApp/Resource/Dictionaries/uk-en.txt" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Vocabulary/DesktopApp/Controlling/C_main.class" afterPath="$PROJECT_DIR$/out/production/Vocabulary/DesktopApp/Controlling/C_main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Vocabulary/DesktopApp/Controlling/HandMadeControllers/TypedWords.class" afterPath="$PROJECT_DIR$/out/production/Vocabulary/DesktopApp/Controlling/HandMadeControllers/TypedWords.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Vocabulary/DesktopApp/Tools/MyClassWithText.class" afterPath="$PROJECT_DIR$/out/production/Vocabulary/DesktopApp/Tools/MyClassWithText.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Vocabulary/DesktopApp/Tools/ShowMinorStage.class" afterPath="$PROJECT_DIR$/out/production/Vocabulary/DesktopApp/Tools/ShowMinorStage.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DesktopApp/Controlling/C_main.java" afterPath="$PROJECT_DIR$/src/DesktopApp/Controlling/C_main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DesktopApp/Controlling/HandMadeControllers/TypedWords.java" afterPath="$PROJECT_DIR$/src/DesktopApp/Controlling/HandMadeControllers/TypedWords.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DesktopApp/Tools/ShowMinorStage.java" afterPath="$PROJECT_DIR$/src/DesktopApp/Tools/ShowMinorStage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DesktopApp/GUI/Style.css" afterPath="$PROJECT_DIR$/src/DesktopApp/GUI/Style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DesktopApp/GUI/main.fxml" afterPath="$PROJECT_DIR$/src/DesktopApp/GUI/main.fxml" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -86,15 +82,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="C_main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="C_main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DesktopApp/Controlling/C_main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8319149">
-              <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="195" column="46" selection-start-line="195" selection-start-column="46" selection-end-line="195" selection-end-column="46" />
               <folding>
                 <element signature="method#setImages#0;class#C_main#0" expanded="false" />
                 <element signature="method#setListeners#0;class#C_main#0" expanded="false" />
-                <element signature="method#getStageForChooseLanguage#0;class#C_main#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -104,10 +99,9 @@
         <entry file="file://$PROJECT_DIR$/src/DesktopApp/Controlling/HandMadeControllers/TypedWords.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="90" column="26" selection-start-line="90" selection-start-column="26" selection-end-line="90" selection-end-column="26" />
+              <caret line="168" column="23" selection-start-line="168" selection-start-column="23" selection-end-line="168" selection-end-column="125" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#setSearchWords#0;class#TypedWords#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -124,6 +118,26 @@
                 <element signature="e#4927#4928#0" expanded="true" />
                 <element signature="e#4960#4961#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Style.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/DesktopApp/GUI/Style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="1.576441">
+              <caret line="37" column="1" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DesktopApp/GUI/minorScenes/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-23.538462">
+              <caret line="36" column="1" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -198,15 +212,15 @@
         <option value="$PROJECT_DIR$/src/DesktopApp/Main.java" />
         <option value="$PROJECT_DIR$/src/DesktopApp/Tools/References.java" />
         <option value="$PROJECT_DIR$/src/DesktopApp/Controlling/minorControllers/CS_ViewSearhWord.java" />
-        <option value="$PROJECT_DIR$/src/DesktopApp/GUI/Style.css" />
         <option value="$PROJECT_DIR$/src/DesktopApp/Tools/Vocabulary/AllVocabularies.java" />
         <option value="$PROJECT_DIR$/src/DesktopApp/Tools/ReadLog.java" />
         <option value="$PROJECT_DIR$/src/DesktopApp/Tools/Vocabulary/Words.java" />
         <option value="$PROJECT_DIR$/src/DesktopApp/Tools/Vocabulary/Manager.java" />
         <option value="$PROJECT_DIR$/src/DesktopApp/Tools/MyClassWithText.java" />
-        <option value="$PROJECT_DIR$/src/DesktopApp/Controlling/C_main.java" />
         <option value="$PROJECT_DIR$/src/DesktopApp/Tools/ShowMinorStage.java" />
         <option value="$PROJECT_DIR$/src/DesktopApp/Controlling/HandMadeControllers/TypedWords.java" />
+        <option value="$PROJECT_DIR$/src/DesktopApp/Controlling/C_main.java" />
+        <option value="$PROJECT_DIR$/src/DesktopApp/GUI/Style.css" />
       </list>
     </option>
   </component>
@@ -227,8 +241,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="width" value="1366" />
-    <option name="height" value="768" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="784" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -1211,7 +1227,7 @@
       <workItem from="1450979742011" duration="11840000" />
       <workItem from="1450993063010" duration="8504000" />
       <workItem from="1451033867813" duration="15000" />
-      <workItem from="1451033924942" duration="30544000" />
+      <workItem from="1451033924942" duration="37729000" />
     </task>
     <task id="LOCAL-00001" summary="add class AllVocabulary">
       <created>1450868362663</created>
@@ -1223,7 +1239,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="403637000" />
+    <option name="totallyTimeSpent" value="410822000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1235,7 +1251,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1366" height="768" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1245,7 +1261,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32808024" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32771823" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28653294" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3062787" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30659026" sideWeight="0.49705014" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21028744" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
@@ -1290,7 +1306,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="17" />
+      <option name="time" value="18" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1577,13 +1593,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DesktopApp/GUI/minorScenes/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.769231">
-          <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/teaching/CreateWindow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.71302426">
@@ -1648,14 +1657,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DesktopApp/GUI/Style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.65384614">
-          <caret line="6" column="33" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/DesktopApp/Tools/Vocabulary/Words.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1704,26 +1705,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/DesktopApp/GUI/minorScenes/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-23.538462">
+          <caret line="36" column="1" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/DesktopApp/Controlling/HandMadeControllers/TypedWords.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="90" column="26" selection-start-line="90" selection-start-column="26" selection-end-line="90" selection-end-column="26" />
+          <caret line="168" column="23" selection-start-line="168" selection-start-column="23" selection-end-line="168" selection-end-column="125" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#setSearchWords#0;class#TypedWords#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DesktopApp/Controlling/C_main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8319149">
-          <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="195" column="46" selection-start-line="195" selection-start-column="46" selection-end-line="195" selection-end-column="46" />
           <folding>
             <element signature="method#setImages#0;class#C_main#0" expanded="false" />
             <element signature="method#setListeners#0;class#C_main#0" expanded="false" />
-            <element signature="method#getStageForChooseLanguage#0;class#C_main#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DesktopApp/GUI/Style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.576441">
+          <caret line="37" column="1" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>

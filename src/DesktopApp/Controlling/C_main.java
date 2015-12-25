@@ -50,9 +50,6 @@ public class C_main implements Initializable{
             thisStage = null;
     public Button study;
     private static Manager manager;
-    private static String CURRENT_LANGUAGE;
-//    private ShowMinorStage showTypedWord;
-//    private TypedWords typedWords = TypedWords.getInstance();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -76,19 +73,20 @@ public class C_main implements Initializable{
         new ShowMinorStage(
                 1, study.getHeight(),
                 stage_study, stage).setButton(study);
-//
+
 //        // Assign label "userChooseDictionary" with the show stage "getStageForChooseLanguage()"
         new ShowMinorStage(
-                -15, userChooseDictionary.getHeight(),
+                -23, userChooseDictionary.getHeight(),
                 getStageForChooseLanguage(),thisStage).setLabel(userChooseDictionary);
 
-        // Assign textField "textFieldF" with the show stage "getStageForTypedWords()"
+        // Assign textField wish stage in class TypedWord
         MyClassWithText word = new MyClassWithText();
         TypedWords.getInstance(0, textFieldF.getHeight() + 2, thisStage, userChooseDictionary, textFieldF, word);
         // add listener when the word is selected
         word.addPropertyChangeListener(evt -> {
             System.out.println(evt.getNewValue());
         });
+
     }
 
     private void setImages() {
@@ -214,8 +212,7 @@ public class C_main implements Initializable{
                 }
                 else if (MouseEvent.MOUSE_CLICKED == event.getEventType() &&
                         MouseButton.PRIMARY == event.getButton()) {
-                    CURRENT_LANGUAGE = ((Label) event.getSource()).getText();
-                    userChooseDictionary.setText(CURRENT_LANGUAGE);
+                    userChooseDictionary.setText(((Label) event.getSource()).getText());
                     stage.close();
                 }
             });
