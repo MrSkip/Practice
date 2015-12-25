@@ -59,12 +59,14 @@ public class Manager {
         Vector<String> vector = new Vector<>();
         while (iterator.hasNext()){
             Words word = iterator.next();
-            if (word.getWord().startsWith(typeWord)){
+            if (word.getWord().toLowerCase().startsWith(typeWord)){
                 vector.add(word.getWord());
                 while (iterator.hasNext()){
                     word = iterator.next();
-                    if (word.getWord().startsWith(typeWord))
+                    if (word.getWord().startsWith(typeWord) ||
+                            word.getWord().toLowerCase().startsWith(typeWord)) {
                         vector.add(word.getWord());
+                    }
                     else break;
                 }
                 break;

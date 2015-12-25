@@ -123,7 +123,12 @@ public class ShowMinorStage {
         return minorStage;
     }
 
+    public Stage getMainStage(){
+        return mainStage;
+    }
+
     public void setMinorStage(Stage stage){
         minorStage = stage;
+        setStageProperties();
     }
 }

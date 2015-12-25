@@ -3,6 +3,7 @@ package DesktopApp.Controlling;
 import DesktopApp.Controlling.HandMadeControllers.TypedWords;
 import DesktopApp.Controlling.minorControllers.C_study;
 import DesktopApp.Tools.CreateStage;
+import DesktopApp.Tools.MyClassWithText;
 import DesktopApp.Tools.ReadLog;
 import DesktopApp.Tools.ShowMinorStage;
 import DesktopApp.Tools.Vocabulary.Manager;
@@ -50,11 +51,8 @@ public class C_main implements Initializable{
     public Button study;
     private static Manager manager;
     private static String CURRENT_LANGUAGE;
-    private static VBox vBoxOfAnswer;
-    private Vector<String> vector = null;
-    private ShowMinorStage showTypedWord;
-    private static int upDown = 0;
-    private TypedWords typedWords = TypedWords.getInstanse();
+//    private ShowMinorStage showTypedWord;
+//    private TypedWords typedWords = TypedWords.getInstance();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -85,10 +83,12 @@ public class C_main implements Initializable{
                 getStageForChooseLanguage(),thisStage).setLabel(userChooseDictionary);
 
         // Assign textField "textFieldF" with the show stage "getStageForTypedWords()"
-        showTypedWord = new ShowMinorStage(
-                0, textFieldF.getHeight() + 2,
-                typedWords.getStage(), thisStage);
-        showTypedWord.setTextField(textFieldF);
+        MyClassWithText word = new MyClassWithText();
+        TypedWords.getInstance(0, textFieldF.getHeight() + 2, thisStage, userChooseDictionary, textFieldF, word);
+        // add listener when the word is selected
+        word.addPropertyChangeListener(evt -> {
+            System.out.println(evt.getNewValue());
+        });
     }
 
     private void setImages() {
@@ -164,113 +164,22 @@ public class C_main implements Initializable{
 //            textFieldF.selectAll();
         });
 
-        textFieldF.addEventHandler(KeyEvent.KEY_RELEASED, event -> {
-            if (event.getCode().getName().equals("Enter") || textFieldF.getText().equals("")) {
-                showTypedWord.closeStudy();
-                upDown = 0;
-            }
-            else if (event.getCode().getName().equals("Up") ||
-                    event.getCode().getName().equals("Down")) {
-                typedWords.dS();
-                return;
-            }
-            else if (event.getText().length() != 0 && !showTypedWord.getMinorStage().isShowing()) {
-                showTypedWord.closeOrShow();
-                upDown = 0;
-            }
-
-            typedWords.setSearchWords(userChooseDictionary.getText(),textFieldF.getText());
-            thisStage.requestFocus();
-        });
-    }
-
-    private Stage getStageForTypedWords(){
-        Stage stage = new Stage();
-
-        vBoxOfAnswer = new VBox();
-
-        stage.setScene(new Scene(vBoxOfAnswer,190, 20));
-        return stage;
-    }
-
-//    private void setSearchWords(){
-//        vector = manager.getTypedWord(userChooseDictionary.getText().trim().toLowerCase(), textFieldF.getText());
-//        Vector<String> goldVector = new Vector<>();
-//
-//        if (!vector.isEmpty())
-//            goldVector.add(vector.firstElement());
-//
-//        for (String aVector : vector) {
-//            if (!aVector.equals(goldVector.lastElement()))
-//                goldVector.add(aVector);
-//
-//            if (goldVector.size() == 10) break;
-//        }
-//
-//        if (!vBoxOfAnswer.getChildren().isEmpty()){
-//            int n = vBoxOfAnswer.getChildren().size();
-//            for (int i = 0; i < n; i++) {
-//                vBoxOfAnswer.getChildren().remove(0);
+//        textFieldF.addEventHandler(KeyEvent.KEY_RELEASED, event -> {
+//            if (event.getCode().getName().equals("Enter") || textFieldF.getText().equals("")) {
+//                showTypedWord.closeStudy();
 //            }
-//        }
+//            else if (event.getCode().getName().equals("Up") ||
+//                    event.getCode().getName().equals("Down")) {
+//                typedWords.dS(event.getCode().getName());
+//                return;
+//            }
+//            else if (event.getText().length() != 0 && !showTypedWord.getMinorStage().isShowing()) {
+//                showTypedWord.closeOrShow();
+//            }
 //
-//        Label firstLabel = new Label(textFieldF.getText());
-//        firstLabel.setStyle(
-//                "-fx-background-color: #ebebeb;" +
-//                        "    -fx-font-style: normal;" +
-//                        "    -fx-font-size: 14;" +
-//                        "    -fx-pref-width: 190;");
-//        firstLabel.setAlignment(Pos.CENTER);
-//
-//        vBoxOfAnswer.getChildren().add(firstLabel);
-//
-//        if (vector.isEmpty()) return;
-//        FontLoader fontLoader = Toolkit.getToolkit().getFontLoader();
-//        for (String aGoldVector : goldVector) {
-//
-//            Label labelCorrect = new Label(textFieldF.getText());
-//
-//            HBox hBox = new HBox();
-//
-//            Label label = new Label(aGoldVector.substring(labelCorrect.getText().length(), aGoldVector.length()));
-//            label.setStyle("-fx-background-color: #b3b3b3; -fx-pref-height: 17");
-//            label.setPrefWidth(190 - fontLoader.computeStringWidth(labelCorrect.getText(), labelCorrect.getFont()) - 5);
-//
-//            hBox.getChildren().addAll(labelCorrect, label);
-//            vBoxOfAnswer.getChildren().add(hBox);
-//
-//            VBox.setMargin(hBox, new Insets(1,1,0,2));
-//        }
-//        vBoxOfAnswer.setStyle("-fx-background-color: #cacaca");
-//        Stage stage = showTypedWord.getMinorStage();
-//        stage.setHeight((vBoxOfAnswer.getChildren().size() - 1) * 18 + 20);
-//        showTypedWord.setMinorStage(stage);
-//    }
-
-    private void setUpDownSelect(String codeName){
-        int n = upDown;
-
-        if (codeName.equals("Up")) upDown++;
-        else upDown--;
-
-        if (upDown < 1 ) upDown = 1;
-        else if (upDown > vBoxOfAnswer.getChildren().size())
-            upDown = vBoxOfAnswer.getChildren().size();
-
-//        System.out.println(((HBox) vBoxOfAnswer.getChildren().get(1)).getChildren().get(1));
-//        ((Label) ((HBox) vBoxOfAnswer.getChildren().get(1)).getChildren().get(0)).setText("df");
-//        ((HBox) vBoxOfAnswer.getChildren().get(1)).getChildren().get(1).setStyle("-fx-background-color: white");
-//        System.out.println(n + " - " + upDown + " -size-> " + vBoxOfAnswer.getChildren().size());
-//        System.out.println(((HBox) vBoxOfAnswer.getChildren().get(1)).getChildren().get(1));
-//        vBoxOfAnswer.getChildren().remove(0);
-//        System.out.println(((HBox) vBoxOfAnswer.getChildren().get(1)).getChildren().get(0));
-//        vBoxOfAnswer.getChildren().get(1).setStyle("-fx-background-color: black");
-//        System.out.println(vBoxOfAnswer.getChildren());
-//        System.out.println(vBoxOfAnswer.getChildren().size());
-//        Stage stage = showTypedWord.getMinorStage();
-//        stage.setHeight((vBoxOfAnswer.getChildren().size() - 1) * 18 + 20);
-//        showTypedWord.setMinorStage(stage);
-
+//            typedWords.setSearchWords(userChooseDictionary.getText(),textFieldF.getText());
+//            thisStage.requestFocus();
+//        });
     }
 
     private Stage getStageForChooseLanguage(){
