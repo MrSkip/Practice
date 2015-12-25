@@ -19,6 +19,9 @@ import javafx.stage.Stage;
 
 import java.util.Vector;
 
+
+// The class show are words that startsEquals with typed word (MAX show words - 10)
+// references with main class - MyClassWithText (return at this class the user choose site)
 public class TypedWords extends ShowMinorStage{
     private static TypedWords instance = null;
 
@@ -29,14 +32,24 @@ public class TypedWords extends ShowMinorStage{
     private TextField textField;
     private MyClassWithText word;
 
+    // use Pattern than can return only one references on this class
     public static TypedWords getInstance(double x, double y, Stage mainStage, Label label, TextField textField, MyClassWithText word){
         if (instance == null)
             return instance = new TypedWords(x, y, mainStage, label, textField, word);
         else return instance;
     }
 
+    /*
+    * x - width of stage show
+    * y - height of stage show
+    * mainStage - on this stage will be show minorStage (this.stage)
+    * label - label of information about selected vocabulary
+    * textField - text field of user typed words
+    * word - than class used for references main class with that
+    * */
+
     private TypedWords(double x, double y, Stage mainStage, Label label, TextField textField, MyClassWithText word){
-        super(x, y, new Stage(), mainStage);
+        super();
 
         this.word = word;
         this.label = label;
@@ -48,30 +61,53 @@ public class TypedWords extends ShowMinorStage{
 
         stage.setScene(new Scene(vBox, 190, (vBox.getChildren().size() - 1) * 18 + 20));
 
-        super.setMinorStage(stage);
+        super.helpConstructor(x, y, stage, mainStage);
         super.setTextField(textField);
+
         setTextFieldListener();
     }
 
+    // Set listener for show or hide this.stage and set on this,stage the typed words
     private void setTextFieldListener(){
         textField.addEventHandler(KeyEvent.KEY_RELEASED, event -> {
-            if (event.getCode().getName().equals("Enter") || textField.getText().equals("")) {
+            if (textField.getText().equals("")){
                 super.closeStudy();
-            }
-            else if (event.getCode().getName().equals("Up") ||
-                    event.getCode().getName().equals("Down")) {
-                dS(event.getCode().getName());
                 return;
             }
-            else if (event.getText().length() != 0 && !stage.isShowing()) {
-                super.closeOrShow();
+
+            switch (event.getCode().getName()) {
+                case "Enter":
+                    if (!textField.getText().equals("")) {
+                        if (upDown > 0)
+                            selected(((Label) vBox.getChildren().get(0)).getText() +
+                                    ((Label) ((HBox) vBox.getChildren().get(upDown)).getChildren().get(1)).getText());
+                        else if (upDown == 0)
+                            selected(((Label) vBox.getChildren().get(0)).getText());
+                    } else {
+                        super.closeStudy();
+                        return;
+                    }
+                    return;
+                case "Up":
+                case "Down":
+                    dS(event.getCode().getName());
+                    return;
+                case "Tab":
+                    super.closeOrShow();
+                    return;
             }
 
-            setSearchWords(label.getText(),textField.getText());
+            if (!event.isMetaDown() && !event.isAltDown() && !event.isControlDown() && !event.isShiftDown()
+                    && !event.getCode().isModifierKey() && !event.getCode().isArrowKey() && !event.getCode().isFunctionKey()) {
+                setSearchWords(label.getText(), textField.getText());
+                super.setShowing();
+            }
+
             super.getMainStage().requestFocus();
         });
     }
 
+    // Method using for set the words on stage
     public void setSearchWords(String userChooseDictionary, String text){
         Vector<String> vector = Manager.getTypedWord(userChooseDictionary.trim().toLowerCase(), text.toLowerCase());
         Vector<String> goldVector = new Vector<>();
@@ -135,6 +171,7 @@ public class TypedWords extends ShowMinorStage{
         upDown = 0;
     }
 
+    // Method using for styling label when they are selected or unselected
     private void setStyle(MouseEvent event, Label label, Label labelCorrect){
         if (event.getEventType() == MouseEvent.MOUSE_ENTERED) {
             label.setStyle("-fx-background-color: #dedede;");
@@ -149,11 +186,16 @@ public class TypedWords extends ShowMinorStage{
             selected(labelCorrect.getText() + label.getText());
     }
 
+    // Method using for send into main class the user chose word
     private void selected(String word){
+        textField.setText(word);
+        textField.positionCaret(word.length());
+
         this.word.setText(word);
-        super.closeOrShow();
+        super.closeStudy();
     }
 
+    // Method using for Up|Down (choose the words using this key)
     public void dS(String upDown){
         if (vBox.getChildren().size() == 0 || vBox.getChildren().size() == 1) return;
 

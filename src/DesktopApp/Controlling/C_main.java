@@ -72,12 +72,12 @@ public class C_main implements Initializable{
         thisStage = stage;
         stage.show();
 
-        // Assign button "study" with the show stage "study"
+//      Assign button "study" with the show stage "study"
         new ShowMinorStage(
                 1, study.getHeight(),
                 stage_study, stage).setButton(study);
-
-        // Assign label "userChooseDictionary" with the show stage "getStageForChooseLanguage()"
+//
+//        // Assign label "userChooseDictionary" with the show stage "getStageForChooseLanguage()"
         new ShowMinorStage(
                 -15, userChooseDictionary.getHeight(),
                 getStageForChooseLanguage(),thisStage).setLabel(userChooseDictionary);

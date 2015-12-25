@@ -25,10 +25,19 @@ public class ShowMinorStage {
     */
 
     public ShowMinorStage(double x, double y, Stage minorStage, Stage mainStage){
+        helpConstructor(x, y, minorStage, mainStage);
+    }
+
+    public ShowMinorStage(){}
+
+    public void helpConstructor(double x, double y, Stage minorStage, Stage mainStage){
         this.x2 = x;
         this.y2 = y;
         this.minorStage = minorStage;
         this.mainStage = mainStage;
+
+        this.x = mainStage.getX();
+        this.y = mainStage.getY();
 
         setStageProperties();
     }
@@ -37,32 +46,47 @@ public class ShowMinorStage {
         minorStage.initStyle(StageStyle.UNDECORATED);
         minorStage.initOwner(mainStage);
 
-        // Add listener that can be close stage_study if window is change Width AND set new new positions at minorStage
+        // Add listener that can be close minorStage if window is change coordinate X
         mainStage.xProperty().addListener((observable, oldValue, newValue) -> {
-            setPosition();
             closeStudy();
         });
 
-        // Add listener than can be close stage_study when window change Height AND set new new positions at minorStage
+        // Add listener than can be close minorStage when window change coordinate Y
         mainStage.yProperty().addListener((observable, oldValue, newValue) -> {
-            setPosition();
+            closeStudy();
+        });
+
+        // Add listener than can be close minorStage when window change height
+        mainStage.heightProperty().addListener((observable, oldValue, newValue) -> {
+            closeStudy();
+        });
+
+        // Add listener than can be close minorStage when window change width
+        mainStage.widthProperty().addListener((observable, oldValue, newValue) -> {
             closeStudy();
         });
     }
 
     // When the windows resize or first show than take position at object
     private void setPosition(){
+
+        this.x = mainStage.getX() + 8;
+        this.y = mainStage.getY() + 30;
+
         if (object instanceof Button){
-            this.x = ((Button)object).localToScreen(Point2D.ZERO).getX();
-            this.y = ((Button)object).localToScreen(Point2D.ZERO).getY();
+            Button button = (Button) object;
+            x += button.localToScene(Point2D.ZERO).getX();
+            y += button.localToScene(Point2D.ZERO).getY();
         }
         else if (object instanceof Label){
-            this.x = ((Label)object).localToScreen(Point2D.ZERO).getX();
-            this.y = ((Label)object).localToScreen(Point2D.ZERO).getY();
+            Label label = (Label) object;
+            x += label.localToScene(Point2D.ZERO).getX();
+            y += label.localToScene(Point2D.ZERO).getY();
         }
         else if (object instanceof TextField){
-            this.x = ((TextField)object).localToScreen(Point2D.ZERO).getX();
-            this.y = ((TextField)object).localToScreen(Point2D.ZERO).getY();
+            TextField textField = (TextField) object;
+            x += textField.localToScene(Point2D.ZERO).getX();
+            y += textField.localToScene(Point2D.ZERO).getY();
         }
     }
 
@@ -107,16 +131,21 @@ public class ShowMinorStage {
             minorStage.close();
     }
 
-    // Method close mStage (is minorStage is show) - and show minorStage (if minorStage is close)
-    public void closeOrShow(){
+    public void setShowing(){
         if (!minorStage.isShowing()){
+            setPosition();
             minorStage.setX(x + x2);
             minorStage.setY(y + y2);
             minorStage.show();
         }
-        else {
+    }
+
+    // Method close mStage (is minorStage is show) - and show minorStage (if minorStage is close)
+    public void closeOrShow(){
+        if (!minorStage.isShowing())
+            setShowing();
+        else
             closeStudy();
-        }
     }
 
     public Stage getMinorStage(){
