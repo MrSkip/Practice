@@ -32,7 +32,6 @@ public class CreateStage {
     *   modal - modal or not modal window (if modal the user can`t do something with parent window)
     *   styling - add or not add default windows border
     */
-
     public CreateStage(String title, String path, int x, int y, boolean modal, boolean styling){
         this.title = title;
         this.path = path;

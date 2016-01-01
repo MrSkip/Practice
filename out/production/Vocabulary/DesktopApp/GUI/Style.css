@@ -53,3 +53,26 @@
     -fx-background-radius: 5;
     -fx-effect: dropshadow(gaussian, #747474, 1, 1.5, 1, 1);
 }
+
+.text-area .content{
+    -fx-background-color: #d8d8d8;
+}
+
+#textArea {
+    -fx-pref-height: 100;
+    -fx-font-weight: 400px;
+    -fx-text-fill: black;
+}
+
+#vBoxBt{
+    -fx-background-color: black;
+    -fx-pref-height: 25px;
+}
+
+#outputDate{
+    -fx-font-size: 26;
+    -fx-font-family: Playbill;
+    -fx-background-color: #858585;
+    -fx-text-fill: #b0b0b0;
+    -fx-pref-width: 150px;
+}

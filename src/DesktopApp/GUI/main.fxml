@@ -52,7 +52,7 @@
                   </HBox>
                </left>
                <right>
-                  <MenuBar id="menu2" prefHeight="25.0" prefWidth="206.0" stylesheets="@Style.css" BorderPane.alignment="CENTER">
+                  <MenuBar id="menu2" prefHeight="25.0" prefWidth="203.0" stylesheets="@Style.css" BorderPane.alignment="CENTER">
                     <menus>
                       <Menu mnemonicParsing="false" text="Your Dictionary">
                         <items>
@@ -94,11 +94,11 @@
                            </image>
                         </ImageView>
                         <Pane prefHeight="36.0" prefWidth="5.0" />
-                        <TextField id="searchField" fx:id="textFieldF" prefHeight="25.0" prefWidth="190.0" stylesheets="@Style.css" />
+                        <TextField id="searchField" fx:id="textFieldF" prefHeight="0.0" prefWidth="189.0" stylesheets="@Style.css" />
                         <Pane prefHeight="36.0" prefWidth="4.0" />
-                        <ImageView fx:id="find" fitHeight="105.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="find" fitHeight="31.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../../../magnifying-glass23.png" />
+                              <Image url="@../../../../../../GUI/find1.png" />
                            </image>
                         </ImageView>
                         <Pane prefHeight="35.0" prefWidth="194.0" />

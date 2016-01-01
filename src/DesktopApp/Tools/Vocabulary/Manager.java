@@ -49,6 +49,31 @@ public class Manager {
     }
 
     // Method return words that start with typeWord
+    public static Collection<Words> getDictionaryWord(String vocabularyName, String typeWord){
+        if (getTypedVocabulary(vocabularyName) == null){
+            System.out.println("Don`t have vocabulary of name - " + vocabularyName);
+            return null;
+        }
+
+        Iterator<Words> iterator = getTypedVocabulary(vocabularyName).iterator();
+        Collection<Words> collection = new ArrayList<>();
+        while (iterator.hasNext()){
+            Words word = iterator.next();
+            if (word.getWord().toLowerCase().equals(typeWord)){
+                collection.add(word);
+                while (iterator.hasNext()){
+                    word = iterator.next();
+                    if (word.getWord().equals(typeWord)) {
+                        collection.add(word);
+                    }
+                    else break;
+                }
+                break;
+            }
+        }
+        return collection;
+    }
+
     public static Vector<String> getTypedWord(String vocabularyName, String typeWord){
         if (getTypedVocabulary(vocabularyName) == null){
             System.out.println("Don`t have vocabulary of name - " + vocabularyName);

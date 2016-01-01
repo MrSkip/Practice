@@ -70,6 +70,7 @@ public class TypedWords extends ShowMinorStage{
     // Set listener for show or hide this.stage and set on this,stage the typed words
     private void setTextFieldListener(){
         textField.addEventHandler(KeyEvent.KEY_RELEASED, event -> {
+
             if (textField.getText().equals("")){
                 super.closeStudy();
                 return;
@@ -93,6 +94,8 @@ public class TypedWords extends ShowMinorStage{
                     dS(event.getCode().getName());
                     return;
                 case "Tab":
+                    if (!stage.isShowing())
+                        setSearchWords(label.getText(), textField.getText());
                     super.closeOrShow();
                     return;
             }

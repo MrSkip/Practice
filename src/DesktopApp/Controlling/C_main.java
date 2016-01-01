@@ -1,40 +1,31 @@
 package DesktopApp.Controlling;
 
 import DesktopApp.Controlling.HandMadeControllers.TypedWords;
-import DesktopApp.Controlling.minorControllers.C_study;
 import DesktopApp.Tools.CreateStage;
 import DesktopApp.Tools.MyClassWithText;
-import DesktopApp.Tools.ReadLog;
 import DesktopApp.Tools.ShowMinorStage;
 import DesktopApp.Tools.Vocabulary.Manager;
-import com.sun.javafx.tk.FontLoader;
-import com.sun.javafx.tk.Toolkit;
-import javafx.event.EventHandler;
+import DesktopApp.Tools.Vocabulary.Words;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
-import javafx.geometry.Point2D;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;
 import javafx.scene.Group;
-import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Iterator;
 import java.util.ResourceBundle;
 import java.util.Vector;
 
@@ -45,6 +36,7 @@ public class C_main implements Initializable{
             find;
     public TextField textFieldF;
     public Label userChooseDictionary;
+    public TextArea textArea;
     private Stage
             stage_study = null,
             thisStage = null;
@@ -84,20 +76,21 @@ public class C_main implements Initializable{
         TypedWords.getInstance(0, textFieldF.getHeight() + 2, thisStage, userChooseDictionary, textFieldF, word);
         // add listener when the word is selected
         word.addPropertyChangeListener(evt -> {
-            System.out.println(evt.getNewValue());
+//            textArea.setText(manager.getWord(userChooseDictionary.getText(), evt.getNewValue().toString()).toString());
+            showPaneWithTranslate(evt.getNewValue().toString());
         });
 
     }
 
     private void setImages() {
         try {
-            find.setImage(new Image(new File("D:\\magnifying-glass23.png").toURI().toURL().toString()));
+            find.setImage(new Image(new File("D:\\GUI\\find1.png").toURI().toURL().toString()));
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
 
         try {
-            history.setImage(new Image(new File("D:\\notebook91.png").toURI().toURL().toString()));
+            history.setImage(new Image(new File("D:\\GUI\\history1.png").toURI().toURL().toString()));
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
@@ -110,9 +103,9 @@ public class C_main implements Initializable{
                 String path;
 
                 if (event.getEventType() == MouseEvent.MOUSE_EXITED)
-                    path = "D:\\magnifying-glass23.png";
+                    path = "D:\\GUI\\find1.png";
                 else
-                    path = "D:\\magnifying-glass23(blue).png";
+                    path = "D:\\GUI\\find2.png";
 
                 try {
                     find.setImage(new Image(new File(path).toURI().toURL().toString()));
@@ -128,9 +121,9 @@ public class C_main implements Initializable{
                 String path;
 
                 if (event.getEventType() == MouseEvent.MOUSE_EXITED)
-                    path = "D:\\notebook91.png";
+                    path = "D:\\GUI\\history1.png";
                 else
-                    path = "D:\\notebook91(blue).png";
+                    path = "D:\\GUI\\history2.png";
 
                 try {
                     history.setImage(new Image(new File(path).toURI().toURL().toString()));
@@ -222,5 +215,164 @@ public class C_main implements Initializable{
         }
 
         return stage;
+    }
+
+    private void showPaneWithTranslate(String word){
+        borderPanePrimary.getChildren().remove(borderPanePrimary.getCenter());
+
+        Label
+                wordLabel = new Label("Word"),
+                transcriptionLabel = new Label("Transcription"),
+                translateLabel = new Label("Translate");
+        TextField
+                wordTextField = new TextField(),
+                transcriptionTextField = new TextField("");
+        TextArea translateTextArea = new TextArea();
+
+        VBox vBox = new VBox();
+        HBox hBox1 = new HBox();
+        HBox hBox2 = new HBox();
+
+        hBox1.setAlignment(Pos.CENTER);
+        hBox2.setAlignment(Pos.TOP_CENTER);
+
+        wordLabel.setAlignment(Pos.CENTER);
+        transcriptionLabel.setAlignment(Pos.CENTER);
+        translateLabel.setAlignment(Pos.CENTER);
+
+        wordTextField.setAlignment(Pos.CENTER);
+        transcriptionTextField.setAlignment(Pos.CENTER);
+
+        wordLabel.setId("outputDate");
+        transcriptionLabel.setId("outputDate");
+        translateLabel.setId("outputDate");
+        translateLabel.setStyle("-fx-pref-width: 290px");
+
+        wordTextField.setStyle("-fx-pref-width: 150; -fx-background-color: #d8d8d8; -fx-text-fill: #616161");
+        transcriptionTextField.setStyle("-fx-pref-width: 150; -fx-background-color: #d8d8d8; -fx-text-fill: #616161");
+        translateTextArea.setStyle("-fx-pref-width: 300;");
+
+
+        Iterator<Words> iterator = Manager.getDictionaryWord(userChooseDictionary.getText(), word.toLowerCase()).iterator();
+        int n = 0;
+        Vector<String> vector = new Vector<>();
+        while (iterator.hasNext()){
+            Words dictionaryWord = iterator.next();
+
+            wordTextField.setText(dictionaryWord.getWord());
+            transcriptionTextField.setText(dictionaryWord.getTranscription());
+
+            vector.add(dictionaryWord.getTranslate());
+        }
+        String str =  "";
+        for (String s : vector) {
+            if (!s.contains(" 1. ") && !s.contains(" 1) ")) {
+                if (str.length() == 0) str += s;
+                else str += "\n" + s;
+                n++;
+            } else {
+                int n1 = 1;
+                while (true) {
+                    String s1;
+                    if (s.contains(n1 + ". ")) {
+                        n1++;
+                        if (s.contains(n1 + ". ")) {
+                            s1 = s.substring(s.indexOf((n1 - 1) + ". ") + 3, s.indexOf(n1 + ". "));
+                            s = s.substring(s1.length());
+                        } else {
+                            s1 = s.substring(s.indexOf((n1 - 1) + ". ") + 3);
+                            s = "";
+                        }
+                    } else {
+                        s1 = s;
+                        s = "";
+                    }
+                    int n2 = 1;
+                    String type = "";
+                    while (true) {
+                        String s2;
+                        if (s1.contains(" " + n2 + ") ")) {
+
+                            if (type.equals("")) {
+                                type = s1.substring(0, s1.indexOf(n2 + ") ")).trim();
+                                if (str.length() == 0)
+                                    str += type;
+                                else
+                                    str += "\n" + type;
+                                n++;
+                            }
+
+                            n2++;
+                            String enter = "";
+                            if (s1.contains(" " + n2 + ") ")) {
+                                int x = n2 >= 10 ? 2 : 1;
+                                if (str.length() != 0) enter = "\n";
+                                str += enter + " " + s1.substring(s1.indexOf(" " + (n2 - 1) + ") ") + 3 + x, s1.indexOf(" " + n2 + ") "));
+                                s1 = s1.substring(s1.indexOf(" " + (n2 - 1) + ") ") + 2 + x);
+                                n++;
+                            } else {
+                                int x = (n2 - 1) >= 10 ? 2 : 1;
+                                if (str.length() != 0) enter = "\n";
+                                str += enter + " " + s1.substring(s1.indexOf(" " + (n2 - 1) + ") ") + 3 + x);
+                                s1 = "";
+                                n++;
+                            }
+                        } else {
+                            s2 = s1.substring(s1.indexOf(" " + (n2 - 1) + ") ") + 2);
+                            s1 = "";
+                            str += s2;
+                            n++;
+                        }
+
+                        if (s1.equals(""))
+                            break;
+                    }
+
+                    if (s.equals(""))
+                        break;
+                }
+            }
+        }
+
+        translateTextArea.setText(str);
+        translateTextArea.setPrefHeight(19 * n + 10);
+
+        if (str.length() >= 45)
+            translateTextArea.setMinHeight(40);
+        else
+            translateTextArea.setMinHeight(25);
+
+        HBox
+                hBoxT1 = new HBox(translateLabel),
+                hBoxT2 = new HBox(translateTextArea);
+
+        hBoxT1.setAlignment(Pos.CENTER);
+        hBoxT2.setAlignment(Pos.CENTER);
+
+        VBox vBox1 = new VBox(hBoxT1, hBoxT2);
+        vBox1.setAlignment(Pos.CENTER);
+
+        if (transcriptionTextField.getText() != null && !transcriptionTextField.getText().equals("")) {
+            translateLabel.setStyle("-fx-pref-width: 302px");
+            hBox1.getChildren().addAll(wordLabel, transcriptionLabel);
+            hBox2.getChildren().addAll(wordTextField, transcriptionTextField);
+        } else {
+            translateLabel.setStyle("-fx-pref-width: 302px");
+            wordLabel.setStyle("-fx-pref-width: 302px");
+            wordTextField.setStyle("-fx-pref-width: 302; -fx-background-color: #d8d8d8; -fx-text-fill: #616161");
+
+            hBox1.getChildren().addAll(wordLabel);
+            hBox2.getChildren().addAll(wordTextField);
+        }
+
+        HBox.setMargin(wordLabel, new Insets(0, 1, 0, 2));
+        HBox.setMargin(translateLabel, new Insets(0, 1, 0, 1));
+        HBox.setMargin(wordTextField, new Insets(0, 1, 0, 2));
+        HBox.setMargin(translateTextArea, new Insets(0, 1, 0, 1));
+
+        vBox.getChildren().addAll(hBox1, hBox2);
+        vBox.getChildren().add(vBox1);
+
+        borderPanePrimary.setCenter(vBox);
     }
 }
