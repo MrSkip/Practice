@@ -62,7 +62,7 @@ public class TypedWords extends ShowMinorStage{
         stage.setScene(new Scene(vBox, 190, (vBox.getChildren().size() - 1) * 18 + 20));
 
         super.helpConstructor(x, y, stage, mainStage);
-        super.setTextField(textField);
+        super.setObject(textField);
 
         setTextFieldListener();
     }
@@ -79,11 +79,16 @@ public class TypedWords extends ShowMinorStage{
             switch (event.getCode().getName()) {
                 case "Enter":
                     if (!textField.getText().equals("")) {
-                        if (upDown > 0)
+                        if (upDown > 0) {
                             selected(((Label) vBox.getChildren().get(0)).getText() +
                                     ((Label) ((HBox) vBox.getChildren().get(upDown)).getChildren().get(1)).getText());
-                        else if (upDown == 0)
-                            selected(((Label) vBox.getChildren().get(0)).getText());
+                        }
+                        else if (upDown == 0) {
+                            if (vBox.getChildren().size() > 1) {
+                                textField.setText("");
+                                selected(((Label) vBox.getChildren().get(0)).getText());
+                            }
+                        }
                     } else {
                         super.closeStudy();
                         return;
@@ -191,10 +196,10 @@ public class TypedWords extends ShowMinorStage{
 
     // Method using for send into main class the user chose word
     private void selected(String word){
-        textField.setText(word);
-        textField.positionCaret(word.length());
+        this.word.setText(word + "#" + label.getText());
 
-        this.word.setText(word);
+        textField.setText("");
+
         super.closeStudy();
     }
 

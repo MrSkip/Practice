@@ -4,6 +4,7 @@ import javafx.geometry.Point2D;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -88,10 +89,15 @@ public class ShowMinorStage {
             x += textField.localToScene(Point2D.ZERO).getX();
             y += textField.localToScene(Point2D.ZERO).getY();
         }
+        else if (object instanceof ImageView){
+            ImageView imageView = (ImageView) object;
+            x += imageView.localToScene(Point2D.ZERO).getX();
+            y += imageView.localToScene(Point2D.ZERO).getY();
+        }
     }
 
     // Method references button with minorStage
-    public void setButton(Button button){
+    public void setObject(Button button){
         object = button;
         setCloseOnObject(button.getWidth(), button.getHeight());
         button.setOnAction(event -> closeOrShow());
@@ -99,16 +105,22 @@ public class ShowMinorStage {
     }
 
     // Method references label with minorStage
-    public void setLabel(Label label){
+    public void setObject(Label label){
         object = label;
         setCloseOnObject(label.getWidth(), label.getHeight());
         label.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> closeOrShow());
         setPosition();
     }
 
-    public void setTextField(TextField textField){
+    public void setObject(TextField textField){
         object = textField;
         setCloseOnObject(textField.getWidth(), textField.getHeight());
+        setPosition();
+    }
+
+    public void setObject(ImageView imageView){
+        object = imageView;
+        setCloseOnObject(imageView.getFitWidth(), imageView.getFitHeight());
         setPosition();
     }
 
@@ -159,5 +171,9 @@ public class ShowMinorStage {
     public void setMinorStage(Stage stage){
         minorStage = stage;
         setStageProperties();
+    }
+
+    public void setX(double x){
+        this.x2 = x;
     }
 }

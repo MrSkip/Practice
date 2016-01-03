@@ -13,13 +13,17 @@ import javafx.scene.Cursor;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.effect.Blend;
+import javafx.scene.effect.Lighting;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Border;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.shape.Arc;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -30,13 +34,13 @@ import java.util.ResourceBundle;
 import java.util.Vector;
 
 public class C_main implements Initializable{
+    private Vector<String> historyOfSearch;
     public BorderPane borderPanePrimary;
     public ImageView
             history,
             find;
     public TextField textFieldF;
     public Label userChooseDictionary;
-    public TextArea textArea;
     private Stage
             stage_study = null,
             thisStage = null;
@@ -45,6 +49,8 @@ public class C_main implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        historyOfSearch = new Vector<>();
+
         manager = Manager.getInstance();
         stage_study = new CreateStage("", "..\\GUI\\minorScenes\\study.fxml", 215, 304, true, false).getStage();
 
@@ -64,22 +70,42 @@ public class C_main implements Initializable{
 //      Assign button "study" with the show stage "study"
         new ShowMinorStage(
                 1, study.getHeight(),
-                stage_study, stage).setButton(study);
+                stage_study, stage).setObject(study);
 
 //        // Assign label "userChooseDictionary" with the show stage "getStageForChooseLanguage()"
         new ShowMinorStage(
                 -23, userChooseDictionary.getHeight(),
-                getStageForChooseLanguage(),thisStage).setLabel(userChooseDictionary);
+                getStageForChooseLanguage(),thisStage).setObject(userChooseDictionary);
 
         // Assign textField wish stage in class TypedWord
         MyClassWithText word = new MyClassWithText();
         TypedWords.getInstance(0, textFieldF.getHeight() + 2, thisStage, userChooseDictionary, textFieldF, word);
         // add listener when the word is selected
         word.addPropertyChangeListener(evt -> {
-//            textArea.setText(manager.getWord(userChooseDictionary.getText(), evt.getNewValue().toString()).toString());
-            showPaneWithTranslate(evt.getNewValue().toString());
+            showPaneWithTranslate(evt.getNewValue().toString().substring(0, evt.getNewValue().toString().indexOf("#")));
+
+            historyOfSearch.removeElement(evt.getNewValue().toString());
+            historyOfSearch.add(0, evt.getNewValue().toString());
         });
 
+        MyClassWithText myClassWithText = new MyClassWithText();
+        StageHistory.getInstance(-110,history.getFitHeight(),thisStage,history,historyOfSearch, myClassWithText);
+        myClassWithText.addPropertyChangeListener(evt -> {
+            if (evt.getNewValue().toString().equals(""))
+                return;
+
+            textFieldF.setText(evt.getNewValue().toString().substring(0, evt.getNewValue().toString().indexOf("#")));
+            textFieldF.positionCaret(textFieldF.getText().length());
+
+            userChooseDictionary.setText(evt.getNewValue().toString().substring(evt.getNewValue().toString().indexOf("#") + 1));
+
+            showPaneWithTranslate(evt.getNewValue().toString().substring(0, evt.getNewValue().toString().indexOf("#")));
+
+            historyOfSearch.removeElement(evt.getNewValue().toString());
+            historyOfSearch.add(0, evt.getNewValue().toString());
+
+            myClassWithText.setText("");
+        });
     }
 
     private void setImages() {
@@ -374,5 +400,133 @@ public class C_main implements Initializable{
         vBox.getChildren().add(vBox1);
 
         borderPanePrimary.setCenter(vBox);
+    }
+}
+
+class StageHistory extends ShowMinorStage{
+    private static StageHistory instance = null;
+    private Stage stage;
+    private Vector<String> vector = null;
+    private MyClassWithText word;
+    private double x;
+
+    public static StageHistory getInstance(double x, double y, Stage mainStage, ImageView imageView, Vector<String> vector,
+                                           MyClassWithText word){
+        if (instance == null)
+            return instance = new StageHistory(x, y, mainStage, imageView, vector, word);
+        else return instance;
+    }
+
+    private StageHistory(double x, double y, Stage mainStage, ImageView imageView, Vector<String> vector, MyClassWithText word){
+        super();
+        this.vector = vector;
+        this.word = word;
+        this.x = x;
+        stage = new Stage();
+        super.helpConstructor(x, y, stage, mainStage);
+        super.setObject(imageView);
+
+        imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
+            if (MouseButton.PRIMARY == event.getButton()) {
+                createStage();
+                super.closeOrShow();
+            }
+        });
+    }
+
+    private void createStage(){
+        if (vector == null) return;
+        int height = 0;
+        VBox vBox = new VBox();
+        vBox.setStyle("-fx-background-color: dimgrey;");
+
+        Label label = new Label("History".toUpperCase());
+        label.setStyle("-fx-background-color: #7d7d7d; -fx-text-fill: #ffffff; -fx-pref-width: 130");
+        label.setAlignment(Pos.CENTER);
+        vBox.getChildren().add(label);
+        height += 17;
+
+        if (vector.size() == 0){
+            BorderPane borderPane = new BorderPane();
+            Label label1 = new Label("Here will be \n      show \n your history");
+            label1.setAlignment(Pos.CENTER);
+            label1.setStyle("-fx-text-fill: #ffffff; -fx-pref-width: 130; -fx-font-weight: bold");
+            borderPane.setCenter(label1);
+            vBox.getChildren().add(borderPane);
+            height += 51;
+        } else {
+            VBox vBox1 = new VBox();
+            vBox1.autosize();
+            for (String aVector : vector) {
+                Label label1 = new Label(" " + aVector.substring(0, aVector.indexOf("#")));
+                label1.setStyle("-fx-background-color: #909090; -fx-text-fill: #ece8e8; -fx-pref-width: 118px;");
+                label1.setId(aVector.substring(aVector.indexOf("#")));
+                label1.setCursor(Cursor.HAND);
+
+                label1.addEventHandler(MouseEvent.ANY, e -> {
+                    if (e.getEventType() == MouseEvent.MOUSE_ENTERED)
+                        ((Label) e.getSource()).setStyle("-fx-background-color: #7d7d7d; -fx-text-fill: #ffffff; -fx-pref-width: 118px;");
+                    else if (e.getEventType() == MouseEvent.MOUSE_EXITED)
+                        ((Label) e.getSource()).setStyle("-fx-background-color: #909090; -fx-text-fill: #ece8e8; -fx-pref-width: 118px;");
+                    else if (MouseButton.PRIMARY == e.getButton() && MouseEvent.MOUSE_CLICKED == e.getEventType()) {
+                        word.setText(((Label) e.getSource()).getText().trim() + ((Label) e.getSource()).getId());
+                        super.closeStudy();
+                    }
+                });
+                vBox1.getChildren().add(label1);
+                VBox.setMargin(label1, new Insets(1, 3, 0, 3));
+                height += 18;
+            }
+            ScrollPane scrollPane = new ScrollPane(vBox1);
+            scrollPane.setStyle("-fx-background: dimgrey; -fx-border-color: dimgray");
+            scrollPane.setMinHeight(19);
+            vBox.getChildren().addAll(scrollPane);
+        }
+        if (vector.size() != 0) {
+            String name = System.getProperty("user.dir") +
+                    "\\src\\DesktopApp\\Resource\\images\\" + "delete85.png";
+            File file = new File(name);
+            ImageView imageView = new ImageView();
+            imageView.setFitHeight(25);
+            imageView.setFitWidth(25);
+            imageView.setCursor(Cursor.HAND);
+            try {
+                imageView.setImage(new Image(file.toURI().toURL().toString()));
+                imageView.setEffect(new Lighting());
+            } catch (Exception e) {
+                System.out.println("Error: " + e);
+            }
+            imageView.addEventFilter(MouseEvent.ANY, e -> {
+                if (e.getEventType() == MouseEvent.MOUSE_ENTERED)
+                    imageView.setEffect(new Blend());
+                else if (e.getEventType() == MouseEvent.MOUSE_EXITED)
+                    imageView.setEffect(new Lighting());
+                else if (MouseButton.PRIMARY == e.getButton() && MouseEvent.MOUSE_CLICKED == e.getEventType() &&
+                        vector.size() != 0) {
+                    vector.clear();
+                    ((VBox) ((ScrollPane) vBox.getChildren().get(1)).getContent()).getChildren().clear();
+                    super.closeStudy();
+                }
+            });
+            BorderPane borderPane = new BorderPane();
+            borderPane.autosize();
+            borderPane.setRight(imageView);
+
+            vBox.getChildren().add(borderPane);
+            height += 25;
+        }
+
+        height += 5;
+        int width = 0;
+        if (vector.size() >= 9) {
+            width = 13;
+            super.setX(x + -13);
+        }
+
+        if (height <= 190)
+            stage.setScene(new Scene(vBox, 130 + width, height));
+        else
+            stage.setScene(new Scene(vBox, 130 + width, 200));
+
     }
 }
