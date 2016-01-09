@@ -3,6 +3,7 @@ package DesktopApp.Controlling;
 import DesktopApp.Controlling.HandMadeControllers.TypedWords;
 import DesktopApp.Tools.CreateStage;
 import DesktopApp.Tools.MyClassWithText;
+import DesktopApp.Tools.ReadLog;
 import DesktopApp.Tools.ShowMinorStage;
 import DesktopApp.Tools.Vocabulary.Manager;
 import DesktopApp.Tools.Vocabulary.Words;
@@ -23,7 +24,6 @@ import javafx.scene.layout.Border;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.shape.Arc;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -65,6 +65,9 @@ public class C_main implements Initializable{
     // Show the scene
     public void show(Stage stage){
         thisStage = stage;
+
+        thisStage.setOnCloseRequest(event1 -> ReadLog.writeLog());
+
         stage.show();
 
 //      Assign button "study" with the show stage "study"
@@ -139,7 +142,18 @@ public class C_main implements Initializable{
                     e.printStackTrace();
                 }
             }
+            else if (event.getButton() == MouseButton.PRIMARY &&
+                    event.getEventType() == MouseEvent.MOUSE_CLICKED){
+                if (!textFieldF.getText().equals("")){
+                    String s = textFieldF.getText() + "#" + userChooseDictionary.getText();
+                    historyOfSearch.removeElement(s);
+                    historyOfSearch.add(0, s);
+
+                    showPaneWithTranslate(textFieldF.getText());
+                }
+            }
         });
+        find.setCursor(Cursor.HAND);
 
         history.addEventFilter(MouseEvent.ANY, event -> {
             if (event.getEventType() == MouseEvent.MOUSE_ENTERED ||
@@ -178,25 +192,7 @@ public class C_main implements Initializable{
             else
                 textFieldF.setStyle("-fx-background-color: #c8c8c8;");
             textFieldF.requestFocus();
-//            textFieldF.selectAll();
         });
-
-//        textFieldF.addEventHandler(KeyEvent.KEY_RELEASED, event -> {
-//            if (event.getCode().getName().equals("Enter") || textFieldF.getText().equals("")) {
-//                showTypedWord.closeStudy();
-//            }
-//            else if (event.getCode().getName().equals("Up") ||
-//                    event.getCode().getName().equals("Down")) {
-//                typedWords.dS(event.getCode().getName());
-//                return;
-//            }
-//            else if (event.getText().length() != 0 && !showTypedWord.getMinorStage().isShowing()) {
-//                showTypedWord.closeOrShow();
-//            }
-//
-//            typedWords.setSearchWords(userChooseDictionary.getText(),textFieldF.getText());
-//            thisStage.requestFocus();
-//        });
     }
 
     private Stage getStageForChooseLanguage(){
@@ -403,7 +399,7 @@ public class C_main implements Initializable{
     }
 }
 
-class StageHistory extends ShowMinorStage{
+class StageHistory extends ShowMinorStage {
     private static StageHistory instance = null;
     private Stage stage;
     private Vector<String> vector = null;
@@ -528,5 +524,22 @@ class StageHistory extends ShowMinorStage{
         else
             stage.setScene(new Scene(vBox, 130 + width, 200));
 
+    }
+}
+
+class UserDictionary{
+    public static boolean isShowing = false;
+    private static BorderPane borderPane, mPane, mmPane;
+
+    public static void createFirstPane(BorderPane pane){
+        borderPane = pane;
+        mPane = new BorderPane();
+        mmPane = new BorderPane();
+
+
+    }
+
+    public static boolean getIsShowing(){
+        return isShowing;
     }
 }

@@ -17,6 +17,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.nio.charset.Charset;
 import java.util.Vector;
 
 
@@ -75,6 +76,11 @@ public class TypedWords extends ShowMinorStage{
                 super.closeStudy();
                 return;
             }
+
+            if (textField.getText().length() == 1)
+            if ("qwertyuiopasdfghjklzxcvbnm".contains(textField.getText().toLowerCase()))
+                label.setText("English-Ukraine");
+            else label.setText("Ukraine-English");
 
             switch (event.getCode().getName()) {
                 case "Enter":

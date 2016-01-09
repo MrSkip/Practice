@@ -3,8 +3,8 @@ count of use-0
 language-ENGLISH
 
 ~DICTIONARY->
-D:\Dictionary\Dictionary\done\en-uk.txt
-D:\Dictionary\Dictionary\done\uk-en.txt
+D:\Project\Java\Vocabulary\src\DesktopApp\Resource\Dictionaries\English-Ukraine.txt
+D:\Project\Java\Vocabulary\src\DesktopApp\Resource\Dictionaries\Ukraine-English.txt
 
 ~STUDY->
 http://lingualeo.com/
@@ -16,14 +16,13 @@ http://liuro.com.ua/
 http://learnenglishteens.britishcouncil.org/
 http://elllo.org/
 -USER SITES
-http://www.vk.com/1
-http://www.vk.com/6
 http://www.vk.com/3
-http://www.vk.com/4
-http://www.vk.com/5
 http://www.vk.com/6
 -RECENT
-www.duolingo.com
+http://www.vk.com/6
 lingvozone.com
-opentalk.org.ua
+www.duolingo.com
 ~END STUDY<-
+~USER DICTIONARY
+mula
+~END USER DICTIONARY<-
