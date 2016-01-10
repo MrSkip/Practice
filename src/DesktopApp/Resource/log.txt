@@ -25,4 +25,6 @@ www.duolingo.com
 ~END STUDY<-
 ~USER DICTIONARY
 mula
+copo
+zorro
 ~END USER DICTIONARY<-

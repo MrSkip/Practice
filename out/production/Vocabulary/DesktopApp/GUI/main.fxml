@@ -116,11 +116,4 @@
          </children>
       </VBox>
    </top>
-   <right>
-      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <center>
-            <TextArea prefHeight="200.0" prefWidth="200.0" text="Vacabulary" BorderPane.alignment="CENTER" />
-         </center>
-      </BorderPane>
-   </right>
 </BorderPane>

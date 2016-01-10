@@ -37,4 +37,8 @@ public class AllVocabularies{
     public String getInfo(){
         return info;
     }
+
+    public void setInfo(String newInfo){
+        info = newInfo;
+    }
 }

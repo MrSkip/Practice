@@ -21,23 +21,10 @@ public class ReadLog {
             vocabularyPath = new Vector<>(),
             studyLog = new Vector<>(),
             studyRecentLog = new Vector<>(),
-            studyUserSites = new Vector<>(),
-            pathToUserDictionary = new Vector<>();
-    private static Vector<AllVocabularies> allUserVocabulary = null;
-
-    public static void main(String[] args) {
-//        Manager manager = new Manager();
-//        manager.setListWords(readVocabulary("uk-en"));
-//        manager.setListWords(readVocabulary("en-uk"));
-//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-//        while (true){
-//            try {
-//                System.out.println(manager.getWord(br.readLine()));
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//        }
-    }
+            studyUserSites = new Vector<>();
+    private static Vector<AllVocabularies>
+            allUserVocabulary = new Vector<>(),
+            oldUserVocabulary = new Vector<>();
 
     public static Vector<AllVocabularies> getAllVocabularies() {
         // if the method is not call than call him
@@ -118,7 +105,7 @@ public class ReadLog {
         if (!studyLog.isEmpty()) studyLog.clear();
         if (!studyRecentLog.isEmpty()) studyRecentLog.clear();
         if (!studyUserSites.isEmpty()) studyUserSites.clear();
-        if (!pathToUserDictionary.isEmpty()) pathToUserDictionary.clear();
+        if (!allUserVocabulary.isEmpty()) allUserVocabulary.clear();
 
         try {
             FileInputStream fstream = new FileInputStream(pathToLog);
@@ -152,10 +139,13 @@ public class ReadLog {
                         break;
                     case "~USER DICTIONARY":
                         while (!(str = br.readLine()).equals("~END USER DICTIONARY<-")) {
-                            pathToUserDictionary.add(str);
+                            AllVocabularies allVocabularies = readUserDictionary(str);
+                            if (!allVocabularies.getVocabularyName().equals("empty!!!"))
+                                allUserVocabulary.add(allVocabularies);
                         }
                         break;
                 }
+                oldUserVocabulary.addAll(allUserVocabulary.stream().collect(Collectors.toList()));
             }
             if (COUNT_OF_USE == 0) {
                 File folder = new File(System.getProperty("user.dir") +
@@ -211,47 +201,63 @@ public class ReadLog {
             fw.write("\n~END STUDY<-");
 
             fw.write("\n~USER DICTIONARY");
-            for (String aPathToUserDictionary : pathToUserDictionary) {
-                fw.write("\n" + aPathToUserDictionary);
+            for (AllVocabularies vocabularies : allUserVocabulary) {
+                forUserDictionary();
+                fw.write("\n" + vocabularies.getVocabularyName());
             }
             fw.write("\n~END USER DICTIONARY<-");
 
             fw.close();
-
             if (allUserVocabulary != null){
-                for (int i = 0; i < allUserVocabulary.size(); i++) {
+                for (AllVocabularies anAllUserVocabulary : allUserVocabulary) {
+                    if (anAllUserVocabulary.getVocabularyName().equals(""))
+                        continue;
                     String pathToDictionary = System.getProperty("user.dir") +
-                            "\\src\\DesktopApp\\Resource\\UserDictionaries\\" + allUserVocabulary.get(i).getVocabularyName() + ".txt";
+                            "\\src\\DesktopApp\\Resource\\UserDictionaries\\" + anAllUserVocabulary.getVocabularyName() + ".txt";
                     File file = new File(pathToDictionary);
-                    try{
-
+                    try {
                         if (file.createNewFile())
                             System.out.println("File created");
                         else
                             System.out.println("File already exist");
-
-                    }catch (IOException e){
+                    } catch (IOException e) {
                         System.out.println("Error:\n" + e);
                     }
 
-                    fw = new FileWriter(pathToLog, false);
-                    fw.write("//" + allUserVocabulary.get(i).getInfo());
-                    for (Words words : allUserVocabulary.get(i).getWordsCollection()) {
-                        fw.write("\n" + words.getInfo().substring(0, words.getInfo().indexOf(":")));
+                    fw = new FileWriter(pathToDictionary, false);
+                    String s = "//" + anAllUserVocabulary.getInfo();
+                    fw.write(s);
+                    for (Words words : anAllUserVocabulary.getWordsCollection()) {
+                        fw.write("\n" + words.getInfo().substring(0, words.getInfo().indexOf(":")) + ":");
                         fw.write(words.getWord() + " = [");
                         fw.write(words.getTranscription() + "] = ");
                         fw.write(words.getTranslate() + " ||> ");
-                        fw.write(words.getInfo() + " ||< ");
-                        fw.write(words.getNote().substring(words.getNote().indexOf(":") + 1));
+                        fw.write(words.getInfo().substring(words.getInfo().indexOf(":") + 1) + " ||< ");
+                        fw.write(words.getNote());
                     }
+                    fw.close();
                 }
             }
-
+            oldUserVocabulary.stream().filter(allVocabularies -> allUserVocabulary.indexOf(allVocabularies) == -1).forEach(allVocabularies -> {
+                String pathToDictionary = System.getProperty("user.dir") +
+                        "\\src\\DesktopApp\\Resource\\UserDictionaries\\" + allVocabularies.getVocabularyName() + ".txt";
+                if (new File(pathToDictionary).exists())
+                    new File(pathToDictionary).delete();
+            });
         } catch (Exception e) {
             System.out.println("Error: \n" + e);
             return false;
         }
         return false;
+    }
+
+    private static void forUserDictionary(){
+        try{
+        allUserVocabulary.stream().filter(allVocabularies -> allVocabularies.getVocabularyName().isEmpty() || allVocabularies.getVocabularyName().equals("") ||
+                allVocabularies.getVocabularyName() == null).forEach(allVocabularies -> allUserVocabulary.remove(allVocabularies));
+        } catch (Exception e){
+            System.out.println("Error at `forUserDictionary`class 'ReadLog'");
+        }
     }
 
     public static Vector<String> getVocabularyPath() {
@@ -320,38 +326,22 @@ public class ReadLog {
         return LANGUAGE;
     }
 
-    public static Vector<String> getUserDictionaries() {
+    public static Vector<AllVocabularies> getUserDictionaries() {
         if (!IfRead) readLog();
-        return
-                pathToUserDictionary.stream().map(aPathToUserDictionary ->
-                        aPathToUserDictionary.substring(aPathToUserDictionary.lastIndexOf("\\") + 1)).collect(Collectors.toCollection(Vector::new));
+        return allUserVocabulary;
     }
-
-    public static void addUserDictionary(String name) {
-        String pathToDictionary = System.getProperty("user.dir") +
-                "\\src\\DesktopApp\\Resource\\UserDictionaries\\" + name + ".txt";
-
-        pathToUserDictionary.removeElement(pathToDictionary);
-        pathToUserDictionary.add(0, pathToDictionary);
-    }
-
-
 
     public static AllVocabularies readUserDictionary(String name) {
         String pathToDictionary = System.getProperty("user.dir") +
                 "\\src\\DesktopApp\\Resource\\UserDictionaries\\" + name + ".txt";
-        boolean bl = false;
         Collection<Words> collection = new ArrayList<>();
         AllVocabularies allVocabularies = null;
-        for (String vector :
-                getUserDictionaries()) {
-            if (vector.trim().equals(name.trim()))
-                bl = true;
-        }
-        if (!bl) return null;
+
+        if (!new File(pathToDictionary).exists())
+            return new AllVocabularies("empty!!!", new ArrayList<>());
+
         try {
             FileInputStream fstream = new FileInputStream(pathToDictionary);
-            System.out.println(pathToDictionary);
             DataInputStream in = new DataInputStream(fstream);
             BufferedReader br = new BufferedReader(new InputStreamReader(in, Charset.defaultCharset()));
 
@@ -362,7 +352,6 @@ public class ReadLog {
                 info = info.substring(2);
             else info = "";
 
-            // Read words from Ukraine Vocabulary
             while ((str = br.readLine()) != null) {
                 collection.add(
                         new Words(

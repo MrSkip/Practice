@@ -17,8 +17,6 @@ http://learnenglishteens.britishcouncil.org/
 http://elllo.org/
 -USER SITES
 http://www.vk.com/3
-http://www.vk.com/4
-http://www.vk.com/5
 http://www.vk.com/6
 -RECENT
 http://www.vk.com/6
@@ -27,4 +25,6 @@ www.duolingo.com
 ~END STUDY<-
 ~USER DICTIONARY
 mula
+copo
+zorro
 ~END USER DICTIONARY<-
