@@ -30,11 +30,13 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Iterator;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.Vector;
 
@@ -538,21 +540,79 @@ class UserDictionary {
     private static Button buttonViewAllOrThis,
             buttonDelete = new Button("Delete selected"),
             buttonCreate = new Button("Create");
-//    private static int position = -1;
+
     private static Vector<String> namesOfUserDictionaries;
-    private static MyClassWithInteger number;
 
     public static void createFirstPane(BorderPane pane) {
         isShowing = true;
         borderPane = pane;
         createFirstPane();
+
+        buttonDelete.setCursor(Cursor.HAND);
+        buttonDelete.setTooltip(new Tooltip("Delete the first vocabulary in list"));
+
+        buttonDelete.setOnAction(event -> {
+
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Confirmation Dialog");
+            alert.setHeaderText("Delete the dictionary - " +
+                    ((Label) ((HBox) ((VBox) ((ScrollPane) mPane.getLeft()).getContent()).getChildren().get(0))
+                    .getChildren().get(0)).getText().trim().toUpperCase());
+            alert.setContentText("Are you sure?");
+            alert.initStyle(StageStyle.UTILITY);
+
+            Optional<ButtonType> result = alert.showAndWait();
+            if (result.get() == ButtonType.OK){
+                UserVocabularyManager.deleteVocabulary(((Label) ((HBox) ((VBox) ((ScrollPane) mPane.getLeft()).getContent()).getChildren().get(0))
+                        .getChildren().get(0)).getText().trim());
+                ((VBox) ((ScrollPane) mPane.getLeft()).getContent()).getChildren().remove(0);
+                if (!((VBox) ((ScrollPane) mPane.getLeft()).getContent()).getChildren().isEmpty()) {
+                    (((HBox) ((VBox) ((ScrollPane) mPane.getLeft()).getContent()).getChildren().get(0)).getChildren().get(0))
+                            .setStyle("-fx-background-color: #4175a4; -fx-text-fill: #eeeeee; -fx-font-family: cursive; -fx-pref-width: 130");
+                }
+                else {
+                    createBorderOfDictionariesNames();
+                }
+            }
+        });
+
+        buttonCreate.setCursor(Cursor.HAND);
+
+        buttonCreate.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
+            if (MouseButton.PRIMARY == event.getButton()){
+                if (buttonCreate.getText().equals("Create")) {
+                    ((HBox) mPane.getBottom()).getChildren().remove(1);
+                    TextField textField = new TextField();
+                    textField.setPromptText("Create new vocabulary");
+                    textField.setPrefWidth(200);
+                    ((HBox) mPane.getBottom()).getChildren().add(0, textField);
+                    ((Button) ((HBox) mPane.getBottom()).getChildren().get(1)).setText("OK");
+
+                    textField.addEventHandler(javafx.scene.input.KeyEvent.KEY_TYPED, event1 -> {
+                        if (!event1.getCharacter().equals(" "))
+                        if (!Character.isLetterOrDigit(event1.getCharacter().toCharArray()[0]) || textField.getText().trim().length() > 250) {
+                            event1.consume();
+                        }
+                    });
+                }
+                else {
+                    String s = ((TextField) ((HBox) mPane.getBottom()).getChildren().get(0)).getText().trim() + "";
+                    if (!s.isEmpty()) {
+                        UserVocabularyManager.createVocabulary(s);
+                        createBorderOfDictionariesNames();
+                    }
+                    ((HBox) mPane.getBottom()).getChildren().remove(0);
+                    ((HBox) mPane.getBottom()).getChildren().add(1, buttonDelete);
+                    ((Button) ((HBox) mPane.getBottom()).getChildren().get(0)).setText("Create");
+                }
+                HBox.setMargin(((HBox) mPane.getBottom()).getChildren().get(1), new Insets(1, 12, 1, 3));
+                borderPane.setLeft(mPane);
+            }
+        });
     }
 
     public static void createFirstPane(){
-        namesOfUserDictionaries = UserVocabularyManager.getAllNamesOfUserDictionaries();
-
         mPane = new BorderPane();
-        mmPane = new BorderPane();
         mPane.setStyle("-fx-background-color: #747474; -fx-pref-width: 250");
 
         VBox vBox = new VBox();
@@ -581,8 +641,8 @@ class UserDictionary {
                 buttonViewAllOrThis.setStyle("-fx-background-color: #9c9c9c; -fx-background-radius: 5px; -fx-text-fill: #eeeeee");
             else if (MouseButton.PRIMARY == e.getButton() && MouseEvent.MOUSE_CLICKED == e.getEventType()) {
                 if (buttonViewAllOrThis.getText().equals("View selected Dictionary"))
-                    createSecondPane(((Label) ((VBox) ((ScrollPane) ((BorderPane) borderPane.getLeft()).getLeft()).getContent()).getChildren()
-                            .get(0)).getText().trim());
+                    createSecondPane(((Label) ((HBox) ((VBox) ((ScrollPane) mPane.getLeft()).getContent()).getChildren().get(0))
+                            .getChildren().get(0)).getText().trim());
                 else
                     createFirstPane();
             }
@@ -610,10 +670,11 @@ class UserDictionary {
 
 
     private static void createBorderOfDictionariesNames(){
+        namesOfUserDictionaries = UserVocabularyManager.getAllNamesOfUserDictionaries();
         VBox vBoxContentOfUserDictionary = new VBox();
         borderPane.getChildren().remove(borderPane.getLeft());
-        mPane.getChildren().remove(mPane.getLeft());
-        System.out.println(namesOfUserDictionaries);
+        mPane.getChildren().removeAll(mPane.getLeft(), mPane.getCenter());
+
         if (namesOfUserDictionaries.isEmpty())
         {
             Label label = new Label("            Please \n" +
@@ -676,16 +737,21 @@ class UserDictionary {
                 else
                 {
                     ObservableList<Node> nodes = ((VBox) ((ScrollPane) ((BorderPane) borderPane.getLeft()).getLeft()).getContent()).getChildren();
+                    int positionDelete = -1;
                     for (Node node : nodes) {
+                        positionDelete++;
                         if (((Label) ((HBox) node).getChildren().get(0)).getText().trim().equals(((ContextMenu) event.getSource()).getId())) {
                             ((VBox) node.getParent()).getChildren().remove(node);
-                            namesOfUserDictionaries.removeElement(((ContextMenu) event.getSource()).getId());
                             UserVocabularyManager.deleteVocabulary(((ContextMenu) event.getSource()).getId());
                             break;
                         }
                     }
                     if (nodes.isEmpty()) {
                         createBorderOfDictionariesNames();
+                    }
+                    else if (positionDelete == 0) {
+                        (((HBox) ((VBox) ((ScrollPane) mPane.getLeft()).getContent()).getChildren().get(0)).getChildren().get(0))
+                                .setStyle("-fx-background-color: #4175a4; -fx-text-fill: #eeeeee; -fx-font-family: cursive; -fx-pref-width: 130");
                     }
                 }
             });
