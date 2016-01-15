@@ -65,6 +65,14 @@ public class UserVocabularyManager {
         return allVocabularies;
     }
 
+    public static Collection<Words> getVocabulary(String vocabularyName){
+        int x = getIndexOfVocabularyName(vocabularyName);
+        if (x == -1)
+            return new ArrayList<>();
+
+        return allVocabularies.get(x).getWordsCollection();
+    }
+
     private static int getIndexOfVocabularyName(String name){
         int x = -1;
         for (int i = 0; i < allVocabularies.size(); i++) {

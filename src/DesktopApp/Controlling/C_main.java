@@ -6,39 +6,40 @@ import DesktopApp.Tools.MyClassWithText;
 import DesktopApp.Tools.ReadLog;
 import DesktopApp.Tools.ShowMinorStage;
 import DesktopApp.Tools.Vocabulary.Manager;
-import DesktopApp.Tools.Vocabulary.MyClassWithInteger;
 import DesktopApp.Tools.Vocabulary.UserVocabularyManager;
 import DesktopApp.Tools.Vocabulary.Words;
-import com.sun.glass.events.KeyEvent;
+import javafx.beans.property.ReadOnlyObjectWrapper;
+import javafx.beans.property.ReadOnlyStringWrapper;
+import javafx.beans.property.StringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.MapChangeListener;
 import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Cursor;
-import javafx.scene.Group;
-import javafx.scene.Node;
-import javafx.scene.Scene;
+import javafx.scene.*;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.effect.Blend;
 import javafx.scene.effect.Lighting;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Border;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import javafx.util.Callback;
 
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.Iterator;
-import java.util.Optional;
-import java.util.ResourceBundle;
-import java.util.Vector;
+import java.util.*;
 
 public class C_main implements Initializable{
     private Vector<String> historyOfSearch;
@@ -49,8 +50,7 @@ public class C_main implements Initializable{
     public TextField textFieldF;
     public Label userChooseDictionary;
     private Stage
-            stage_study = null,
-            thisStage = null;
+            stage_study = null;
     public Button study;
     private static Manager manager;
 
@@ -71,9 +71,7 @@ public class C_main implements Initializable{
 
     // Show the scene
     public void show(Stage stage){
-        thisStage = stage;
-
-        thisStage.setOnCloseRequest(event1 -> ReadLog.writeLog());
+        stage.setOnCloseRequest(event1 -> ReadLog.writeLog());
 
         stage.show();
 
@@ -85,11 +83,11 @@ public class C_main implements Initializable{
 //        // Assign label "userChooseDictionary" with the show stage "getStageForChooseLanguage()"
         new ShowMinorStage(
                 -23, userChooseDictionary.getHeight(),
-                getStageForChooseLanguage(),thisStage).setObject(userChooseDictionary);
+                getStageForChooseLanguage(), stage).setObject(userChooseDictionary);
 
         // Assign textField wish stage in class TypedWord
         MyClassWithText word = new MyClassWithText();
-        TypedWords.getInstance(0, textFieldF.getHeight() + 2, thisStage, userChooseDictionary, textFieldF, word);
+        TypedWords.getInstance(0, textFieldF.getHeight() + 2, stage, userChooseDictionary, textFieldF, word);
         // add listener when the word is selected
         word.addPropertyChangeListener(evt -> {
             showPaneWithTranslate(evt.getNewValue().toString().substring(0, evt.getNewValue().toString().indexOf("#")));
@@ -99,7 +97,7 @@ public class C_main implements Initializable{
         });
 
         MyClassWithText myClassWithText = new MyClassWithText();
-        StageHistory.getInstance(-110,history.getFitHeight(),thisStage,history,historyOfSearch, myClassWithText);
+        StageHistory.getInstance(-110,history.getFitHeight(), stage,history,historyOfSearch, myClassWithText);
         myClassWithText.addPropertyChangeListener(evt -> {
             if (evt.getNewValue().toString().equals(""))
                 return;
@@ -536,12 +534,10 @@ class StageHistory extends ShowMinorStage {
 
 class UserDictionary {
     public static boolean isShowing = false;
-    private static BorderPane borderPane, mPane, mmPane;
+    private static BorderPane borderPane, mPane;
     private static Button buttonViewAllOrThis,
             buttonDelete = new Button("Delete selected"),
             buttonCreate = new Button("Create");
-
-    private static Vector<String> namesOfUserDictionaries;
 
     public static void createFirstPane(BorderPane pane) {
         isShowing = true;
@@ -661,16 +657,14 @@ class UserDictionary {
         buttonDelete.setStyle("-fx-background-color: #565656; -fx-background-radius: 5px; -fx-text-fill: #eeeeee");
         buttonCreate.setStyle("-fx-background-color: #565656; -fx-background-radius: 5px; -fx-text-fill: #eeeeee");
         hBoxLast.getChildren().addAll(buttonCreate, buttonDelete);
-        HBox.setMargin(buttonDelete, new Insets(1, 3, 1, 5));
+        HBox.setMargin(buttonDelete, new Insets(1, 11, 1, 2));
         mPane.setBottom(hBoxLast);
 
         borderPane.setLeft(mPane);
     }
 
-
-
     private static void createBorderOfDictionariesNames(){
-        namesOfUserDictionaries = UserVocabularyManager.getAllNamesOfUserDictionaries();
+        Vector<String> namesOfUserDictionaries = UserVocabularyManager.getAllNamesOfUserDictionaries();
         VBox vBoxContentOfUserDictionary = new VBox();
         borderPane.getChildren().remove(borderPane.getLeft());
         mPane.getChildren().removeAll(mPane.getLeft(), mPane.getCenter());
@@ -705,23 +699,29 @@ class UserDictionary {
 
             label.addEventHandler(MouseEvent.ANY, e -> {
                 if (((VBox) ((Label) e.getSource()).getParent().getParent()).getChildren().indexOf(((Label) e.getSource()).getParent()) != 0) {
-                    if (e.getEventType() == MouseEvent.MOUSE_ENTERED)
-                        label.setStyle("-fx-background-color: #7f7f7f; -fx-text-fill: #eeeeee; -fx-font-family: cursive; -fx-pref-width: 130");
+                    if (e.getEventType() == MouseEvent.MOUSE_ENTERED) {
+                            label.setStyle("-fx-background-color: #7f7f7f; -fx-text-fill: #eeeeee; -fx-font-family: cursive; -fx-pref-width: 130");
+                    }
                     else if (e.getEventType() == MouseEvent.MOUSE_EXITED)
                         label.setStyle("-fx-background-color: #9c9c9c; -fx-text-fill: #eeeeee; -fx-font-family: cursive; -fx-pref-width: 130");
                     else if (MouseButton.PRIMARY == e.getButton() && MouseEvent.MOUSE_CLICKED == e.getEventType()) {
-                        VBox vBox = ((VBox) ((Label) e.getSource()).getParent().getParent());
-                        HBox hBox1 = new HBox();
+                        if (e.getClickCount() == 2)
+                            createSecondPane(((Label) ((HBox) ((VBox) ((ScrollPane) mPane.getLeft()).getContent()).getChildren().get(0))
+                                    .getChildren().get(0)).getText().trim());
+                        else {
+                            VBox vBox = ((VBox) ((Label) e.getSource()).getParent().getParent());
+                            HBox hBox1 = new HBox();
 
-                        hBox1.getChildren().addAll(((HBox) ((Label) e.getSource()).getParent()).getChildren());
-                        hBox1.autosize();
-                        hBox1.getChildren().get(0)
-                                .setStyle("-fx-background-color: #4175a4; -fx-text-fill: #eeeeee; -fx-font-family: cursive; -fx-pref-width: 130");
-                        vBox.getChildren().add(0, hBox1);
+                            hBox1.getChildren().addAll(((HBox) ((Label) e.getSource()).getParent()).getChildren());
+                            hBox1.autosize();
+                            hBox1.getChildren().get(0)
+                                    .setStyle("-fx-background-color: #4175a4; -fx-text-fill: #eeeeee; -fx-font-family: cursive; -fx-pref-width: 130");
+                            vBox.getChildren().add(0, hBox1);
 
-                        if (vBox.getChildren().size() > 1)
-                            ((HBox) vBox.getChildren().get(1)).getChildren().get(0)
-                                    .setStyle("-fx-background-color: #7f7f7f; -fx-text-fill: #eeeeee; -fx-font-family: cursive; -fx-pref-width: 130");
+                            if (vBox.getChildren().size() > 1)
+                                ((HBox) vBox.getChildren().get(1)).getChildren().get(0)
+                                        .setStyle("-fx-background-color: #7f7f7f; -fx-text-fill: #eeeeee; -fx-font-family: cursive; -fx-pref-width: 130");
+                        }
                     }
                 }
             });
@@ -788,7 +788,97 @@ class UserDictionary {
     }
 
     public static void createSecondPane(String vocabularyName){
-        System.out.println(vocabularyName);
+        ObservableList<Words> list = FXCollections.observableList(new ArrayList<>(UserVocabularyManager.getVocabulary(vocabularyName)));
+
+        TableView<Words> tableView = new TableView<>(list);
+        tableView.setTableMenuButtonVisible(true);
+        tableView.setEditable(true);
+        mPane.getChildren().remove(mPane.getLeft());
+
+        TableColumn<Words, String> word = new TableColumn<>("Word");
+        word.setCellValueFactory(param -> new ReadOnlyObjectWrapper<>(param.getValue().getWord()));
+        setCellFactory(word);
+
+        TableColumn<Words, String> transcription = new TableColumn<>("Transcription");
+        transcription.setCellValueFactory(param -> new ReadOnlyStringWrapper("[" + param.getValue().getTranscription() + "]"));
+        setCellFactory(transcription);
+
+        TableColumn<Words, String> translate = new TableColumn<>("Translate");
+        translate.setCellValueFactory(param -> new ReadOnlyStringWrapper(param.getValue().getTranslate()));
+        setCellFactory(translate);
+
+        TableColumn<Words, String> userTranslate = new TableColumn<>("User Translate");
+        userTranslate.setCellValueFactory(param -> new ReadOnlyStringWrapper(param.getValue().getInfo().substring(param.getValue().getInfo().indexOf(':') + 1)));
+        setCellFactory(userTranslate);
+
+        TableColumn<Words, String> note = new TableColumn<>("Note");
+        note.setCellValueFactory(param -> new ReadOnlyStringWrapper(param.getValue().getNote()));
+        setCellFactory(note);
+
+        tableView.getColumns().addAll(word, transcription, translate, userTranslate, note);
+        tableView.setEditable(true);
+        mPane.setLeft(tableView);
+    }
+
+    private static void setCellFactory(TableColumn column){
+        column.setCellFactory(param -> new TextFieldTableCell<Words, String>(){
+            @Override
+            public void updateItem(String item, boolean empty) {
+                if(item != null){
+                    setText(item);
+                }
+            }
+            @Override
+            public void startEdit() {
+                super.startEdit();
+
+                TextField textField = new TextField(getText());
+                textField.setMinWidth(1);
+                textField.setPrefWidth(getPrefWidth());
+
+                setGraphic(textField);
+                textField.requestFocus();
+                setText("");
+
+                textField.focusedProperty().addListener((observable, oldValue, newValue) -> {
+                    if (! newValue) {
+                        commitEdit(textField.getText());
+                    }
+                });
+                textField.addEventHandler(KeyEvent.KEY_RELEASED, event -> {
+                    if (event.getCode().ordinal() == 13){
+                        commitEdit(textField.getText());
+                    }
+                });
+            }
+
+            @Override
+            public void commitEdit(String newValue) {
+                super.commitEdit(newValue);
+                setGraphic(null);
+                setText(newValue);
+                if (column.getText().equals("Word"))
+                    getTableView().getItems().get(getTableRow().getIndex()).setWord(newValue);
+                else if (column.getText().equals("Transcription")) {
+                    String s = newValue;
+
+                    if (s.toCharArray()[0] == '[')
+                        s = s.substring(1);
+                    if (s.toCharArray()[s.length() - 1] == ']')
+                        s = s.substring(0, s.lastIndexOf(']'));
+
+                    getTableView().getItems().get(getTableRow().getIndex()).setTranscription(s);
+                }
+                else if (column.getText().equals("Translate"))
+                    getTableView().getItems().get(getTableRow().getIndex()).setTranslate(newValue);
+                else if (column.getText().equals("User Translate")){
+                    String s = getTableView().getItems().get(getTableRow().getIndex()).getInfo();
+                    getTableView().getItems().get(getTableRow().getIndex()).setInfo(s.substring(0, s.indexOf(':') + 1) + newValue);
+                }
+                else if (column.getText().equals("Note"))
+                    getTableView().getItems().get(getTableRow().getIndex()).setNote(newValue);
+            }
+        });
     }
 
     public static boolean getIsShowing(){
