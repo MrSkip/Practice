@@ -1,0 +1,4 @@
+//create for me
+English-Ukraine:V-Day = ['vi:dei] =  n (v — скор. від victory) день перемоги (у другій світовій війні). ||> fdf ||< 
+English-Ukraine:program = [program] =  див. programme. ||> df ||< 
+English-Ukraine:programming = [] =  1. programme.?programmingn 1) складання програми; 2) виконання програми; 3) програмування; 4) відтворення режиму праці. ||> f ||< 

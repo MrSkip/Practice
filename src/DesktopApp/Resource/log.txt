@@ -25,10 +25,6 @@ http://www.vk.com/3
 http://www.vk.com/6
 ~END STUDY<-
 ~USER DICTIONARY
-mula
-create my selfe
-copo
-Stepan
-zorro
-Visible
+MyFirstNotDelete
+sftiva
 ~END USER DICTIONARY<-

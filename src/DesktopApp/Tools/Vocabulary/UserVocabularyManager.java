@@ -40,6 +40,7 @@ public class UserVocabularyManager {
                 break;
             }
         }
+        System.out.println("Add - " + bl);
         if (bl){
             Collection<Words> collection = new ArrayList<>();
             collection.add(words);

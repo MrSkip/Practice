@@ -15,10 +15,6 @@ public class Words {
         this.note = note;
     }
 
-    public Words(){
-
-    }
-
     public String getNote() {
         return note;
     }

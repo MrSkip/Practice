@@ -12,6 +12,7 @@ import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.property.ReadOnlyStringWrapper;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
 import javafx.collections.MapChangeListener;
 import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
@@ -246,7 +247,7 @@ public class C_main implements Initializable{
     }
 
     private void showPaneWithTranslate(String word){
-        Words w = new Words();
+        Words w = new Words("", "", "", "", "");
         borderPanePrimary.getChildren().remove(borderPanePrimary.getCenter());
 
         Label
@@ -286,8 +287,12 @@ public class C_main implements Initializable{
         for (Words words : Manager.getDictionaryWord(userChooseDictionary.getText(), word.toLowerCase())) {
             wordTextField.setText(words.getWord());
             transcriptionTextField.setText(words.getTranscription());
+            vector.add(words.getTranslate().trim());
 
-            vector.add(words.getTranslate());
+            w.setWord(words.getWord().trim());
+            w.setTranscription(words.getTranscription().trim());
+            w.setTranslate(w.getTranslate().trim() + " " + words.getTranslate().trim());
+            w.setInfo(userChooseDictionary.getText().trim() + ":");
         }
 
         String str =  "";
@@ -400,6 +405,9 @@ public class C_main implements Initializable{
         vBox.getChildren().add(vBox1);
 
         borderPanePrimary.setCenter(vBox);
+
+        if (! w.getWord().isEmpty() && w.getWord() != null)
+            UserDictionary.dunamicAddToDictionary(w);
     }
 }
 
@@ -862,6 +870,13 @@ class UserDictionary {
 
         tableView.getColumns().addAll(word, transcription, translate, userTranslate, note);
         tableView.setEditable(true);
+
+        tableView.getItems().addListener((ListChangeListener<? super Words>) c -> {
+            for (Words words : c.getList()) {
+                UserVocabularyManager.addWordToVocabulary(((Label) ((HBox) ((VBox) mPane.getTop()).getChildren().get(1)).getChildren()
+                        .get(1)).getText().trim(), words);
+            }
+        });
         mPane.setLeft(tableView);
     }
 
@@ -888,10 +903,6 @@ class UserDictionary {
 
                 textField.focusedProperty().addListener((observable, oldValue, newValue) -> {
                     if (! newValue)
-                        commitEdit(textField.getText());
-                });
-                textField.addEventHandler(KeyEvent.KEY_RELEASED, event -> {
-                    if (event.getCode().ordinal() == 0)
                         commitEdit(textField.getText());
                 });
             }
@@ -932,8 +943,10 @@ class UserDictionary {
     }
 
     public static void dunamicAddToDictionary(Words words){
-        UserVocabularyManager.addWordToVocabulary(words.getInfo().substring(0, words.getInfo().indexOf(':')), words);
         if (mPane != null && mPane.getLeft() instanceof TableView)
             ((TableView) mPane.getLeft()).getItems().add(0, words);
+        else if (mPane != null && mPane.getLeft() instanceof ScrollPane)
+            UserVocabularyManager.addWordToVocabulary(((Label) ((HBox) ((VBox) ((ScrollPane) mPane.getLeft()).getContent()).getChildren().get(0))
+                    .getChildren().get(0)).getText().trim(), words);
     }
 }

@@ -225,12 +225,14 @@ public class ReadLog {
                     }
 
                     fw = new FileWriter(pathToDictionary, false);
-                    String s = anAllUserVocabulary.getInfo();
+                    String s = anAllUserVocabulary.getInfo() + "";
                     if (s.equals("null") || s.equals(""))
                         s = "";
-                    fw.write("//" + s);
+                    fw.write("//");
+                    fw.write(s);
                     for (Words words : anAllUserVocabulary.getWordsCollection()) {
-                        fw.write("\n" + words.getInfo().substring(0, words.getInfo().indexOf(":")) + ":");
+                        fw.write("\n");
+                        fw.write(words.getInfo().substring(0, words.getInfo().indexOf(":")) + ":");
                         fw.write(words.getWord() + " = [");
                         fw.write(words.getTranscription() + "] = ");
                         fw.write(words.getTranslate() + " ||> ");
