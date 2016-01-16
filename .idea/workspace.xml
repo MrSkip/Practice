@@ -2,23 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="add tableView t oUserVocabularies">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DesktopApp/Resource/UserDictionaries/Stepan.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DesktopApp/Resource/UserDictionaries/Visible.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/teaching/DeleteSelectedRow.java" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Vocabulary/DesktopApp/Resource/Dictionaries/en-uk.txt" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Vocabulary/DesktopApp/Resource/Dictionaries/uk-en.txt" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/src/DesktopApp/Resource/Dictionaries/en-uk.txt" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/src/DesktopApp/Resource/Dictionaries/uk-en.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Vocabulary/DesktopApp/Controlling/C_main.class" afterPath="$PROJECT_DIR$/out/production/Vocabulary/DesktopApp/Controlling/C_main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Vocabulary/DesktopApp/Controlling/HandMadeControllers/TypedWords.class" afterPath="$PROJECT_DIR$/out/production/Vocabulary/DesktopApp/Controlling/HandMadeControllers/TypedWords.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Vocabulary/DesktopApp/Controlling/StageHistory.class" afterPath="$PROJECT_DIR$/out/production/Vocabulary/DesktopApp/Controlling/StageHistory.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Vocabulary/DesktopApp/Controlling/UserDictionary$1.class" afterPath="$PROJECT_DIR$/out/production/Vocabulary/DesktopApp/Controlling/UserDictionary$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Vocabulary/DesktopApp/Controlling/UserDictionary.class" afterPath="$PROJECT_DIR$/out/production/Vocabulary/DesktopApp/Controlling/UserDictionary.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Vocabulary/DesktopApp/Tools/Vocabulary/UserVocabularyManager.class" afterPath="$PROJECT_DIR$/out/production/Vocabulary/DesktopApp/Tools/Vocabulary/UserVocabularyManager.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Vocabulary/DesktopApp/Controlling/minorControllers/C_study.class" afterPath="$PROJECT_DIR$/out/production/Vocabulary/DesktopApp/Controlling/minorControllers/C_study.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Vocabulary/DesktopApp/Tools/ShowMinorStage.class" afterPath="$PROJECT_DIR$/out/production/Vocabulary/DesktopApp/Tools/ShowMinorStage.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Vocabulary/sample/playingVideo/Controller.class" afterPath="$PROJECT_DIR$/out/production/Vocabulary/sample/playingVideo/Controller.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Vocabulary/DesktopApp/Resource/UserDictionaries/mula.txt" afterPath="$PROJECT_DIR$/out/production/Vocabulary/DesktopApp/Resource/UserDictionaries/mula.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Vocabulary/DesktopApp/Resource/log.txt" afterPath="$PROJECT_DIR$/out/production/Vocabulary/DesktopApp/Resource/log.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DesktopApp/Controlling/C_main.java" afterPath="$PROJECT_DIR$/src/DesktopApp/Controlling/C_main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DesktopApp/Resource/UserDictionaries/mula.txt" afterPath="$PROJECT_DIR$/src/DesktopApp/Resource/UserDictionaries/mula.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DesktopApp/Resource/UserDictionaries/Stepan.txt" afterPath="$PROJECT_DIR$/src/DesktopApp/Resource/UserDictionaries/Stepan.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DesktopApp/Resource/UserDictionaries/Visible.txt" afterPath="$PROJECT_DIR$/src/DesktopApp/Resource/UserDictionaries/Visible.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DesktopApp/Resource/log.txt" afterPath="$PROJECT_DIR$/src/DesktopApp/Resource/log.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DesktopApp/Tools/ReadLog.java" afterPath="$PROJECT_DIR$/src/DesktopApp/Tools/ReadLog.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DesktopApp/Tools/Vocabulary/UserVocabularyManager.java" afterPath="$PROJECT_DIR$/src/DesktopApp/Tools/Vocabulary/UserVocabularyManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DesktopApp/Tools/Vocabulary/Words.java" afterPath="$PROJECT_DIR$/src/DesktopApp/Tools/Vocabulary/Words.java" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -90,60 +95,25 @@
     <favorites_list name="JavaFxApplication" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file leaf-file-name="C_main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/DesktopApp/Controlling/C_main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6447761">
-              <caret line="879" column="13" selection-start-line="879" selection-start-column="13" selection-end-line="879" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.56530213">
+              <caret line="288" column="0" selection-start-line="288" selection-start-column="0" selection-end-line="288" selection-end-column="0" />
               <folding>
                 <element signature="method#initialize#0;class#C_main#0" expanded="false" />
                 <element signature="method#show#0;class#C_main#0" expanded="false" />
                 <element signature="method#setImages#0;class#C_main#0" expanded="false" />
                 <element signature="method#setListeners#0;class#C_main#0" expanded="false" />
                 <element signature="method#getStageForChooseLanguage#0;class#C_main#0" expanded="false" />
-                <element signature="method#showPaneWithTranslate#0;class#C_main#0" expanded="false" />
                 <element signature="class#StageHistory#0" expanded="false" />
                 <element signature="method#createFirstPane#0;class#UserDictionary#0" expanded="false" />
                 <element signature="method#createFirstPane#1;class#UserDictionary#0" expanded="false" />
+                <element signature="method#setCurrentVocabulary#0;class#UserDictionary#0" expanded="false" />
                 <element signature="method#createBorderOfDictionariesNames#0;class#UserDictionary#0" expanded="false" />
-                <element signature="e#39773#39774#0" expanded="true" />
-                <element signature="e#39805#39806#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DesktopApp/GUI/Style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.461538">
-              <caret line="71" column="12" selection-start-line="71" selection-start-column="12" selection-end-line="71" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mula.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DesktopApp/Resource/UserDictionaries/mula.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Words.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DesktopApp/Tools/Vocabulary/Words.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-              <folding>
-                <element signature="e#496#497#0" expanded="true" />
-                <element signature="e#523#524#0" expanded="true" />
-                <element signature="e#554#555#0" expanded="true" />
-                <element signature="e#581#582#0" expanded="true" />
+                <element signature="method#createSecondPane#0;class#UserDictionary#0" expanded="false" />
+                <element signature="method#setCellFactory#0;class#UserDictionary#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -153,24 +123,22 @@
         <entry file="file://$PROJECT_DIR$/src/DesktopApp/Tools/Vocabulary/UserVocabularyManager.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-              <folding>
-                <element signature="e#1757#1758#0" expanded="true" />
-                <element signature="e#1796#1797#0" expanded="true" />
-                <element signature="e#2076#2077#0" expanded="true" />
-                <element signature="e#2114#2115#0" expanded="true" />
-              </folding>
+              <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TypedWords.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DesktopApp/Controlling/HandMadeControllers/TypedWords.java">
+      <file leaf-file-name="Words.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DesktopApp/Tools/Vocabulary/Words.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="79" column="50" selection-start-line="79" selection-start-column="50" selection-end-line="79" selection-end-column="50" />
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="false" />
+                <element signature="e#582#583#0" expanded="true" />
+                <element signature="e#609#610#0" expanded="true" />
+                <element signature="e#649#650#0" expanded="true" />
+                <element signature="e#681#682#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -206,7 +174,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/sample/style.css" />
         <option value="$PROJECT_DIR$/src/sample/mainWidnows/MainController.java" />
         <option value="$PROJECT_DIR$/src/sample/mainWidnows/mainStyle.css" />
         <option value="$PROJECT_DIR$/src/sample/mainWidnows/MainView.fxml" />
@@ -253,9 +220,10 @@
         <option value="$PROJECT_DIR$/src/DesktopApp/Resource/UserDictionaries/zorro.txt" />
         <option value="$PROJECT_DIR$/src/DesktopApp/Resource/UserDictionaries/copo.txt" />
         <option value="$PROJECT_DIR$/src/DesktopApp/Resource/log.txt" />
+        <option value="$PROJECT_DIR$/src/DesktopApp/Resource/UserDictionaries/mula.txt" />
+        <option value="$PROJECT_DIR$/src/teaching/DeleteSelectedRow.java" />
         <option value="$PROJECT_DIR$/src/DesktopApp/Tools/Vocabulary/UserVocabularyManager.java" />
         <option value="$PROJECT_DIR$/src/DesktopApp/Tools/Vocabulary/Words.java" />
-        <option value="$PROJECT_DIR$/src/DesktopApp/Resource/UserDictionaries/mula.txt" />
         <option value="$PROJECT_DIR$/src/DesktopApp/Controlling/C_main.java" />
       </list>
     </option>
@@ -310,34 +278,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Vocabulary" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Vocabulary" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Vocabulary" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Vocabulary" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sample" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="Scope">
         <subPane subId="Problems" />
         <subPane subId="Project Files">
@@ -660,6 +600,34 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Vocabulary" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Vocabulary" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Vocabulary" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Vocabulary" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sample" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -679,21 +647,21 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.smartKeys" />
     <property name="settings.editor.splitter.proportion" value="0.21645446" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="132" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="131" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="161" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="159" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="162" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="160" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="837" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="829" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="155" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="154" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="153" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="151" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="155" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="154" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="829" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="820" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="SearchEverywhereHistoryKey" value="searchField&#9;PSI&#9;JAVA://DesktopApp.Controlling.C_main#searchField" />
   </component>
@@ -1317,6 +1285,9 @@
       <workItem from="1452578900542" duration="999000" />
       <workItem from="1452681502093" duration="20336000" />
       <workItem from="1452852935521" duration="28685000" />
+      <workItem from="1452956463373" duration="117000" />
+      <workItem from="1452956852610" duration="152000" />
+      <workItem from="1452957047735" duration="9105000" />
     </task>
     <task id="LOCAL-00001" summary="add class AllVocabulary">
       <created>1450868362663</created>
@@ -1328,7 +1299,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="645995000" />
+    <option name="totallyTimeSpent" value="655369000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1341,21 +1312,20 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="768" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295129" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32378224" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32312405" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32808024" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32771823" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24068768" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32664755" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22492836" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30659026" sideWeight="0.49705014" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19818456" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19818456" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295129" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1372,6 +1342,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295129" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1396,7 +1367,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="28" />
+      <option name="time" value="29" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1405,30 +1376,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/DesktopApp/GUI/start.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DesktopApp/Controlling/C_start.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DesktopApp/Controlling/minorControllers/C_setting.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2992">
-          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/DesktopApp/Controlling/minorControllers/C_print.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.1904">
@@ -1658,7 +1605,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2603939">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1666,10 +1612,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="196" column="26" selection-start-line="196" selection-start-column="26" selection-end-line="196" selection-end-column="26" />
-          <folding>
-            <element signature="method#referenceImages#0;class#C_study#0" expanded="false" />
-            <element signature="method#setImagesProperties#0;class#C_study#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1677,13 +1619,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.595186">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DesktopApp/Tools/Vocabulary/AllVocabularies.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.702407">
-          <caret line="42" column="5" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -1724,11 +1659,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DesktopApp/Controlling/HandMadeControllers/TypedWords.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="1.6592">
           <caret line="79" column="50" selection-start-line="79" selection-start-column="50" selection-end-line="79" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1736,7 +1669,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7968128">
           <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1751,49 +1683,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.6442105">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DesktopApp/Tools/Vocabulary/UserVocabularyManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-          <folding>
-            <element signature="e#1757#1758#0" expanded="true" />
-            <element signature="e#1796#1797#0" expanded="true" />
-            <element signature="e#2076#2077#0" expanded="true" />
-            <element signature="e#2114#2115#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DesktopApp/GUI/Style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.461538">
+        <state vertical-scroll-proportion="2.0150251">
           <caret line="71" column="12" selection-start-line="71" selection-start-column="12" selection-end-line="71" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DesktopApp/Tools/Vocabulary/Words.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-          <folding>
-            <element signature="e#496#497#0" expanded="true" />
-            <element signature="e#523#524#0" expanded="true" />
-            <element signature="e#554#555#0" expanded="true" />
-            <element signature="e#581#582#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DesktopApp/Resource/UserDictionaries/mula.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.0544">
           <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1801,29 +1704,81 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7629482">
           <caret line="40" column="32" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/teaching/DeleteSelectedRow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.1497585">
+          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/javafx-src.zip!/javafx/scene/control/cell/TextFieldTableCell.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="201" column="30" selection-start-line="201" selection-start-column="30" selection-end-line="201" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_60/javafx-src.zip!/javafx/scene/control/Cell.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.760234">
+          <caret line="347" column="19" selection-start-line="347" selection-start-column="19" selection-end-line="347" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DesktopApp/Tools/Vocabulary/AllVocabularies.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46978557">
+          <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
           <folding>
-            <element signature="e#0#1309#0" expanded="true" />
+            <element signature="e#754#755#0" expanded="true" />
+            <element signature="e#792#793#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DesktopApp/Tools/Vocabulary/UserVocabularyManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DesktopApp/Tools/Vocabulary/Words.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <element signature="e#582#583#0" expanded="true" />
+            <element signature="e#609#610#0" expanded="true" />
+            <element signature="e#649#650#0" expanded="true" />
+            <element signature="e#681#682#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DesktopApp/Controlling/C_main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6447761">
-          <caret line="879" column="13" selection-start-line="879" selection-start-column="13" selection-end-line="879" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.56530213">
+          <caret line="288" column="0" selection-start-line="288" selection-start-column="0" selection-end-line="288" selection-end-column="0" />
           <folding>
             <element signature="method#initialize#0;class#C_main#0" expanded="false" />
             <element signature="method#show#0;class#C_main#0" expanded="false" />
             <element signature="method#setImages#0;class#C_main#0" expanded="false" />
             <element signature="method#setListeners#0;class#C_main#0" expanded="false" />
             <element signature="method#getStageForChooseLanguage#0;class#C_main#0" expanded="false" />
-            <element signature="method#showPaneWithTranslate#0;class#C_main#0" expanded="false" />
             <element signature="class#StageHistory#0" expanded="false" />
             <element signature="method#createFirstPane#0;class#UserDictionary#0" expanded="false" />
             <element signature="method#createFirstPane#1;class#UserDictionary#0" expanded="false" />
+            <element signature="method#setCurrentVocabulary#0;class#UserDictionary#0" expanded="false" />
             <element signature="method#createBorderOfDictionariesNames#0;class#UserDictionary#0" expanded="false" />
-            <element signature="e#39773#39774#0" expanded="true" />
-            <element signature="e#39805#39806#0" expanded="true" />
+            <element signature="method#createSecondPane#0;class#UserDictionary#0" expanded="false" />
+            <element signature="method#setCellFactory#0;class#UserDictionary#0" expanded="false" />
           </folding>
         </state>
       </provider>

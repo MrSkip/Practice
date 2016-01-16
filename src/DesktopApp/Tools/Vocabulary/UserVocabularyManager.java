@@ -32,8 +32,32 @@ public class UserVocabularyManager {
     public static void addWordToVocabulary(String vocabularyName, Words words){
         int x = getIndexOfVocabularyName(vocabularyName);
         if (x == -1) return;
+
+        boolean bl = true;
+        for (Words words1 : allVocabularies.get(x).getWordsCollection()) {
+            if (words1.getWord().equals(words.getWord())) {
+                bl = false;
+                break;
+            }
+        }
+        if (bl){
+            Collection<Words> collection = new ArrayList<>();
+            collection.add(words);
+            collection.addAll(allVocabularies.get(x).getWordsCollection());
+            allVocabularies.get(x).setWordsCollection(collection);
+        }
+    }
+
+    public static void removeWordFromVocabulary(String vocabularyName, Words words){
+        int x = getIndexOfVocabularyName(vocabularyName);
+        if (x == -1) return;
         Collection<Words> collection = allVocabularies.get(x).getWordsCollection();
-        collection.add(words);
+        for (Words words1 : collection) {
+            if (words1.equals(words)){
+                collection.remove(words1);
+                break;
+            }
+        }
         allVocabularies.get(x).setWordsCollection(collection);
     }
 
@@ -63,6 +87,15 @@ public class UserVocabularyManager {
 
     public static Vector<AllVocabularies> getAllVocabularies(){
         return allVocabularies;
+    }
+
+    public static void move(String vocabularyName){
+        int x = getIndexOfVocabularyName(vocabularyName);
+        if (x == -1)
+            return;
+
+        allVocabularies.add(0, allVocabularies.get(x));
+        allVocabularies.remove(x + 1);
     }
 
     public static Collection<Words> getVocabulary(String vocabularyName){
