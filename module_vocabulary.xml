@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_vocabulary" default="compile.module.vocabulary">
+  <dirname property="module.vocabulary.basedir" file="${ant.file.module_vocabulary}"/>
+  
+  <property name="module.jdk.home.vocabulary" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.vocabulary" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.vocabulary" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.vocabulary" value="-encoding UTF-8 -source 8 -target 8 ${compiler.args}"/>
+  
+  <property name="vocabulary.output.dir" value="${module.vocabulary.basedir}/out/production/Vocabulary"/>
+  <property name="vocabulary.testoutput.dir" value="${module.vocabulary.basedir}/out/test/Vocabulary"/>
+  
+  <path id="vocabulary.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="vocabulary.module.production.classpath">
+    <path refid="${module.jdk.classpath.vocabulary}"/>
+  </path>
+  
+  <path id="vocabulary.runtime.production.module.classpath">
+    <pathelement location="${vocabulary.output.dir}"/>
+  </path>
+  
+  <path id="vocabulary.module.classpath">
+    <path refid="${module.jdk.classpath.vocabulary}"/>
+    <pathelement location="${vocabulary.output.dir}"/>
+  </path>
+  
+  <path id="vocabulary.runtime.module.classpath">
+    <pathelement location="${vocabulary.testoutput.dir}"/>
+    <pathelement location="${vocabulary.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.vocabulary">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.vocabulary">
+    <patternset refid="excluded.from.module.vocabulary"/>
+  </patternset>
+  
+  <path id="vocabulary.module.sourcepath">
+    <dirset dir="${module.vocabulary.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.vocabulary" depends="compile.module.vocabulary.production,compile.module.vocabulary.tests" description="Compile module Vocabulary"/>
+  
+  <target name="compile.module.vocabulary.production" depends="register.custom.compilers" description="Compile module Vocabulary; production classes">
+    <mkdir dir="${vocabulary.output.dir}"/>
+    <javac2 destdir="${vocabulary.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.vocabulary}/javac">
+      <compilerarg line="${compiler.args.vocabulary}"/>
+      <bootclasspath refid="vocabulary.module.bootclasspath"/>
+      <classpath refid="vocabulary.module.production.classpath"/>
+      <src refid="vocabulary.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.vocabulary"/>
+    </javac2>
+    
+    <copy todir="${vocabulary.output.dir}">
+      <fileset dir="${module.vocabulary.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.vocabulary.tests" depends="register.custom.compilers,compile.module.vocabulary.production" description="compile module Vocabulary; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.vocabulary" description="cleanup module">
+    <delete dir="${vocabulary.output.dir}"/>
+    <delete dir="${vocabulary.testoutput.dir}"/>
+  </target>
+</project>

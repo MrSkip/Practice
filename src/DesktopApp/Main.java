@@ -1,19 +1,17 @@
 package DesktopApp;
 
 import DesktopApp.Controlling.C_main;
-import DesktopApp.Tools.CreateStage;
+import DesktopApp.GUI.CreateStage;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
-
 public class Main extends Application{
-    static Stage stage = null;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
         CreateStage createStage = null;
         try {
-            createStage = new CreateStage("run", "..\\GUI\\main.fxml", 600, 400, false, true);
+            createStage = new CreateStage("run", System.getProperty("user.dir") + "\\DesktopApp\\GUI\\main.fxml", 100, 100, false, true);
         }
         catch (Exception e){
             e.printStackTrace();

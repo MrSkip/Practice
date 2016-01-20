@@ -1,0 +1,78 @@
+#scene{
+    -fx-background-color: #909090;
+}
+
+#searchField{
+    -fx-background-radius: 19;
+    -fx-background-color: #c8c8c8;
+    -fx-effect: dropshadow(gaussian, #747474, 0, 1.0, 1.6, 1);
+}
+
+#combo{
+    -fx-background-color: #bababa;
+    -fx-font-size: 12;
+    -fx-pref-height: 25;
+    -fx-pref-width: 140;
+}
+
+#labelForVocabulary{
+    -fx-background-color: #909090;
+    -fx-font-style:italic;
+    -fx-font-size: 12;
+    -fx-pref-width: 125;
+    -fx-effect: innershadow( gaussian, rgba(85, 85, 85, 0.5), 10, 0, 1, 1 );
+    -fx-background-radius: 5;
+}
+
+#labelForFind{
+    -fx-background-color: #5995a7;
+    -fx-font-style: normal;
+    -fx-font-size: 14;
+    -fx-pref-width: 125;
+}
+
+#menu{
+    -fx-background-color: #c0c0c0;
+    -fx-background-radius: 5;
+    -fx-effect: dropshadow(gaussian, #747474, 2, 1.5, 2, 1);
+}
+
+#menu2{
+    -fx-background-color: #c0c0c0;
+    /*-fx-background-radius: 5;*/
+    /*-fx-effect: innershadow(gaussian, #747474, 1, 1.5, 2, 2);*/
+    -fx-effect: innershadow( gaussian, rgba(85, 85, 85, 0.5), 10, 0, 1, 1 );
+}
+
+#menupane{
+    -fx-background-color: #9e9e9e;
+}
+
+#study{
+    -fx-background-color: #c0c0c0;
+    -fx-background-radius: 5;
+    -fx-effect: dropshadow(gaussian, #747474, 1, 1.5, 1, 1);
+}
+
+.text-area .content{
+    -fx-background-color: #d8d8d8;
+}
+
+#textArea {
+    -fx-pref-height: 100;
+    -fx-font-weight: 400px;
+    -fx-text-fill: black;
+}
+
+#vBoxBt{
+    -fx-background-color: black;
+    -fx-pref-height: 25px;
+}
+
+#outputDate{
+    -fx-font-size: 26;
+    -fx-font-family: Playbill;
+    -fx-background-color: #858585;
+    -fx-text-fill: #b0b0b0;
+    -fx-pref-width: 150px;
+}

@@ -1,7 +1,7 @@
 package DesktopApp.Controlling;
 
 import DesktopApp.Controlling.HandMadeControllers.TypedWords;
-import DesktopApp.Tools.CreateStage;
+import DesktopApp.GUI.CreateStage;
 import DesktopApp.Tools.MyClassWithText;
 import DesktopApp.Tools.ReadLog;
 import DesktopApp.Tools.ShowMinorStage;
@@ -10,32 +10,26 @@ import DesktopApp.Tools.Vocabulary.UserVocabularyManager;
 import DesktopApp.Tools.Vocabulary.Words;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.property.ReadOnlyStringWrapper;
-import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
-import javafx.collections.MapChangeListener;
 import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.*;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.effect.Blend;
 import javafx.scene.effect.Lighting;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import javafx.util.Callback;
 
 import java.io.File;
 import java.net.MalformedURLException;
@@ -60,10 +54,10 @@ public class C_main implements Initializable{
         historyOfSearch = new Vector<>();
 
         manager = Manager.getInstance();
-        stage_study = new CreateStage("", "..\\GUI\\minorScenes\\study.fxml", 215, 304, true, false).getStage();
+        stage_study = new CreateStage("", System.getProperty("user.dir") + "\\DesktopApp\\GUI\\minorScenes\\study.fxml", 215, 304,  true, false).getStage();
 
         borderPanePrimary.getStylesheets().clear();
-        borderPanePrimary.getStylesheets().add(getClass().getResource("..\\GUI\\Style.css").toExternalForm());
+        borderPanePrimary.getStylesheets().add(getClass().getResource("Style.css").toExternalForm());
         borderPanePrimary.setId("scene");
 
         setImages();
@@ -78,10 +72,10 @@ public class C_main implements Initializable{
 
 //      Assign button "study" with the show stage "study"
         new ShowMinorStage(
-                1, study.getHeight(),
+        1, study.getHeight(),
                 stage_study, stage).setObject(study);
 
-//        // Assign label "userChooseDictionary" with the show stage "getStageForChooseLanguage()"
+        // Assign label "userChooseDictionary" with the show stage "getStageForChooseLanguage()"
         new ShowMinorStage(
                 -23, userChooseDictionary.getHeight(),
                 getStageForChooseLanguage(), stage).setObject(userChooseDictionary);
@@ -121,14 +115,16 @@ public class C_main implements Initializable{
 
     private void setImages() {
         try {
-            find.setImage(new Image(new File("D:\\GUI\\find1.png").toURI().toURL().toString()));
+            find.setImage(new Image(new File(ReadLog.getDesktopAppFolder() + "Resource\\images\\find1.png").toURI().toURL().toString()));
         } catch (MalformedURLException e) {
+            System.out.println("Resource\\images\\find1.png");
             e.printStackTrace();
         }
 
         try {
-            history.setImage(new Image(new File("D:\\GUI\\history1.png").toURI().toURL().toString()));
+            history.setImage(new Image(new File(ReadLog.getDesktopAppFolder() + "Resource\\images\\history1.png").toURI().toURL().toString()));
         } catch (MalformedURLException e) {
+            System.out.println("Resource\\images\\history1.png");
             e.printStackTrace();
         }
     }
@@ -140,9 +136,9 @@ public class C_main implements Initializable{
                 String path;
 
                 if (event.getEventType() == MouseEvent.MOUSE_EXITED)
-                    path = "D:\\GUI\\find1.png";
+                    path = ReadLog.getDesktopAppFolder() + "Resource\\images\\find1.png";
                 else
-                    path = "D:\\GUI\\find2.png";
+                    path = ReadLog.getDesktopAppFolder() + "Resource\\images\\find2.png";
 
                 try {
                     find.setImage(new Image(new File(path).toURI().toURL().toString()));
@@ -169,9 +165,9 @@ public class C_main implements Initializable{
                 String path;
 
                 if (event.getEventType() == MouseEvent.MOUSE_EXITED)
-                    path = "D:\\GUI\\history1.png";
+                    path = ReadLog.getDesktopAppFolder() + "Resource\\images\\history1.png";
                 else
-                    path = "D:\\GUI\\history2.png";
+                    path = ReadLog.getDesktopAppFolder() + "Resource\\images\\history2.png";
 
                 try {
                     history.setImage(new Image(new File(path).toURI().toURL().toString()));
@@ -214,7 +210,7 @@ public class C_main implements Initializable{
             Label label = new Label(" " + manager.getAllVocabularies().get(i).getVocabularyName());
 
             label.getStylesheets().clear();
-            label.getStylesheets().add(this.getClass().getResource("..\\GUI\\Style.css").toExternalForm());
+            label.getStylesheets().add(this.getClass().getResource("Style.css").toExternalForm());
             label.setId("labelForVocabulary");
 
             label.setCursor(Cursor.HAND);
@@ -290,7 +286,12 @@ public class C_main implements Initializable{
             vector.add(words.getTranslate().trim());
 
             w.setWord(words.getWord().trim());
-            w.setTranscription(words.getTranscription().trim());
+
+            if (words.getTranscription() != null && ! words.getTranscription().isEmpty())
+                w.setTranscription(words.getTranscription().trim());
+            else
+                w.setTranscription("");
+
             w.setTranslate(w.getTranslate().trim() + " " + words.getTranslate().trim());
             w.setInfo(userChooseDictionary.getText().trim() + ":");
         }
@@ -491,8 +492,7 @@ class StageHistory extends ShowMinorStage {
             vBox.getChildren().addAll(scrollPane);
         }
         if (vector.size() != 0) {
-            String name = System.getProperty("user.dir") +
-                    "\\src\\DesktopApp\\Resource\\images\\" + "delete85.png";
+            String name = ReadLog.getDesktopAppFolder() + "Resource\\images\\" + "delete85.png";
             File file = new File(name);
             ImageView imageView = new ImageView();
             imageView.setFitHeight(25);
@@ -606,22 +606,31 @@ class UserDictionary {
                         if (!Character.isLetterOrDigit(event1.getCharacter().toCharArray()[0]) || textField.getText().trim().length() > 250) {
                             event1.consume();
                         }
+                        if (Character.getDirectionality(event1.getCharacter().toCharArray()[0]) == 10) {
+                            deleteTextFieldForTypeName();
+                            HBox.setMargin(((HBox) mPane.getBottom()).getChildren().get(1), new Insets(1, 12, 1, 3));
+                            borderPane.setLeft(mPane);
+                        }
                     });
                 }
-                else {
-                    String s = ((TextField) ((HBox) mPane.getBottom()).getChildren().get(0)).getText().trim() + "";
-                    if (!s.isEmpty()) {
-                        UserVocabularyManager.createVocabulary(s);
-                        createBorderOfDictionariesNames();
-                    }
-                    ((HBox) mPane.getBottom()).getChildren().remove(0);
-                    ((HBox) mPane.getBottom()).getChildren().add(1, buttonDelete);
-                    ((Button) ((HBox) mPane.getBottom()).getChildren().get(0)).setText("Create");
+                else if ( ! buttonCreate.getText().equals("Create")){
+                    deleteTextFieldForTypeName();
                 }
                 HBox.setMargin(((HBox) mPane.getBottom()).getChildren().get(1), new Insets(1, 12, 1, 3));
                 borderPane.setLeft(mPane);
             }
         });
+    }
+
+    private static void deleteTextFieldForTypeName(){
+        String s = ((TextField) ((HBox) mPane.getBottom()).getChildren().get(0)).getText().trim() + "";
+        if (!s.isEmpty()) {
+            UserVocabularyManager.createVocabulary(s);
+            createBorderOfDictionariesNames();
+        }
+        ((HBox) mPane.getBottom()).getChildren().remove(0);
+        ((HBox) mPane.getBottom()).getChildren().add(1, buttonDelete);
+        ((Button) ((HBox) mPane.getBottom()).getChildren().get(0)).setText("Create");
     }
 
     public static void createFirstPane(){

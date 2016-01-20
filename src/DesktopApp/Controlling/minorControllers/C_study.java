@@ -1,12 +1,10 @@
 package DesktopApp.Controlling.minorControllers;
 
 import DesktopApp.Tools.ReadLog;
-import javafx.event.EventType;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;
-import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -41,8 +39,7 @@ public class C_study implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
-        url = this.getClass().getResource("..\\..\\GUI\\minorScenes\\style.css");
+        url = this.getClass().getResource("style.css");
         if (url == null) {
             System.out.println("Resource not found. Aborting.");
             System.exit(-1);
@@ -137,8 +134,7 @@ public class C_study implements Initializable{
 
     // Reference images with array of ImageView "images[]"
     private void referenceImages(){
-        String path = System.getProperty("user.dir") +
-                "\\src\\DesktopApp\\Resource\\linksImage\\";
+        String path = ReadLog.getDesktopAppFolder() + "Resource\\linksImage\\";
 
         images = new ImageView[8];
 
@@ -340,8 +336,7 @@ public class C_study implements Initializable{
     private void setAdd(MouseEvent event){
         if (event.getEventType() == MouseEvent.MOUSE_ENTERED ||
                 event.getEventType() == MouseEvent.MOUSE_EXITED){
-            String path = System.getProperty("user.dir") +
-                    "\\src\\DesktopApp\\Resource\\images\\";
+            String path = ReadLog.getDesktopAppFolder() + "Resource\\images\\";
             String imageName;
 
             if (event.getEventType() == MouseEvent.MOUSE_ENTERED)
@@ -373,8 +368,7 @@ public class C_study implements Initializable{
     }
 
     private void setAddImage(){
-        String path = System.getProperty("user.dir") +
-                "\\src\\DesktopApp\\Resource\\images\\"
+        String path = ReadLog.getDesktopAppFolder() + "Resource\\images\\"
                 + "left224.png";
 
         File f = new File(path);

@@ -77,10 +77,11 @@ public class TypedWords extends ShowMinorStage{
                 return;
             }
 
-            if (textField.getText().length() == 1)
-            if ("qwertyuiopasdfghjklzxcvbnm".contains(textField.getText().toLowerCase()))
+            if (textField.getText().length() >= 1)
+            if ("qwertyuiopasdfghjklzxcvbnm".contains(String.valueOf(textField.getText().toLowerCase().trim().toCharArray()[0])))
                 label.setText("English-Ukraine");
-            else label.setText("Ukraine-English");
+            else
+                label.setText("Ukraine-English");
 
             switch (event.getCode().getName()) {
                 case "Enter":
@@ -202,6 +203,7 @@ public class TypedWords extends ShowMinorStage{
 
     // Method using for send into main class the user chose word
     private void selected(String word){
+        System.out.println(word);
         this.word.setText(word + "#" + label.getText());
 
         textField.setText("");

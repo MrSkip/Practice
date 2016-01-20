@@ -25,11 +25,11 @@ public class ReadLog {
     private static Vector<AllVocabularies>
             allUserVocabulary = new Vector<>(),
             oldUserVocabulary = new Vector<>();
+    private static String desktopAppFolder = System.getProperty("user.dir") + "\\DesktopApp\\";
 
     public static Vector<AllVocabularies> getAllVocabularies() {
         // if the method is not call than call him
         if (!IfRead) readLog();
-
         Vector<AllVocabularies> allVocabularies = new Vector<>();
 
         for (String path : vocabularyPath) {
@@ -59,7 +59,7 @@ public class ReadLog {
             assert languagePath != null;
             FileInputStream fstream = new FileInputStream(languagePath);
             DataInputStream in = new DataInputStream(fstream);
-            BufferedReader br = new BufferedReader(new InputStreamReader(in, Charset.defaultCharset()));
+            BufferedReader br = new BufferedReader(new InputStreamReader(in, "utf-8"));
 
             String str;
 
@@ -98,8 +98,8 @@ public class ReadLog {
 
     public static void readLog() {
         IfRead = true;
-        String pathToLog = System.getProperty("user.dir") +
-                "\\src\\DesktopApp\\Resource\\log.txt";
+        System.out.println("READ LOGFILE-------------------------------------------------");
+        String pathToLog = desktopAppFolder + "Resource\\log.txt";
 
         if (!vocabularyPath.isEmpty()) vocabularyPath.clear();
         if (!studyLog.isEmpty()) studyLog.clear();
@@ -110,7 +110,7 @@ public class ReadLog {
         try {
             FileInputStream fstream = new FileInputStream(pathToLog);
             DataInputStream in = new DataInputStream(fstream);
-            BufferedReader br = new BufferedReader(new InputStreamReader(in, Charset.defaultCharset()));
+            BufferedReader br = new BufferedReader(new InputStreamReader(in, "windows-1251"));
             String str;
 
             while ((str = br.readLine()) != null) {
@@ -148,8 +148,7 @@ public class ReadLog {
                 oldUserVocabulary.addAll(allUserVocabulary.stream().collect(Collectors.toList()));
             }
             if (COUNT_OF_USE == 0) {
-                File folder = new File(System.getProperty("user.dir") +
-                        "\\src\\DesktopApp\\Resource\\Dictionaries");
+                File folder = new File(desktopAppFolder + "Resource\\Dictionaries");
                 File[] listOfFiles = folder.listFiles();
                 vocabularyPath.clear();
                 if (listOfFiles != null) {
@@ -170,8 +169,7 @@ public class ReadLog {
     public static boolean writeLog() {
         if (!IfRead) return false;
 
-        String pathToLog = System.getProperty("user.dir") +
-                "\\src\\DesktopApp\\Resource\\log.txt";
+        String pathToLog = desktopAppFolder + "Resource\\log.txt";
         FileWriter fw;
         try {
             fw = new FileWriter(pathToLog, false);
@@ -202,6 +200,7 @@ public class ReadLog {
 
             fw.write("\n~USER DICTIONARY");
             for (AllVocabularies vocabularies : allUserVocabulary) {
+                System.out.println(vocabularies.getVocabularyName());
                 forUserDictionary();
                 fw.write("\n" + vocabularies.getVocabularyName());
             }
@@ -212,8 +211,8 @@ public class ReadLog {
                 for (AllVocabularies anAllUserVocabulary : allUserVocabulary) {
                     if (anAllUserVocabulary.getVocabularyName().equals(""))
                         continue;
-                    String pathToDictionary = System.getProperty("user.dir") +
-                            "\\src\\DesktopApp\\Resource\\UserDictionaries\\" + anAllUserVocabulary.getVocabularyName() + ".txt";
+                    String pathToDictionary = desktopAppFolder + "Resource\\UserDictionaries\\"
+                            +  anAllUserVocabulary.getVocabularyName() + ".txt";
                     File file = new File(pathToDictionary);
                     try {
                         if (file.createNewFile())
@@ -243,10 +242,11 @@ public class ReadLog {
                 }
             }
             oldUserVocabulary.stream().filter(allVocabularies -> allUserVocabulary.indexOf(allVocabularies) == -1).forEach(allVocabularies -> {
-                String pathToDictionary = System.getProperty("user.dir") +
-                        "\\src\\DesktopApp\\Resource\\UserDictionaries\\" + allVocabularies.getVocabularyName() + ".txt";
-                if (new File(pathToDictionary).exists())
+                String pathToDictionary = desktopAppFolder + "Resource\\UserDictionaries\\" + allVocabularies.getVocabularyName() + ".txt";
+                if (new File(pathToDictionary).exists()) {
+                    System.out.println("delete - " + pathToDictionary);
                     new File(pathToDictionary).delete();
+                }
             });
         } catch (Exception e) {
             System.out.println("Error: \n" + e);
@@ -303,21 +303,18 @@ public class ReadLog {
     }
 
     public static Vector<String> getStudyRecentLog() {
-        // if the method is not call than call him
         if (!IfRead) readLog();
 
         return studyRecentLog;
     }
 
     public static Vector<String> getStudyUserSites() {
-        // if the method is not call than call him
         if (!IfRead) readLog();
 
         return studyUserSites;
     }
 
     public static int getCountOfUse() {
-        // if the method is not call than call him
         if (!IfRead) readLog();
 
         return COUNT_OF_USE;
@@ -325,6 +322,7 @@ public class ReadLog {
 
     public static String getLANGUAGE() {
         // if the method is not call than call him
+        System.out.println("getLANGUAGE");
         if (!IfRead) readLog();
 
         return LANGUAGE;
@@ -336,8 +334,7 @@ public class ReadLog {
     }
 
     public static AllVocabularies readUserDictionary(String name) {
-        String pathToDictionary = System.getProperty("user.dir") +
-                "\\src\\DesktopApp\\Resource\\UserDictionaries\\" + name + ".txt";
+        String pathToDictionary = desktopAppFolder + "Resource\\UserDictionaries\\" + name + ".txt";
         Collection<Words> collection = new ArrayList<>();
         AllVocabularies allVocabularies = null;
 
@@ -383,6 +380,10 @@ public class ReadLog {
 
     public static Vector<AllVocabularies> getAllUserVocabulary(){
         return allUserVocabulary;
+    }
+
+    public static String getDesktopAppFolder(){
+        return desktopAppFolder;
     }
 }
 

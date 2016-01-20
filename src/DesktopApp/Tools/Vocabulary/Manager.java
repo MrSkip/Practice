@@ -101,7 +101,6 @@ public class Manager {
     }
 
     private static Collection<Words> getTypedVocabulary(String name){
-
         if (allVocabularies == null)
             allVocabularies = ReadLog.getAllVocabularies();
 
