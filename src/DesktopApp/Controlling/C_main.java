@@ -1,7 +1,7 @@
 package DesktopApp.Controlling;
 
 import DesktopApp.Controlling.HandMadeControllers.TypedWords;
-import DesktopApp.GUI.CreateStage;
+import DesktopApp.Tools.CreateStage;
 import DesktopApp.Tools.MyClassWithText;
 import DesktopApp.Tools.ReadLog;
 import DesktopApp.Tools.ShowMinorStage;
@@ -54,7 +54,7 @@ public class C_main implements Initializable{
         historyOfSearch = new Vector<>();
 
         manager = Manager.getInstance();
-        stage_study = new CreateStage("", System.getProperty("user.dir") + "\\DesktopApp\\GUI\\minorScenes\\study.fxml", 215, 304,  true, false).getStage();
+        stage_study = new CreateStage("", ReadLog.getDesktopAppFolder() + "GUI\\minorScenes\\study.fxml", 215, 304,  true, false).getStage();
 
         borderPanePrimary.getStylesheets().clear();
         borderPanePrimary.getStylesheets().add(getClass().getResource("Style.css").toExternalForm());
@@ -68,7 +68,17 @@ public class C_main implements Initializable{
     public void show(Stage stage){
         stage.setOnCloseRequest(event1 -> ReadLog.writeLog());
 
+        stage.setMinHeight(437);
+        stage.setMinWidth(615);
+        stage.setMaxWidth(746);
+        try {
+            stage.getIcons().add(new Image(new File(ReadLog.getDesktopAppFolder() + "Resource\\images\\icon.png").toURI().toURL().toString()));
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+
         stage.show();
+
 
 //      Assign button "study" with the show stage "study"
         new ShowMinorStage(
@@ -638,6 +648,7 @@ class UserDictionary {
             mPane = new BorderPane();
             mPane.setStyle("-fx-background-color: #747474; -fx-pref-width: 250");
         }
+        mPane.setPrefWidth(150);
         buttonViewAllOrThis.setText("");
         VBox vBox = new VBox();
         vBox.autosize();
@@ -747,17 +758,17 @@ class UserDictionary {
             label.setPrefHeight(23);
             label.setCursor(Cursor.HAND);
             if (i == 0)
-                label.setStyle("-fx-background-color: #4175a4; -fx-text-fill: #f1f1f1; -fx-font-family: cursive; -fx-pref-width: 130");
+                label.setStyle("-fx-background-color: #4175a4; -fx-text-fill: #f1f1f1; -fx-font-family: cursive; -fx-pref-width: 170");
             else
-                label.setStyle("-fx-background-color: #9c9c9c; -fx-text-fill: #f1f1f1; -fx-font-family: cursive; -fx-pref-width: 130");
+                label.setStyle("-fx-background-color: #9c9c9c; -fx-text-fill: #f1f1f1; -fx-font-family: cursive; -fx-pref-width: 170");
 
             label.addEventHandler(MouseEvent.ANY, e -> {
                 if (((VBox) ((Label) e.getSource()).getParent().getParent()).getChildren().indexOf(((Label) e.getSource()).getParent()) != 0) {
                     if (e.getEventType() == MouseEvent.MOUSE_ENTERED) {
-                            label.setStyle("-fx-background-color: #7f7f7f; -fx-text-fill: #eeeeee; -fx-font-family: cursive; -fx-pref-width: 130");
+                            label.setStyle("-fx-background-color: #7f7f7f; -fx-text-fill: #eeeeee; -fx-font-family: cursive; -fx-pref-width: 170");
                     }
                     else if (e.getEventType() == MouseEvent.MOUSE_EXITED)
-                        label.setStyle("-fx-background-color: #9c9c9c; -fx-text-fill: #eeeeee; -fx-font-family: cursive; -fx-pref-width: 130");
+                        label.setStyle("-fx-background-color: #9c9c9c; -fx-text-fill: #eeeeee; -fx-font-family: cursive; -fx-pref-width: 170");
                     else if (MouseButton.PRIMARY == e.getButton() && MouseEvent.MOUSE_CLICKED == e.getEventType()) {
                         if (e.getClickCount() == 2)
                             createSecondPane(((Label) ((HBox) ((VBox) ((ScrollPane) mPane.getLeft()).getContent()).getChildren().get(0))
@@ -770,12 +781,12 @@ class UserDictionary {
                             hBox1.getChildren().addAll(((HBox) ((Label) e.getSource()).getParent()).getChildren());
                             hBox1.autosize();
                             hBox1.getChildren().get(0)
-                                    .setStyle("-fx-background-color: #4175a4; -fx-text-fill: #eeeeee; -fx-font-family: cursive; -fx-pref-width: 130");
+                                    .setStyle("-fx-background-color: #4175a4; -fx-text-fill: #eeeeee; -fx-font-family: cursive; -fx-pref-width: 170");
                             vBox.getChildren().add(0, hBox1);
 
                             if (vBox.getChildren().size() > 1)
                                 ((HBox) vBox.getChildren().get(1)).getChildren().get(0)
-                                        .setStyle("-fx-background-color: #7f7f7f; -fx-text-fill: #eeeeee; -fx-font-family: cursive; -fx-pref-width: 130");
+                                        .setStyle("-fx-background-color: #7f7f7f; -fx-text-fill: #eeeeee; -fx-font-family: cursive; -fx-pref-width: 170");
                         }
                     }
                 }
@@ -819,15 +830,15 @@ class UserDictionary {
             textField.setEditable(true);
             textField.setId("po" + namesOfUserDictionaries.get(i));
             textField.setPromptText("Add a note to dictionary");
-            textField.setStyle("-fx-background-color: #696969; -fx-text-fill: #eeeeee; -fx-pref-width: 100");
+            textField.setStyle("-fx-background-color: #696969; -fx-text-fill: #eeeeee; -fx-pref-width: 200");
 
             textField.setText(UserVocabularyManager.getNote(namesOfUserDictionaries.get(i)));
 
             textField.addEventHandler(MouseEvent.ANY, e -> {
                 if (e.getEventType() == MouseEvent.MOUSE_ENTERED)
-                    textField.setStyle("-fx-background-color: #979797; -fx-text-fill: #353535; -fx-pref-width: 100");
+                    textField.setStyle("-fx-background-color: #979797; -fx-text-fill: #353535; -fx-pref-width: 200");
                 else if (e.getEventType() == MouseEvent.MOUSE_EXITED)
-                    textField.setStyle("-fx-background-color: #696969; -fx-text-fill: #eeeeee; -fx-pref-width: 100");
+                    textField.setStyle("-fx-background-color: #696969; -fx-text-fill: #eeeeee; -fx-pref-width: 200");
             });
 
             textField.addEventHandler(javafx.scene.input.KeyEvent.KEY_RELEASED, event ->

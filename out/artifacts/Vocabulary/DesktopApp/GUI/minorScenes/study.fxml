@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane id="bgStudy" fx:id="borderPanePrimary" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.84" prefHeight="304.0" prefWidth="215.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DesktopApp.Controlling.minorControllers.C_study">
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox fx:id="vBoxBt" alignment="TOP_RIGHT">
+               <children>
+                  <Label fx:id="firstBt" prefHeight="14.0" prefWidth="217.0" text="RECENT">
+                     <padding>
+                        <Insets right="6.0" />
+                     </padding>
+                     <font>
+                        <Font name="Arial Bold Italic" size="11.0" />
+                     </font>
+                  </Label>
+                  <Line endX="115.0" opacity="0.24" startX="-100.0" />
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Button id="button123" fx:id="bt1" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="22.0" prefWidth="28.0" stylesheets="@style.css" text="1">
+                           <HBox.margin>
+                              <Insets top="1.0" />
+                           </HBox.margin>
+                           <padding>
+                              <Insets left="1.0" />
+                           </padding>
+                        </Button>
+                        <Button id="button123" fx:id="bt2" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="22.0" prefWidth="28.0" stylesheets="@style.css" text="2">
+                           <HBox.margin>
+                              <Insets left="3.0" right="3.0" top="1.0" />
+                           </HBox.margin>
+                           <padding>
+                              <Insets left="1.0" />
+                           </padding>
+                        </Button>
+                        <Button id="button123" fx:id="bt3" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="22.0" prefWidth="28.0" stylesheets="@style.css" text="3">
+                           <HBox.margin>
+                              <Insets top="1.0" />
+                           </HBox.margin>
+                           <padding>
+                              <Insets left="1.0" />
+                           </padding>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <Pane fx:id="pane" prefHeight="277.0" prefWidth="216.0">
+               <children>
+                  <VBox>
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fx:id="listImage2" fitHeight="88.0" fitWidth="103.0" pickOnBounds="true" preserveRatio="true">
+                                 <HBox.margin>
+                                    <Insets left="5.0" top="5.0" />
+                                 </HBox.margin>
+                                 <effect>
+                                    <Lighting>
+                                       <bumpInput>
+                                          <Shadow />
+                                       </bumpInput>
+                                    </Lighting>
+                                 </effect></ImageView>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fx:id="listImage3" fitHeight="103.0" fitWidth="103.0" pickOnBounds="true" preserveRatio="true">
+                                 <HBox.margin>
+                                    <Insets top="5.0" />
+                                 </HBox.margin>
+                                 <effect>
+                                    <Lighting>
+                                       <bumpInput>
+                                          <Shadow />
+                                       </bumpInput>
+                                    </Lighting>
+                                 </effect></ImageView>
+                              <ImageView fx:id="listImage4" fitHeight="88.0" fitWidth="103.0" pickOnBounds="true" preserveRatio="true">
+                                 <HBox.margin>
+                                    <Insets left="5.0" top="5.0" />
+                                 </HBox.margin>
+                                 <effect>
+                                    <Lighting>
+                                       <bumpInput>
+                                          <Shadow />
+                                       </bumpInput>
+                                    </Lighting>
+                                 </effect></ImageView>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children></Pane>
+         </children>
+      </VBox>
+   </center>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="24.0" prefWidth="215.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="textField" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="173.0" promptText="Add new site" />
+            <ImageView fx:id="add" fitHeight="18.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Resource/images/left224.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="3.0" />
+               </HBox.margin>
+            </ImageView>
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>

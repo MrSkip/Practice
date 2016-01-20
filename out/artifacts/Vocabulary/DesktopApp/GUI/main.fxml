@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane id="scene" fx:id="borderPanePrimary" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DesktopApp.Controlling.C_main">
+   <top>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <BorderPane id="menupane" prefHeight="0.0" prefWidth="600.0" stylesheets="@Style.css">
+               <left>
+                  <HBox BorderPane.alignment="CENTER">
+                     <children>
+                        <Group fx:id="group" />
+                        <Button id="study" fx:id="study" mnemonicParsing="false" prefHeight="0.0" prefWidth="50.0" stylesheets="@Style.css" text="Study">
+                           <HBox.margin>
+                              <Insets left="1.0" right="3.0" />
+                           </HBox.margin>
+                        </Button>
+                        <MenuBar id="menu2" prefHeight="25.0" prefWidth="196.0" stylesheets="@Style.css">
+                          <menus>
+                            <Menu mnemonicParsing="false" text="File">
+                              <items>
+                                <MenuItem mnemonicParsing="false" text="Close" />
+                              </items>
+                            </Menu>
+                            <Menu mnemonicParsing="false" text="Setting">
+                              <items>
+                                <MenuItem mnemonicParsing="false" text="Delete" />
+                              </items>
+                            </Menu>
+                            <Menu mnemonicParsing="false" text="Print">
+                              <items>
+                                <MenuItem mnemonicParsing="false" text="About" />
+                              </items>
+                            </Menu>
+                              <Menu mnemonicParsing="false" text="Help">
+                                <items>
+                                  <MenuItem mnemonicParsing="false" text="Action 1" />
+                                </items>
+                              </Menu>
+                          </menus>
+                        </MenuBar>
+                     </children>
+                  </HBox>
+               </left>
+               <right>
+                  <MenuBar id="menu2" prefHeight="25.0" prefWidth="203.0" stylesheets="@Style.css" BorderPane.alignment="CENTER">
+                    <menus>
+                      <Menu mnemonicParsing="false" text="Your Dictionary">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="Close" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="VK">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="Delete" />
+                        </items>
+                      </Menu>
+                      <Menu mnemonicParsing="false" text="FB">
+                        <items>
+                          <MenuItem mnemonicParsing="false" text="About" />
+                        </items>
+                      </Menu>
+                        <Menu mnemonicParsing="false" text="?">
+                          <items>
+                            <MenuItem mnemonicParsing="false" text="Action 1" />
+                          </items>
+                        </Menu>
+                    </menus>
+                  </MenuBar>
+               </right>
+            </BorderPane>
+            <HBox id="menupane" stylesheets="@Style.css">
+               <VBox.margin>
+                  <Insets left="1.0" />
+               </VBox.margin>
+            </HBox>
+            <VBox alignment="CENTER" prefHeight="65.0" prefWidth="600.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="36.0" prefWidth="600.0">
+                     <children>
+                        <Pane prefHeight="29.0" prefWidth="169.0" />
+                        <ImageView fx:id="history" fitHeight="24.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../notebook91.png" />
+                           </image>
+                        </ImageView>
+                        <Pane prefHeight="36.0" prefWidth="5.0" />
+                        <TextField id="searchField" fx:id="textFieldF" prefHeight="0.0" prefWidth="189.0" stylesheets="@Style.css" />
+                        <Pane prefHeight="36.0" prefWidth="4.0" />
+                        <ImageView fx:id="find" fitHeight="31.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../GUI/find1.png" />
+                           </image>
+                        </ImageView>
+                        <Pane prefHeight="35.0" prefWidth="194.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Label fx:id="userChooseDictionary" text="Ukraine-English" />
+                        <Pane prefHeight="17.0" prefWidth="8.0" />
+                        <Pane prefHeight="12.0" prefWidth="11.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </top>
+</BorderPane>

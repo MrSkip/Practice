@@ -4,7 +4,6 @@ import DesktopApp.Tools.Vocabulary.AllVocabularies;
 import DesktopApp.Tools.Vocabulary.Words;
 
 import java.io.*;
-import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Vector;
@@ -25,7 +24,7 @@ public class ReadLog {
     private static Vector<AllVocabularies>
             allUserVocabulary = new Vector<>(),
             oldUserVocabulary = new Vector<>();
-    private static String desktopAppFolder = System.getProperty("user.dir") + "\\DesktopApp\\";
+    private static String desktopAppFolder = System.getProperty("user.dir") + "\\DesktopApp\\";//\src\
 
     public static Vector<AllVocabularies> getAllVocabularies() {
         // if the method is not call than call him
@@ -59,7 +58,7 @@ public class ReadLog {
             assert languagePath != null;
             FileInputStream fstream = new FileInputStream(languagePath);
             DataInputStream in = new DataInputStream(fstream);
-            BufferedReader br = new BufferedReader(new InputStreamReader(in, "utf-8"));
+            BufferedReader br = new BufferedReader(new InputStreamReader(in, "UTF-8"));
 
             String str;
 
@@ -110,7 +109,7 @@ public class ReadLog {
         try {
             FileInputStream fstream = new FileInputStream(pathToLog);
             DataInputStream in = new DataInputStream(fstream);
-            BufferedReader br = new BufferedReader(new InputStreamReader(in, "windows-1251"));
+            BufferedReader br = new BufferedReader(new InputStreamReader(in, "UTF-8"));
             String str;
 
             while ((str = br.readLine()) != null) {
@@ -170,9 +169,9 @@ public class ReadLog {
         if (!IfRead) return false;
 
         String pathToLog = desktopAppFolder + "Resource\\log.txt";
-        FileWriter fw;
+        PrintWriter fw;
         try {
-            fw = new FileWriter(pathToLog, false);
+            fw = new PrintWriter(pathToLog, "UTF-8");
 
             fw.write("~START->");
             fw.write("\ncount of use-" + COUNT_OF_USE +
@@ -223,7 +222,7 @@ public class ReadLog {
                         System.out.println("Error:\n" + e);
                     }
 
-                    fw = new FileWriter(pathToDictionary, false);
+                    fw = new PrintWriter(pathToDictionary, "UTF-8");
                     String s = anAllUserVocabulary.getInfo() + "";
                     if (s.equals("null") || s.equals(""))
                         s = "";
@@ -344,7 +343,7 @@ public class ReadLog {
         try {
             FileInputStream fstream = new FileInputStream(pathToDictionary);
             DataInputStream in = new DataInputStream(fstream);
-            BufferedReader br = new BufferedReader(new InputStreamReader(in, Charset.defaultCharset()));
+            BufferedReader br = new BufferedReader(new InputStreamReader(in, "UTF-8"));
 
             String str;
             String info = br.readLine();

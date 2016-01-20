@@ -1,0 +1,29 @@
+~START->
+count of use-0
+language-ENGLISH
+
+~DICTIONARY->
+D:\Project\Java\Vocabulary\out\artifacts\Vocabulary\DesktopApp\Resource\Dictionaries\English-Ukraine.txt
+D:\Project\Java\Vocabulary\out\artifacts\Vocabulary\DesktopApp\Resource\Dictionaries\Ukraine-English.txt
+
+~STUDY->
+http://lingualeo.com/
+http://oxforddictionaries.com/
+https://duolingo.com/
+http://easy-english.com.ua/
+https://opentalk.org.ua/
+http://liuro.com.ua/
+http://learnenglishteens.britishcouncil.org/
+http://elllo.org/
+-USER SITES
+asdfasdf
+http://www.vk.com/3
+http://www.vk.com/6
+-RECENT
+lingvozone.com
+http://www.vk.com/3
+http://www.vk.com/6
+~END STUDY<-
+~USER DICTIONARY
+First dictionary
+~END USER DICTIONARY<-

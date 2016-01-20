@@ -25,7 +25,9 @@ http://www.vk.com/3
 http://www.vk.com/6
 ~END STUDY<-
 ~USER DICTIONARY
-Альоша
 MyFirstNotDelete
-sftiva
+dsfg
+df
+sdfgdfg
+hb
 ~END USER DICTIONARY<-
